@@ -266,10 +266,9 @@ $\color{red}{\textsf{[Post deployment]}}$
 
 
 ## What’s the Difference Between Continuous Integration, Delivery, and Deployment?
-CI is a part of both C delivery and C deployment. It is the practice of merging all developer working copies with a shared mainline several times a day. It is very beneficial to commit all the code to the main branch that can be done daily as frequent as possible. Don't have to wait until you have a lot of changes accumulate and then you push a big change. Better to make the change incremental and relatively minor so you are able to track where the problems comes from if there is any. 
-
-C delivery and C deployment are pretty similar to each other, they automates different part of acceptance tests and deploying to different staging. The difference is that C. Delivery deploys the model into production manually. It is the practice of building and testing code changes in a non-production environment before merging them into the production environment. C. Deployment automatically deploying code changes to the production environment as soon as they are merged into the mainline.C delivery and C deployment are pretty similar to each other, they automates different part of acceptance tests and deploying to different staging. The difference is that C. Delivery deploys the model into production manually. It is the practice of building and testing code changes in a non-production environment before merging them into the production environment. C. Deployment automatically deploying code changes to the production environment as soon as they are merged into the mainline. 
-
+- **Continuous Integration (CI):** CI involves frequently merging all developer working copies to a shared mainline, promoting small and incremental code commits to easily identify issues.
+- **Continuous Delivery (CD) vs. Continuous Deployment:** Both CD practices automate testing and deployment to various stages, but Continuous Delivery requires manual deployment to production, while Continuous Deployment automatically pushes changes to production upon successful merge into the mainline.
+  
 [Back to TOC](#MLOps-Questions)    
 
 
