@@ -380,19 +380,6 @@ Cost function = RSS + λ ∑|β_j|
 ```
 Cost function = RSS + λ ∑(β_j)^2
 ```
-### Comparison and Choice
-
-- **Variable Selection**: Lasso can zero out coefficients, performing variable selection, while Ridge only shrinks coefficients close to zero.
-- **Interpretability**: Lasso may yield more interpretable models due to variable selection. Ridge regression might be less interpretable as it includes all features.
-- **Multicollinearity**: Ridge regression handles multicollinearity better than Lasso by distributing coefficients among correlated predictors.
-- **Model Complexity**: Lasso can produce simpler models by excluding irrelevant features. Ridge tends to include all features, which might not be ideal for model simplicity.
-
-**Choosing Between Lasso and Ridge**:
-- If feature selection is important or if the number of observations is much larger than the number of features, Lasso might be more appropriate.
-- If dealing with highly correlated data and interpretability is not a major concern, Ridge might be preferable.
-- Elastic Net is a middle ground that combines Lasso and Ridge, potentially offering the best of both worlds when tuning its parameters correctly.
-
-
 
 [Back to TOC](#ML-Questions)
 
