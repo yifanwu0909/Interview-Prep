@@ -1,13 +1,13 @@
 # MLOps Questions
 
-- [Model Monitoring](#model-monitoring)
-- [Cues for Retraining](#cues-for-retraining)
-- [Error Rate Based Drift Detection](#error-rate-based-drift-detection)
-- [Drift Detection on the Target Variable](#drift-detection-on-the-target-variable)
-- [Drift Detection on the Input Data](#drift-detection-on-the-input-data)
-- [Summary](#summary)
-- [Explain about Model/Concept Drift](#explain-about-model-concept-drift)
-- [Train/Serve Skew](#train-serve-skew)
+- [Model Monitoring](#model-monitoring)   
+  - [Cues for Retraining](#cues-for-retraining)   
+  - [Error Rate Based Drift Detection](#error-rate-based-drift-detection)   
+  - [Drift Detection on the Target Variable](#drift-detection-on-the-target-variable)   
+  - [Drift Detection on the Input Data](#drift-detection-on-the-input-data)   
+  - [Summary](#summary)   
+- [Explain about Model/Concept Drift](#explain-about-model-or-concept-drift)
+- [Train/Serve Skew](#train-or-serve-skew)
 - [Model Packaging](#model-packaging)
 - [How to Create CI/CD Pipelines for Machine Learning](#how-to-create-cicd-pipelines-for-machine-learning)
 - [How Would You Scale Your ML Model](#how-would-you-scale-your-ml-model)
@@ -36,34 +36,41 @@
 - [What Is the Difference Between Datawarehouse and OLAP?](#what-is-the-difference-between-datawarehouse-and-olap)
 
 ## Model Monitoring
+The knowledge embedded in a machine learning model is a frozen snapshot of a real-world process imperfectly captured in data. Even if your machine learning (ML) models aren’t wrong now, drift will inevitably affect any model and cause it to lose accuracy over time. 
+A change in any step in the model dependency pipeline may violate the statistical, technical, or business assumptions that were relied upon when the model was built, which will require the model to be retrained. 
+
+![Alt text](Pictures/model_monitoring.png)
+
+
+
 [Back to TOC](#MLOps-Questions)    
 
 
-## Cues for Retraining
+### Cues for Retraining
 [Back to TOC](#MLOps-Questions)    
 
 
-## Error Rate Based Drift Detection
+### Error Rate Based Drift Detection
 [Back to TOC](#MLOps-Questions)    
 
 
-## Drift Detection on the Target Variable
+### Drift Detection on the Target Variable
 [Back to TOC](#MLOps-Questions)    
 
 
-## Drift Detection on the Input Data
+### Drift Detection on the Input Data
 [Back to TOC](#MLOps-Questions)    
 
 
-## Summary
+### Summary
 [Back to TOC](#MLOps-Questions)    
 
 
-## Explain about Model/Concept Drift
+## Explain about Model or Concept Drift
 [Back to TOC](#MLOps-Questions)    
 
 
-## Train/Serve Skew
+## Train or Serve Skew
 [Back to TOC](#MLOps-Questions)    
 
 
@@ -111,11 +118,9 @@
 [Back to TOC](#MLOps-Questions)    
 
 
-## Stream Processing
+## Stream Processing vs Batch Processing
 [Back to TOC](#MLOps-Questions)    
 
-
- vs Batch Processing
 
 ## How Can We Ensure Reproducibility When Deploying Machine Learning Models?
 [Back to TOC](#MLOps-Questions)    
