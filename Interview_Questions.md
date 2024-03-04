@@ -100,6 +100,25 @@ The bottom line is that all computers really "understand" is binary instructions
 
 [Back to TOC](#Interview-Questions)  
 
+
+## What is List comprehension
+List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.  
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+for x in fruits:
+  if "a" in x:
+         newlist.append(x)
+
+#VS:
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+```
+[Back to TOC](#Interview-Questions)  
+
+
 ## Tuple VS a list
 | Aspects \ Objects                                          | List                                               | Tuple                                              |
 |------------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
@@ -132,23 +151,7 @@ If you think about the interpreter model every line has to be interpreted for me
 [Back to TOC](#Interview-Questions)  
 
 
-## What is List comprehension
-List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.  
 
-```python
-fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
-newlist = []
-for x in fruits:
-  if "a" in x:
-         newlist.append(x)
-
-#VS:
-
-fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
-newlist = [x for x in fruits if "a" in x]
-```
-
-[Back to TOC](#Interview-Questions)  
 
 
 ## 
