@@ -385,11 +385,9 @@ Cost function = RSS + λ ∑(β_j)^2
 
 
 ## AUC and ROC
-They are tools for assessing the performance of a classifier by examining the trade-off between the true positive rate (sensitivity) and the false positive rate (1 - specificity) at various threshold settings.
-
 ### ROC Curve
 
-**Definition**: The ROC curve is a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied. It is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold levels.
+**Definition**: It is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold levels.
 
 **Key Features**:
 - The x-axis represents the false positive rate (FPR, or 1 - specificity), and the y-axis represents the true positive rate (TPR, or sensitivity).
@@ -398,17 +396,15 @@ They are tools for assessing the performance of a classifier by examining the tr
 
 ### AUC
 
-**Definition**: The AUC, or Area Under the ROC Curve, is a single scalar value that summarizes the performance of a classifier across all threshold values. The AUC represents the probability that a randomly chosen positive instance is ranked higher than a randomly chosen negative instance.
+**Definition**: The AUC, or Area Under the ROC Curve. The AUC represents the probability that a randomly chosen positive instance is ranked higher than a randomly chosen negative instance.
 
 **Key Features**:
-- The AUC value ranges from 0 to 1. A model with perfect predictive accuracy would have an AUC of 1, whereas a model with no discriminative ability would have an AUC of 0.5 (equivalent to random guessing).
+- The AUC value ranges from 0 to 1. (0.5 equivalent to random guessing).
 - AUC is useful as a single measure of overall model performance, especially when comparing different models.
 - It is invariant to the threshold set for classification and is often used when the classes are imbalanced.
 
 | Feature | ROC Curve | AUC |
 |---------|-----------|-----|
-| **Definition** | A graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied. | A single scalar value summarizing the performance of a classifier across all threshold values. |
-| **Key Features** | - Plots true positive rate (TPR) vs. false positive rate (FPR) at different thresholds.<br>- Each point represents a sensitivity/specificity pair for a particular threshold.<br>- Useful for visualizing the trade-off between TPR and FPR. | - Ranges from 0 to 1, with 1 representing perfect predictive accuracy.<br>- Invariant to classification threshold.<br>- Useful for comparing overall performance of different models. |
 | **Interpretability** | Provides a comprehensive view of the trade-off between sensitivity and specificity at various thresholds. | Summarizes model performance into a single metric, making it easier to compare but less detailed. |
 | **Use Cases** | Useful for selecting a threshold that balances TPR and FPR based on specific needs. | Useful for comparing the overall performance of different classifiers without considering the threshold. |
 | **Robustness** | Offers insights into performance across the spectrum of class distributions. | Generally more robust to imbalanced class distributions. |
