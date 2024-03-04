@@ -485,9 +485,9 @@ Neurons in this layer have full connectivity with all neurons in the preceding a
 ### Non-Linearity Layers
 **activation functions**
 Since convolution is a linear operation and images are far from linear, non-linearity layers are often placed directly after the convolutional layer to introduce non-linearity to the activation map.
-- Sigmoid: takes a real-valued number and “squashes” it into a range between 0 and 1. [vanishing gradients]
-- Tanh:  squashes a real-valued number to the range [-1, 1]. Like sigmoid, the activation saturates, but — unlike the sigmoid neurons — its output is zero centered. [vanishing gradients]
-- ReLU(Rectified Linear Unit): `ƒ(κ)=max (0,κ)`, the activation is simply threshold at zero.  [No Vanishing Gradients]
+- Sigmoid: takes a real-valued number and “squashes” it into a range between 0 and 1. $\color{red}{\textsf{[vanishing gradients]}}$
+- Tanh:  squashes a real-valued number to the range [-1, 1]. Like sigmoid, the activation saturates, but — unlike the sigmoid neurons — its output is zero centered. $\color{red}{\textsf{[vanishing gradients]}}$
+- ReLU(Rectified Linear Unit): `ƒ(κ)=max (0,κ)`, the activation is simply threshold at zero.  $\color{green}{\textsf{[No Vanishing Gradients]}}$
 	-  ：More reliable and accelerates the convergence by six times. 
 	-  ：ReLU can be fragile during training. A large gradient flowing through it can update it in such a way that the neuron will never get further updated. 
 		- FIX: setting a proper learning rate.
