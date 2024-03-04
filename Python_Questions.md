@@ -12,7 +12,7 @@
 - [Tuple VS a list](#tuple-vs-a-list)
 - [What does the generator function do in Python?](#what-does-the-generator-function-do-in-Python)
 - [Explain the map function.](#explain-the-map-function)
-- [Explain what _init_.py does](#explain-what-initpy-does).
+- [Explain what init.py does](#explain-what-initpy-does).
 - [Reduce function](#reduce-function)
 - [Filter function](#filter-function)
 - [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
