@@ -22,6 +22,7 @@
 - [Pylint and PyChecker](#pylint)
 - [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
 - [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
+- [Pickling and UnPickling](#pickling)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -591,8 +592,41 @@ While lambda functions in Python are limited to a single expression and cannot c
 [Back to TOC](#Python-Questions)   
 
 
+## Pickling
 
+Converting a Python object into a byte stream to save it to a file or transmit it over a network. This byte stream can then be stored or sent and later be "unpickled" — that is, converted back into the original Python object. 
 
+### How Pickling Works
+
+To pickle an object, you use the `pickle.dump()` function, which writes the pickled byte stream to a file-like object. Alternatively, you can use `pickle.dumps()` to get a bytes object.
+
+Here's an example of pickling a Python dictionary:
+
+```python
+import pickle
+pickled_data = pickle.dumps(data)
+
+# Save the pickled byte stream to a file
+with open('data.pkl', 'wb') as file:
+    file.write(pickled_data)
+```
+
+### How Unpickling Works
+
+```python
+import pickle
+
+with open('data.pkl', 'rb') as file:
+    pickled_data = file.read()
+
+# Unpickle the byte stream to get the original Python object
+data = pickle.loads(pickled_data)
+print(data)  # Output: {'key': 'value', 'foo': 'bar'}
+```
+
+- **Efficiency**: Pickling can be an efficient way to serialize and deserialize Python objects, but it may not be the most space-efficient format compared to other serialization methods like JSON or Protocol Buffers, especially for simple data structures.
+
+[Back to TOC](#Python-Questions)   
 
 
 
