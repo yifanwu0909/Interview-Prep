@@ -100,7 +100,6 @@ The bottom line is that all computers really "understand" is binary instructions
 
 [Back to TOC](#Interview-Questions)  
 
-## What is List comprehension
 ## Tuple VS a list
 | Aspects \ Objects                                          | List                                               | Tuple                                              |
 |------------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
