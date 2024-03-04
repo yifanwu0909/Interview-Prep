@@ -354,6 +354,54 @@ the act of converting raw observations into desired features using statistical o
 
 
 ## Lasso and Ridge
+Techniques used to prevent overfitting in regression models by adding a regularization term to the cost function. 
+
+### Lasso Regression (L1 Regularization)
+
+**Definition**: Lasso regression adds a penalty equal to the absolute value of the magnitude of coefficients to the loss function. This penalty term is the L1 norm of the coefficients multiplied by a lambda parameter.
+
+**Mathematical Representation**:
+\[ \text{Cost function} = \text{RSS} + \lambda \sum_{j=1}^{p} | \beta_j | \]
+where RSS is the residual sum of squares, \(\beta_j\) are the coefficients, and \(\lambda\) is the regularization parameter.
+
+**Key Features**:
+- Can shrink some coefficients to zero, effectively performing variable selection and resulting in a model that is easier to interpret.
+- Useful when we have a large number of features, some of which might be irrelevant to the prediction.
+- Can lead to sparse models.
+
+**Limitations**:
+- Can struggle with multicollinearity (high correlations among predictor variables).
+- Selecting more than \(n\) features when \(n < p\) (number of observations is less than the number of features) can be inconsistent.
+
+### Ridge Regression (L2 Regularization)
+
+**Definition**: Ridge regression adds a penalty equal to the square of the magnitude of coefficients to the loss function. This penalty term is the L2 norm of the coefficients multiplied by a lambda parameter.
+
+**Mathematical Representation**:
+\[ \text{Cost function} = \text{RSS} + \lambda \sum_{j=1}^{p} \beta_j^2 \]
+where RSS is the residual sum of squares, \(\beta_j\) are the coefficients, and \(\lambda\) is the regularization parameter.
+
+**Key Features**:
+- Shrinks the coefficients evenly but does not necessarily bring them exactly to zero. All features are kept but their impact is minimized.
+- Particularly useful when there is multicollinearity in the data, as it helps in stabilizing the coefficients.
+- Tends to perform well when all the input features influence the output.
+
+**Limitations**:
+- Does not perform variable selection; all variables are included in the final model, which can make the model complex and harder to interpret.
+
+### Comparison and Choice
+
+- **Variable Selection**: Lasso can zero out coefficients, performing variable selection, while Ridge only shrinks coefficients close to zero.
+- **Interpretability**: Lasso may yield more interpretable models due to variable selection. Ridge regression might be less interpretable as it includes all features.
+- **Multicollinearity**: Ridge regression handles multicollinearity better than Lasso by distributing coefficients among correlated predictors.
+- **Model Complexity**: Lasso can produce simpler models by excluding irrelevant features. Ridge tends to include all features, which might not be ideal for model simplicity.
+
+**Choosing Between Lasso and Ridge**:
+- If feature selection is important or if the number of observations is much larger than the number of features, Lasso might be more appropriate.
+- If dealing with highly correlated data and interpretability is not a major concern, Ridge might be preferable.
+- Elastic Net is a middle ground that combines Lasso and Ridge, potentially offering the best of both worlds when tuning its parameters correctly.
+
+
 [Back to TOC](#ML-Questions)
 
 
