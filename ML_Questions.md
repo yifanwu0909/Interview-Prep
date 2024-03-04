@@ -507,22 +507,47 @@ Since convolution is a linear operation and images are far from linear, non-line
 	- The model learns slowly and often times, training stops after a few iterations
 	- Model performance is poor
 - FIX:
-	- $\color{green}{\textsf{Switch to ReLU}}$: switch to other activation functions that are non-saturated for their derivative, e.g., ReLU (Rectified Linear Unit)
+	- **Switch to ReLU**: switch to other activation functions that are non-saturated for their derivative, e.g., ReLU (Rectified Linear Unit)
    
-   	![alt text](Pictures/vanishing_gradient.png)
+		![alt text](Pictures/vanishing_gradient.png)
+	- **Reduce the complexity of the model**: reducing the number of layers in our network like reduce the number of hidden layers
+	- **Use weight initializer with variance**: When our initial weights are set too small or lacking variance, it often will cause gradients to vanish. sampling the initial weights from a uniform or normal distribution of certain variances, and maintaining the variance of activations the same across all layers. 
+	- **Select better optimizer and adjust learning rate**: With gradients approaching zero, the optimizer gets trapped in sub-optimal local minima or saddle point. To overcome this challenge, we can employ an optimizer with a momentum that factors in the accumulated previous gradients. But the momentum will cause fast convergence, hence, slightly reducing the learning rate will help prevent your network from diverging too easily, thus reducing the possibility of gradients approaching zero. 
   
 [Back to TOC](#ML-Questions)
 
 
 ## Exploding Gradient
+due to the initial weights assigned to the neural nets creating large losses. Big gradient values can accumulate to the point where large parameter updates are observed, causing gradient descents to oscillate without coming to global minima. 
+- 迹象：
+	- Contrary to the vanishing scenario, exploding gradients shows itself as unstable, large parameter changes from batch/iteration to batch/iteration
+	- Model weights can become NaN very quickly
+	- Model loss also goes to NaN
+- FIX:
+	- **Gradients clipping**: caps the derivatives to a threshold and uses the capped gradients to update the weights throughout. 
+	- **Proper weight initializer**: one primary cause of gradients exploding lies in too large of a weight initialization and update. Hence, initializing model weights properly is the key to fix this exploding gradients problem.Same as the vanishing gradients, we can initialize weights with a normal distribution. 
+	- **L2 norm regularization**: penalizes large weight values by adding a squared term of  weights to the loss function, result in smaller weight updates throughout the network
+   
 [Back to TOC](#ML-Questions)
 
 
 ## Resnet
+- The best ImageNet models using convolutional and fully-connected layers typically contain between 16 and 30 layers.
+- 2015 Microsoft Research. **Solved the problem of the vanishing/exploding gradient.**
+- $\color{green}{\textsf{Skip connection}}$: connects activations of a  layer to further layers by skipping some layers in between. This forms a $\color{green}{\textsf{residual block}}$. ResNets are made by stacking these residual blocks together. 
+	- advantage: if any layer hurt the performance of architecture, it will be skipped by regularization.
+	- We have a deep network unaffected by vanishing/exploding gradient.
+   
 [Back to TOC](#ML-Questions)
 
 
 ## MobileNet
+- TensorFlow’s first mobile computer vision model
+- Significantly reduces the number of parameters. **lightweight. Small, low-latency**
+	- Depth-wise convolution: channel-wise DK×DK spatial convolution.
+	- Point-wise convolution: 1×1 convolution to change the dimension
+- How: instead of a single 3x3 convolution layer followed by the batch norm and ReLU. Mobile Nets split the convolution into a 3x3 depth-wise conv and a 1x1 pointwise conv
+  
 [Back to TOC](#ML-Questions)
 
 
