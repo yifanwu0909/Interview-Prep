@@ -19,7 +19,7 @@
 - [Can you explain what pass means in Python?](#can-you-explain-what-pass-means-in-Python)
 - [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
 - [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
-- [Pylint](#pylint)
+- [Pylint and PyChecker](#pylint)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
