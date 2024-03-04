@@ -19,7 +19,7 @@
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
-[Back to TOC](#Interview-Questions)    
+[Back to TOC](#Python-Questions)    
 
 ## Copy an object in Python
 ### Shallow Copy
@@ -34,7 +34,7 @@ A deep copy creates a new object and recursively copies all the objects it refer
 ```python
 deep_copied_list = copy.deepcopy(original_list)
 ```
-[Back to TOC](#Interview-Questions)    
+[Back to TOC](#Python-Questions)  
 
 
 ## Mutable vs Immutable  
@@ -49,7 +49,7 @@ deep_copied_list = copy.deepcopy(original_list)
 - Strings
 - Tuples
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## What are decorators in python
@@ -73,7 +73,7 @@ Something is happening before the function is called.
 Whee!
 Something is happening after the function is called.
 ```
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)   
 
 
  
@@ -92,7 +92,7 @@ C is a compiled language. C++ is a compiled language. Python is an interpreted l
 | **Memory Management** | Provides `malloc()` and `calloc()` for allocation, `free()` for deallocation. | Provides `new` for allocation, `delete` for deallocation. | Memory allocation and deallocation is automatic. |
 | **Exception Handling** | Does not support direct exception handling. | Supports exception handling. | Supports exception handling. |
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## Why interpreter languages are slow
@@ -102,7 +102,7 @@ Think of it this way. If you can talk in your native language to someone, that w
 
 The bottom line is that all computers really "understand" is binary instructions, which is what "fast" languages like C are compiled into.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)   
 
 
 ## What is List comprehension
@@ -120,7 +120,7 @@ for x in fruits:
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = [x for x in fruits if "a" in x]
 ```
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## Tuple VS a list
@@ -152,7 +152,7 @@ The interpreter model lifts some responsibility to software. The interpreted mod
   - effectively performing an instruction at the machine level, however as this is at a higher level this is likely several instructions
 If you think about the interpreter model every line has to be interpreted for meaning before execution. Even If we assume this step to be as cheap as possible (1 instruction) the interpreter model has to be 2x slower than machine code. But the interpretation step can involve 100’s of additional instructions. Thus an interpreted program is going to be orders of magnitude slower.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## What does the generator function do in Python?
@@ -187,7 +187,7 @@ Key points to remember about generator functions:
 - Execution is paused and resumed on each `yield`, maintaining state between yields.
 - They are more memory efficient for large datasets or streams.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 
@@ -203,7 +203,7 @@ This is a convenient way to perform element-wise transformations and operations 
 - For multiple iterables, the function is applied in a parallel fashion.
 - The result can be converted to a list or other iterable types for further use or inspection.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## Explain what _init_.py does.
@@ -221,7 +221,7 @@ Here are the key points about `__init__.py`:
 In summary, the `__init__.py` file serves several important functions in Python packages, including package initialization, namespace management, and making packages easier to use and import from. Despite the changes in Python 3.3 and later, `__init__.py` remains a useful and commonly used feature of Python packages.
 Help with module importation from various parts of the code. This helps in the finance industry, when data scientists need to organize financial models, and in healthcare, when organizing medical records. 
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## Reduce function
@@ -273,7 +273,7 @@ In this example, `reduce` applies the `multiply` function to the first two eleme
 - Simplifies Code
 - More efficient than equivalent code written with explicit loops, especially with functions that are optimized for fast execution.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## filter function
@@ -292,7 +292,7 @@ In this example, `reduce` applies the `multiply` function to the first two eleme
 
 5. **Composability**: Functions like `filter` can be combined with other functional programming tools like `map` and `reduce` to perform complex data transformations and aggregations in a concise manner.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 ## Could you explain whether all memory gets freed when Python exits?
@@ -329,7 +329,7 @@ Once the Python process terminates, the operating system takes over. Modern oper
 
 In most cases and environments, you can expect that all memory allocated to a Python process will be freed upon its exit, thanks to the combination of Python's own cleanup efforts and the operating system's management of process resources. However, specific scenarios involving external libraries, subprocesses, or embedded Python might require additional consideration.
 
-[Back to TOC](#Interview-Questions)  
+[Back to TOC](#Python-Questions)  
 
 
 
