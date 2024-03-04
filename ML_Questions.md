@@ -348,6 +348,8 @@ the act of converting raw observations into desired features using statistical o
   - Evaluate model on the testing set post-feature engineering.
   - Maintain transparent documentation to avoid and identify leakage.
 
+[Machine Learning: 14 Feature Engineering Techniques](https://baotramduong.medium.com/machine-learning-14-feature-engineering-techniques-f97040e4f5b5)
+
 [Back to TOC](#ML-Questions)
 
 
