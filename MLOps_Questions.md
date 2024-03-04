@@ -307,6 +307,16 @@ $\color{red}{\textsf{[Post deployment]}}$
 
 
 ## How DevOps and MLOps Are Different
+
+| Aspect                   | DevOps                                                                 | MLOps                                                                                                       |
+|--------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Focus**                | Application development                                               | Machine learning, leveraging data insights for business outcomes                                            |
+| **Unique Processes**     | Automation of development and deployment processes                    | Model training, testing, and validation unique to MLOps                                                      |
+| **Automation Emphasis**  | Code builds, deployments                                              | Automated machine learning tasks, such as training models                                                   |
+| **Approach**             | Improves communication between departments, putting people first      | Puts data first to identify patterns and improve customer experiences with less manual intervention         |
+| **Data Role**            | Data is an output, not an input                                       | Data is a crucial input for building models; regular testing in production for performance degradation      |
+| **Maintenance**          | Monitoring software applications for maintenance                      | Regular testing of models in production to address performance issues due to new data accumulation          |
+
 [Back to TOC](#MLOps-Questions)    
 
 
