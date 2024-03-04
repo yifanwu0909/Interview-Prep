@@ -12,6 +12,7 @@
 - [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
 - [What is List comprehension?](#what-is-list-comprehension)
 - [Tuple VS a list](#tuple-vs-a-list)
+- [What does the generator function do in Python?](#what-does-the-generator-function-do-in-Python)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -151,10 +152,41 @@ If you think about the interpreter model every line has to be interpreted for me
 [Back to TOC](#Interview-Questions)  
 
 
+## What does the generator function do in Python?
+A generator function in Python is a special type of function that returns an iterator object. Instead of returning a single value, a generator yields a sequence of results, producing one item at a time and only when required. This is achieved using the `yield` statement instead of `return`. 
+
+Here's what makes generator functions powerful:
+
+1. **Lazy Evaluation**: Generator functions compute values on the fly and do not store the entire sequence in memory. This makes them highly efficient for working with large datasets or infinite sequences, as they only produce items when needed.
+
+2. **Memory Efficiency**: Since the values are generated on demand and not stored, generator functions are memory efficient, especially when dealing with large data streams.
+
+3. **Simplicity**: Generators can simplify code that would otherwise require complex iterators or recursive functions.
+
+Here is a simple example of a generator function:
+
+```python
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
+
+# Using the generator
+for number in count_up_to(5):
+    print(number)
+```
+
+In this example, `count_up_to` is a generator function that yields numbers from 1 up to a specified `max`. When used in a for loop, it generates numbers one by one; after yielding a number, it pauses its state until the next number is requested.
+
+Key points to remember about generator functions:
+- They use `yield` instead of `return`.
+- Execution is paused and resumed on each `yield`, maintaining state between yields.
+- They are more memory efficient for large datasets or streams.
+
+[Back to TOC](#Interview-Questions)  
 
 
-
-## 
 
 ## 
 
