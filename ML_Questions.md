@@ -63,61 +63,118 @@ An error due to complexity in the learning algorithm. In variance, your data get
 
 ## Techniques for Reducing Bias
 
+[Back to TOC](#ML-Questions)
+
+
 ## Data Cleaning
+[Back to TOC](#ML-Questions)
+
 
 ## Handle Missing Data
+[Back to TOC](#ML-Questions)
+
 
 ## Label Imbalance
+[Back to TOC](#ML-Questions)
+
 
 ## How to Feature Selection
+[Back to TOC](#ML-Questions)
+
 
 ## Procedure for Hyperparameter Tuning
+[Back to TOC](#ML-Questions)
+
 
 ## Improve Poor Model Performance
+[Back to TOC](#ML-Questions)
+
 
 ## Bagging vs Boosting
+[Back to TOC](#ML-Questions)
+
 
 ## How does one Collect Data and Prepare Dataset for Training?
+[Back to TOC](#ML-Questions)
+
 
 ## Why Normalization?
+[Back to TOC](#ML-Questions)
+
 
 ## Too Many Categories in Categorical Features
+[Back to TOC](#ML-Questions)
+
 
 ## Would an Additional Feature Improve GBM or Logistic Regression More?
+[Back to TOC](#ML-Questions)
+
 
 ## Feature Engineering
+[Back to TOC](#ML-Questions)
+
 
 ## Lasso and Ridge
+[Back to TOC](#ML-Questions)
+
 
 ## AUC and ROC
+[Back to TOC](#ML-Questions)
+
 
 ## What is the Intuition Behind the F1 Score?
+[Back to TOC](#ML-Questions)
+
 
 ## How would you Build a Bank Fraud Detection Model?
+[Back to TOC](#ML-Questions)
+
 
 ## CNN
 ### Convolution Layer
 ### Pooling Layer
 ### Fully Connected Layer
 ### Non-Linearity Layers
+[Back to TOC](#ML-Questions)
+
 
 ## Vanishing Gradient
+[Back to TOC](#ML-Questions)
+
 
 ## Exploding Gradient
+[Back to TOC](#ML-Questions)
+
 
 ## Resnet
+[Back to TOC](#ML-Questions)
+
 
 ## MobileNet
+[Back to TOC](#ML-Questions)
+
 
 ## Keras vs Tensorflow vs Pytorch
+[Back to TOC](#ML-Questions)
+
 
 ## Unreasonable Effectiveness of Data
+[Back to TOC](#ML-Questions)
+
 
 ## Difference between Xgboost and Random Forest
+[Back to TOC](#ML-Questions)
+
 
 ## Random Forest VS Decision Tree
+[Back to TOC](#ML-Questions)
+
 
 ## How to Prune Decision Tree
+[Back to TOC](#ML-Questions)
+
 
 ## Data Science Behavioral Question
+[Back to TOC](#ML-Questions)
+
 
