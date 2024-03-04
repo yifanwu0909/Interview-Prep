@@ -191,7 +191,7 @@ Key points to remember about generator functions:
 
 
 
-## Please explain the map function.
+## Explain the map function.
 The `map()` function iterates over the items of the given iterable(s) and applies the function to each item. It returns a map object (an iterator), which can be easily converted into a list, tuple, etc., using the respective type constructors (`list()`, `tuple()`, etc.).
 The function must take as many arguments as there are iterables.
 This is a convenient way to perform element-wise transformations and operations on data structures.
