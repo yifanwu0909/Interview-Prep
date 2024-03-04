@@ -197,14 +197,38 @@ By contrast, if the difficulty of the single model is over-fitting, then Bagging
 
 
 ## How does one Collect Data and Prepare Dataset for Training?
+1. Collect data: sampling technique random shuffle
+2. Clean: missing or duplication, outlier, noise. 
+3. Label: human annotators or historic data
+4. Split: train and test 
+5. Feature engineering on train first and then apply the same logic to test to prevent data leak. Check for data imbalance
+6. Shuffle and train
+
 [Back to TOC](#ML-Questions)
 
 
 ## Why Normalization?
+Bring all the features to a similar scale, so no single feature dominates the learning process.
+
+1. **Faster Convergence**: The optimizer doesn't have to deal with differing scales for different features.
+2. **Stabilize Gradient Steps**: Helps in stabilizing the gradient descent steps.
+3. **Equal Importance**: Ensures that all features have equal importance in the learning process.
+4. **Improved Performance**: Some algorithms, such as k-Nearest Neighbors and neural networks, are sensitive to the scale of the features.
+5. **Requirement for Some Algorithms**: Certain machine learning algorithms, such as Support Vector Machines and Principal Component Analysis, require normalization to function correctly.
+   
 [Back to TOC](#ML-Questions)
 
 
 ## Too Many Categories in Categorical Features
+### Approach1: Use domain knowledge:
+1. Decrease the number of groups and apply one-hot encoding: Think of the meaningful ways to map your data to several larger categories. Then one-hot encode.
+2. Quantitative mapping: designate each category with a score or statistic.
+### Approach2: Learn from the output variable
+1. Calculate aggregated value per group
+	- classifier: ratio of positive labels / group
+	- regression: mean target value / group
+2. Calculate normalized aggregated value per group: weight of evidence score & Perlich aggregations
+   
 [Back to TOC](#ML-Questions)
 
 
