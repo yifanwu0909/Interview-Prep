@@ -8,7 +8,7 @@
   - [Summary](#summary)   
 - [Explain about Model/Concept Drift](#explain-about-model-or-concept-drift)
 - [Train/Serve Skew](#train-or-serve-skew)
-- [Model Packaging](#model-packaging)
+- [Features of each Cloud MLOps tool](#features-of-each-mlops-tool)
 - [How to Create CI/CD Pipelines for Machine Learning](#how-to-create-cicd-pipelines-for-machine-learning)
 - [How Would You Scale Your ML Model](#how-would-you-scale-your-ml-model)
 - [How to Maintain Model Versioning](#how-to-maintain-model-versioning)
@@ -41,40 +41,98 @@ A change in any step in the model dependency pipeline may violate the statistica
 
 ![Alt text](Pictures/model_monitoring.png)
 
-
-
 [Back to TOC](#MLOps-Questions)    
 
 
 ### Cues for Retraining
+we can monitor the input and outputs of our model and trigger model retraining upon the following events: 
+- The model’s performance metrics have deteriorated.
+- The distribution of predictions has changed from those observed during training. 
+- The training data and the live data have begun to diverge and the training data is no longer a good representation of the real world.
+
+Ideally, predictions and the inputs that produced them are logged and easily accessible to facilitate monitoring. The best approach is to tie the model calls to a unique ID which can be used to retrieve the prediction and logging data. If possible, this prediction should either immediately or eventually be tied to a ground truth label. These ground truths are then used to calculate and visualize a performance metric that should be made available to users across the organization. 
+
 [Back to TOC](#MLOps-Questions)    
 
 
 ### Error Rate Based Drift Detection
+Detecting drift based on model performance, or “error rate based drift detection,” ties directly to what we care most about — model performance — and is generally simple to implement. In this strategy, when we observe a significant dip in model performance, we retrain our model. The threshold for retraining should be determined based on the performance expectations set during model development. 
+
 [Back to TOC](#MLOps-Questions)    
 
 
 ### Drift Detection on the Target Variable
+Even without available labels, we can still monitor the distribution of predictions and compare it to the distribution of predictions that we observed over the training data. Prediction data for many use cases tend to be univariate or low dimensional, making some of the common methods for comparing distributions easier to implement and interpret. Some of the more common statistical tests used to compare distributions are the Z-test, Chi-squared, Kolmogorov–Smirnov, Jensen-Shannon, and Earth Mover’s Distance. No matter the chosen metric (similar to error rate-based drift detection) you’ll need to determine a threshold for when retraining becomes necessary.
+
+![Alt text](Pictures/drift.png)
+
 [Back to TOC](#MLOps-Questions)    
 
 
 ### Drift Detection on the Input Data
+we could generate baseline statistics from our training data for each feature and compare these statistics to those seen in the live data. Alternatively (or additionally), we can train a binary classifier to distinguish between training data and live data. Being able to distinguish between the training data and live data (a better-than-random AUC) suggests that the data has drifted.
+
 [Back to TOC](#MLOps-Questions)    
 
 
 ### Summary
+- Trace and understand the dependencies of your model.
+- Select a drift detection method that’s appropriate for your model and data:
+	- Error rate
+	- Target variable
+	- Input data
+- Select a metric and threshold for retraining.
+- When the threshold has been crossed:
+	- Perform error analysis and debug model dependencies for insights
+	- Retrain your model 
+- Iterate and improve.
+  
 [Back to TOC](#MLOps-Questions)    
 
 
 ## Explain about Model or Concept Drift
+Model drift, sometimes called concept drift, occurs when the model performance during the inference phase (using real-world data) degrades when compared to its performance during the training phase (using historical, labeled data). It is also known as train/serve skew as the performance of the model is skewed when compared with the training and serving phases. This could be due to many reasons like
+- The underlying distribution of data has changed
+- Unforeseen events - like a model trained on pre-covid data is expected to perform much worse on data during the COVID-19 pandemic
+- Training happened on a limited number of categories but a recent environmental change happened which added another category
+- In NLP problems the real world data has significantly more number of tokens that are different from training data
+To detect model drift, it is always necessary to keep continuously monitoring the performance of the model. If there is a sustained degradation of model performance, the cause needs to be investigated and treatment methods need to be applied accordingly which almost always involves model retraining.
+
 [Back to TOC](#MLOps-Questions)    
 
 
 ## Train or Serve Skew
+The challenge is that all the processing steps need to be repeated when trying to derive inferences because the model expects the data on which predictions need to be issued to be in the same format as the training data.
+If the prediction data differs significantly from the training data then it can be argued that there is a train/serve skew.
+There are multiple ways to avoid train serve skew like:
+- Maintain separate module files for data preprocessing (a separate class or module.py file)
+- Compose a preprocessing graph using TFX transform graph etc
+  
 [Back to TOC](#MLOps-Questions)    
 
 
-## Model Packaging
+## Features of each MLOps tool
+
+[Source](https://neptune.ai/blog/packaging-ml-models#:~:text=ML%20packing%20tools%20were%20created,track%20of%20this%20for%20you.)
+
+| MLOps Features | MLFlow | Google Kubeflow | TensorFlow Lite & TensorFlow Extended | Azure Machine Learning | AWS SageMaker |
+|----------------|--------|-----------------|----------------------------------------|------------------------|---------------|
+| Data and Pipeline Versioning | No | Yes | Yes | Yes | Yes |
+| Run Orchestration | Limited | Yes | Yes | Yes | Yes |
+| Model and Experiment Versioning | Yes | Yes | Using Machine Learning Metadata (MLMD) | Yes | Yes |
+| Hyperparameter Tuning / Optimization | Yes | Yes | Yes | Yes | Yes |
+| Model Serving | Yes | Yes | Yes | Limited | Limited |
+| Model Deployment and Monitoring in Production / Experiment Tracking | Yes | Yes | Yes | Yes | Yes |
+
+| MLOps Features | MLFlow | Google Kubeflow | TensorFlow Lite & TensorFlow Extended | Azure Machine Learning | AWS SageMaker |
+|----------------|--------|-----------------|----------------------------------------|------------------------|---------------|
+| Open Source / Cloud | Open Source | Open Source | Open Source | Cloud | Cloud |
+| Deployment On Premise | Yes | Yes | Yes | No | No |
+| Experiment Data Storage | Local + Cloud | Cloud | Local | Cloud | Cloud |
+| Easy Setup & Integration | Yes | No | Yes | Yes | Yes |
+| Scalable for Large No. of Experiments | Yes | Yes | No | Yes | Yes |
+| Custom Visualizations | Yes | Yes | Yes | Yes | Yes |
+
 [Back to TOC](#MLOps-Questions)    
 
 
