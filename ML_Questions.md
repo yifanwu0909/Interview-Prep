@@ -506,6 +506,15 @@ The intuition is that we are taking the **harmonic mean between precision and re
 
 
 ## How to Prune Decision Tree
+**Pre-pruning**: tuning the hyperparameters prior to the training pipeline. It involves the heuristic known as ‘early stopping’ which stops the growth of the decision tree - preventing it from reaching its full depth. During each stage of the splitting of the tree, the cross-validation error will be monitored. If the value of the error does not decrease anymore - then we stop the growth of the decision tree. (max_depth, min_samples_leaf, and min_samples_split)
+
+**Post-pruning**: allows the Decision Tree model to grow to its full depth. Once the model grows to its full depth, tree branches are removed to prevent the model from overfitting. `ccp_alpha` (ccp stands for Cost Complexity Pruning) can be used as another option to control the size of a tree. A higher value of `ccp_alpha` will lead to an increase in the number of nodes pruned.
+
+- Train your Decision Tree model to its full depth
+- Compute the `ccp_alphas` value using `cost_complexity_pruning_path()`
+- Train your Decision Tree model with different `ccp_alphas` values and compute train and test performance scores
+- Plot the train and test scores for each value of `ccp_alphas` values.
+
 [Back to TOC](#ML-Questions)
 
 
