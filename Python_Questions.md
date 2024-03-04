@@ -23,6 +23,7 @@
 - [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
 - [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
 - [Pickling and UnPickling](#pickling)
+- [enumerate()](#enumerate)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -629,8 +630,11 @@ print(data)  # Output: {'key': 'value', 'foo': 'bar'}
 [Back to TOC](#Python-Questions)   
 
 
+## enumerate
 
+enumerate() is particularly useful when you need both the index and the value when looping through an iterable. Without enumerate(), you might use a loop with a manually incremented counter. Readable, convenient, and flexible: `enumerate(iterable, start=0)`
 
+[Back to TOC](#Python-Questions)   
 
 
 
