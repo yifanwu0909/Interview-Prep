@@ -233,10 +233,121 @@ Bring all the features to a similar scale, so no single feature dominates the le
 
 
 ## Would an Additional Feature Improve GBM or Logistic Regression More?
+Too many features causes overfitting problems:
+1. **Curse of Dimensionality**: Too many features result in the Curse of dimensionality.
+2. **Sparse Data**: Curse of dimensionality results in data being sparse (especially if datapoints are too few).
+3. **Model Overfitting**: Data being sparse results in model overfitting.
+
+As we add more features, the available data points in our feature space become exponentially sparser, which makes it easier to separate the data points. Yet, it’s not because of any pattern in the data, in actuality it’s just the nature of higher dimensional spaces. Because of this inherent sparsity, we end up overfitting when we add more features to our data. This means we need more data to avoid sparsity — and that’s the curse of dimensionality: as the number of features increase, our data become sparser, which results in overfitting, and we therefore need more data to avoid it.
+
 [Back to TOC](#ML-Questions)
 
 
 ## Feature Engineering
+### Def
+the act of converting raw observations into desired features using statistical or machine learning approaches. Feature engineering is a machine learning technique that leverages data to create new variables that aren’t in the training set. It can produce new features for both supervised and unsupervised learning, with the goal of simplifying and speeding up data transformations while also enhancing model accuracy.
+### Importance
+1. **Enhanced Predictive Power**: helps models to better capture the underlying patterns and relationships, improving their predictive accuracy.
+2. **Noise Reduction**: filter out irrelevant noise.
+3. **Revealing Subtle Patterns**: The process can uncover subtle patterns that might be hidden in the raw data.
+4. **Task-Specific Customization**: tailors features to the specific needs of the modeling task, ensuring that the input data is optimally suited for the problem at hand.
+5. **Capturing Non-Linear Relationships**: Engineered features can reveal non-linear relationships that simpler, linear models might miss, thereby enhancing model complexity and adaptability.
+6. **Model Resilience**: Features that are well-engineered contribute to a model's robustness, helping it to maintain performance even as data distributions change over time.
+7. **Domain Expertise Integration**: Incorporating domain knowledge into feature engineering can capture important nuances that raw data might not reflect, aligning the features more closely with the problem domain.
+8. **Dimensionality Reduction**: Thoughtful feature engineering can reduce the number of input features, which simplifies the model and reduces computational costs.
+9. **Improved Interpretability**: By encapsulating meaningful insights, engineered features can make models more interpretable and understandable to stakeholders.
+### Techniques
+1. **Imputation**:
+   - Handle missing values in your dataset.
+   - Replace missing values with the mean, median, mode, or use more advanced imputation techniques like K-Nearest Neighbors (KNN) or regression imputation.
+2. **One-Hot Encoding**:
+   - Convert categorical variables into a binary matrix.
+   - Use tools like `pandas.get_dummies()` in Python or `OneHotEncoder` from scikit-learn.
+3. **Label Encoding**:
+   - Convert categorical labels into numerical values.
+   - Use `LabelEncoder` from scikit-learn.
+4. **Target Encoding**:
+   - Encode categorical features based on the mean of the target variable for each category.
+   - Implement target encoding manually or use libraries like `category_encoders` in Python.
+5. **Frequency Encoding**:
+   - Encoding categorical variables based on their frequency or occurrence in the dataset.
+6. **Cyclical Encoding**:
+   - Encoding cyclical features, such as time or angles, using sine and cosine transformations.
+7. **Binning or Discretization**:
+   - Convert numerical variables into categorical ones by grouping them into bins or intervals.
+   - Use `pandas.cut()` or `pandas.qcut()` for equal width or quantile binning, respectively.
+8. **Scaling**:
+   - Standardize or normalize numerical features to ensure they have similar scales.
+   - Use `StandardScaler` or `MinMaxScaler` from scikit-learn.
+9. **Log Transform**:
+   - Apply the logarithm transformation to skewed numerical features to make their distribution more normal.
+   - Use `numpy.log()`.
+10. **Aggregation**:
+    - Creating aggregated features by summarizing or aggregating information across groups or categories.
+11. **Outlier Handling**:
+    - Identifying and handling outliers by transforming or capping extreme values.
+12. **Cumulative Features**:
+    - Creating features that represent cumulative sums or averages over time or within specific groups.
+13. **Hashing**:
+    - Hashing categorical variables to generate fixed-size representations, useful for high-cardinality features.
+14. **Embeddings**:
+    - Representing categorical variables using embeddings, which capture relationships between categories.
+15. **Cross-Validation Features**:
+    - Creating features based on cross-validation folds, such as mean or standard deviation of predictions.
+16. **Cluster Labels**:
+    - Assigning cluster labels to data points based on clustering algorithms, creating new categorical features.
+17. **Feature Splitting**:
+    - Splitting combined features or extracting information from them to create new features.
+18. **Feature Extraction**:
+    - Reduce dimensionality by extracting important features.
+    - Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA), or feature selection methods like Recursive Feature Elimination (RFE).
+19. **Interaction Terms**:
+    - Create new features by combining existing ones.
+    - Sum, difference, product, or ratio of two variables.
+20. **Polynomial Features**:
+    - Generate polynomial features to capture non-linear relationships.
+    - Use `PolynomialFeatures` from scikit-learn.
+21. **Time-Based Features**:
+    - Extract features related to time, such as day of the week, month, or season.
+    - Use functions like `datetime` in Python to extract relevant information.
+    - Roll-over time series 
+22. **Text Processing**:
+    - Convert text data into numerical features.
+    - Use methods like Bag of Words, TF-IDF, or Word Embeddings
+23. **Date and Time Features**:
+    - Extracting relevant information from date and time data, such as day of the week, month, or time differences.
+24. **Handling Skewed Data**:
+    - Address skewness in numerical features.
+    - Apply transformations like Box-Cox or Yeo-Johnson.
+25. **Custom Transformations**:
+    - Assume you want to create a custom transformation function.
+### Challenges and Considerations
+#### 1. Overfitting
+- **Risk**: Complex features may capture noise, leading to overfitting.
+- **Strategies**:
+  - Focus on features that improve model understanding and predictive power.
+  - Use validation sets to monitor overfitting.
+  - Prefer simple features for better generalization.
+  - Apply regularization and cross-validation.
+  - Consult domain experts for feature relevance.
+#### 2. Computational Cost
+- **Challenge**: Some techniques are computationally intensive, especially on large datasets.
+- **Solutions**:
+  - Explore parallelization to manage computational load.
+  - Apply feature engineering incrementally.
+  - Use representative samples for large datasets.
+  - Choose efficient algorithms.
+  - Monitor and optimize resource usage.
+#### 3. Data Leakage
+- **Issue**: Information from the testing set influencing model training.
+- **Prevention**:
+  - Ensure feature engineering is confined to the training phase.
+  - Simulate real-world scenarios by not using future information.
+  - Be cautious with features derived from the target variable.
+  - Implement feature engineering within cross-validation folds.
+  - Evaluate model on the testing set post-feature engineering.
+  - Maintain transparent documentation to avoid and identify leakage.
+
 [Back to TOC](#ML-Questions)
 
 
