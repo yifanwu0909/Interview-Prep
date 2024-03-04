@@ -26,7 +26,7 @@
     - [Convolution Layer](#convolution-layer)
     - [Pooling Layer](#pooling-layer)
     - [Fully Connected Layer](#fully-connected-layer)
-    - [Non-Linearity Layers](#non-linearity-layers)
+    - [Non-Linearity Layers: Activation functions](#non-linearity-layers)
 21. [Vanishing Gradient](#vanishing-gradient)
 22. [Exploding Gradient](#exploding-gradient)
 23. [Resnet](#resnet)
@@ -466,10 +466,32 @@ The intuition is that we are taking the **harmonic mean between precision and re
 
 
 ## CNN
+![alt text](Pictures/image.png)
 ### Convolution Layer
+The convolution layer is the core building block of the CNN. It carries the main portion of the network’s computational load. This layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is the restricted portion of the receptive field. Convolution leverages three important ideas that motivated computer vision researchers: 
+- sparse interaction: This is achieved by $\color{red}{\textsf{making kernel smaller than the input}}$ e.g., an image can have millions or thousands of pixels, but while processing it using kernel we can detect meaningful information that is of tens or hundreds of pixels. This means that we need to store fewer parameters that not only reduces the memory requirement of the model but also improves the statistical efficiency of the model.
+- parameter sharing: $\color{red}{\textsf{neurons in the same layer are constrained to use the same set of weights}}$. In a traditional neural network, each element of the weight matrix is used once and then never revisited, while convolution network has shared parameters i.e., for getting output, weights applied to one input are the same as the weight applied elsewhere.
+- equivariant representation: This is due to parameter sharing. If we changed the input in a way, the output will also get changed in the same way.
 ### Pooling Layer
+- Def: The pooling layer replaces the output of the network at certain locations by deriving a summary statistic of the nearby outputs. 
+- $\color{red}{\textsf{Purpose: Reduce the spatial size of the representation}}$, which decreases the required amount of computation and weights. 
+- Types:
+	- max pooling: Most popular. Reports the maximum output from the neighborhood.
+	- average of the rectangular neighborhood
+	- L2 norm of the rectangular neighborhood
+	- weighted average based on the distance from the central pixel
 ### Fully Connected Layer
+Neurons in this layer have full connectivity with all neurons in the preceding and succeeding layer. It is computed by a matrix multiplication followed by a bias. The FC layer helps to map the representation between the input and the output.
 ### Non-Linearity Layers
+**activation functions**
+Since convolution is a linear operation and images are far from linear, non-linearity layers are often placed directly after the convolutional layer to introduce non-linearity to the activation map.
+- Sigmoid: takes a real-valued number and “squashes” it into a range between 0 and 1. [vanishing gradients]
+- Tanh:  squashes a real-valued number to the range [-1, 1]. Like sigmoid, the activation saturates, but — unlike the sigmoid neurons — its output is zero centered. [vanishing gradients]
+- ReLU(Rectified Linear Unit): `ƒ(κ)=max (0,κ)`, the activation is simply threshold at zero.  [No Vanishing Gradients]
+	-  ：More reliable and accelerates the convergence by six times. 
+	-  ：ReLU can be fragile during training. A large gradient flowing through it can update it in such a way that the neuron will never get further updated. 
+		- FIX: setting a proper learning rate.
+
 [Back to TOC](#ML-Questions)
 
 
