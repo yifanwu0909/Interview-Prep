@@ -62,31 +62,88 @@ An error due to complexity in the learning algorithm. In variance, your data get
 
 
 ## Techniques for Reducing Bias
-
+1. Increase the model size
+2. Modify input features based on insights from error analysis (boosting)
+3. Reduce/eliminate regularization
+4. Modify model architecture
+   
 [Back to TOC](#ML-Questions)
 
 
 ## Data Cleaning
+2. Remove irrelevant data
+3. Standardize capitalization
+4. Convert data type
+5. Clear formatting
+6. Fix errors
+7. Language translation
+8. Handle missing values
+   
 [Back to TOC](#ML-Questions)
 
 
 ## Handle Missing Data
+Three types of missing data values:
+1. Missing Completely at Random: No pattern to the missing data.
+2. Missing at Random (MAR): Missing data can be explained by other data in the dataset.
+3. Missing Not at Random (MNAR): Missing value is related to the value itself.
+
+Three strategies for handling missing data:
+1. **Deleting Rows**: Removing rows with missing values, which can lead to loss of information.   
+2. **Imputing Data**: Filling in missing data based on information in the column or other columns in the dataset.
+3. **Using Classification or Regression Models**: Predicting missing values using models.
+
 [Back to TOC](#ML-Questions)
 
 
 ## Label Imbalance
+1. **Resampling**:
+	- Down-sampling the majority class:  model converge faster. However, lead to losing potentially important data.
+	- Over-sampling the minority class: better representation of the minority class.
+2. **Synthetic data generation**:ing techniques like the Synthetic Minority Over-sampling Technique (SMOTE).
+3. **Cost-sensitive learning**: Assigning different weights to samples from different classes to account for the imbalance in the loss function used to train the model.
+4. **Ensemble methods**: trained on different subsets of the data with boosting or bagging.
+5. **Precision-oriented modeling**: Some models are better suited for evaluation metrics sensitive to imbalanced datasets, such as precision. For example, in decision trees and their variants – like random forest, boosted trees, etc. – one can prune paths with high entropy or with sparse samples. Alternatively, models that generate probability-based outputs, such as logistic regression, can be thresholdedto attain the desired performance outcomes.
+**Insider Tip**:  particularly with large capacity models, best to do nothing.
+
 [Back to TOC](#ML-Questions)
 
 
 ## How to Feature Selection
+1. **Filter**:  statistical tests such as ANOVA, mutual information, information gain, chi-squared test, correlation coefficient, and others.
+2. **Business Insight**
+3. **Algorithmic**: the Random Forest method can do feature importance. An alternative approach incorporates L1 regularization, shrink less informative features weight to 0.
+
 [Back to TOC](#ML-Questions)
 
 
 ## Procedure for Hyperparameter Tuning
+In **grid search**, a predefined set of hyperparameters are evaluated exhaustively, while in random search, hyperparameters are selected randomly from a predefined search space. These approaches can be inefficient, especially for models that have a large number of hyperparameters or ones that take a long time to train.
+
+**Bayesian optimization** leverages a probabilistic model to approximate the relationship between hyperparameters and the model performance, using an acquisition function that guides the search by balancing exploration (sampling new hyperparameters) and exploitation (evaluating promising hyperparameters).
+
+In a **genetic algorithm**, models represent combinations of hyperparameters ("genes"). The process involves selecting the fittest models from each generation in an iterative manner. The surviving models undergo modification ("mutation") or recombination ("crossover") of their hyperparameters.
+Bayesian optimization and genetic algorithms can be effective in finding hyperparameter values for complex models and large datasets.
+
 [Back to TOC](#ML-Questions)
 
 
 ## Improve Poor Model Performance
+1. **Overfitting or underfitting?**
+2. **Define the problem**: Clearly define what is considered as "poor performance". Is the model compiling? Are there runtime issues? Is the loss not converging, or simply too high? Are model predictions outside of expected bounds?
+3. **Visualize the data**: Plot the data to check for patterns, outliers, corruption. Determine whether the dataset is being sampled properly, or if there are any ingestion issues. Check the data before and after preprocessing. For instance, missing values might be too pervasive, handled incorrectly, or numerical features are not properly normalized.
+4. **Step through the model**: Inspect the model state at each layer for several steps. Print the outputs of all tensor operations, including outputs of activation functions. It is common to discover problems such as incorrect tensor operations, outliers, NaNs, and improper inputs at this stage.
+5. **Loss**: Verify the loss computation is correct. Check the learning rate, gradient computation, and layer weights. After several steps, verify optimizer behaviors like momentum.
+6. **Simplify the model**: If model performance is still difficult to troubleshoot, simplify all components of the model. Ingest fewer layers, and use a simple optimizer like SGD. Use fewer parameters, ensure the optimizer converges. Once the model is converging and metrics are moving in the right direction, incrementally add complexity back and verify once more.
+7. **Debugging with TensorBoard**: Use TensorBoard to visualize the training process, such as loss over time, to help identify issues with the model. For instance, if the model shows signs of overfitting, apply regularization or early stopping.
+8. **Model tuning**: To get better performance, experiment with various components of the model:
+	- Feature selection
+	- Feature preprocessing
+	- Layers
+	- Training label
+	- Loss function
+Further considerations include layer activations, hyperparameters, and model architecture.
+
 [Back to TOC](#ML-Questions)
 
 
