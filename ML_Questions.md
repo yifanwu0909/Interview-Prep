@@ -496,6 +496,21 @@ Since convolution is a linear operation and images are far from linear, non-line
 
 
 ## Vanishing Gradient
+- Sigmoid function squeezes our input space into a range between [0,1], and when the inputs become fairly small or fairly large, this function saturates at 0 or 1. These regions are referred to as ‘saturating regions’, whose derivatives become extremely close to zero. 
+- The same applies to the Tanh function that saturates at -1 and 1. 
+- Suppose that we have inputs that lie in any of the saturating regions, we would essentially have no gradient values to propagate back, leading to a zero update in earlier layer weights. 
+- Usually, this is no big of a concern for shallow networks with just a couple of layers, however, when we add more layers, vanishing gradients in initial layers will result in model training or convergence failure. This is due to the effect of multiplying n of these small numbers to compute gradients of the early layers in an n-layer network, meaning that the gradient decreases exponentially with n while the early layers train very slowly and thus the performance of the entire network degrades. 
+
+- 迹象：
+	- Large changes are observed in parameters of later layers, whereas parameters of earlier layers change slightly or stay unchanged
+	- In some cases, weights of earlier layers can become 0 as the training goes
+	- The model learns slowly and often times, training stops after a few iterations
+	- Model performance is poor
+- FIX:
+	- $\color{green}{\textsf{Switch to ReLU}}$: switch to other activation functions that are non-saturated for their derivative, e.g., ReLU (Rectified Linear Unit)
+   
+   	![alt text](Pictures/vanishing_gradient.png)
+  
 [Back to TOC](#ML-Questions)
 
 
