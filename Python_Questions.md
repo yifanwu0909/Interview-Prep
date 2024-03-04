@@ -405,6 +405,7 @@ The choice of data structure depends on how you plan to use the data:
 
 Each method has its own advantages and is suitable for different scenarios. Consider the specific needs of your application when deciding which method to use.
 
+[Back to TOC](#Python-Questions)   
 
 
 ## Please explain what monkey patching means in Python.
@@ -461,7 +462,7 @@ Given the risks associated with monkey patching, it's generally recommended to u
 
 In summary, while monkey patching is a powerful tool in Python, it should be used judiciously and with an understanding of the potential implications for code maintainability and stability.
 
-
+[Back to TOC](#Python-Questions)   
 
 
 
