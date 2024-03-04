@@ -21,6 +21,7 @@
 - [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
 - [Pylint and PyChecker](#pylint)
 - [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
+- [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -548,9 +549,46 @@ True
 [Back to TOC](#Python-Questions)   
 
 
+## Is it possible for lambda forms to contain statements in Python?
 
+Unlike regular functions defined with `def`, lambda functions cannot contain statements. Statements include things like `return`, `assert`, or `pass`, as well as assignments, loops, and `if` statements with bodies that contain multiple expressions.
 
+However, it is possible to mimic certain statement-like behaviors within the single expression allowed in a lambda by using techniques such as conditional expressions.
 
+### Conditional Expressions in Lambda
+
+Conditional expressions (or ternary operators) can be used in lambda functions to simulate simple `if-else` statement logic. A conditional expression has the form `a if condition else b`, and it can be included in a lambda.
+
+**Example:**
+
+```python
+# Using a conditional expression in a lambda function
+is_even = lambda x: True if x % 2 == 0 else False
+
+print(is_even(4))  # Output: True
+print(is_even(5))  # Output: False
+```
+
+### Workarounds for Complex Logic
+
+For more complex logic that would typically require statements, it's recommended to define a regular function using `def`. If you absolutely need to keep it in a lambda for some reason (which is generally not advised due to readability concerns), you might resort to using functions that encapsulate the desired behavior.
+
+**Example: Using built-in functions in lambda:**
+
+```python
+# Using the 'map' function within a lambda to apply an operation to multiple items
+apply_func = lambda func, values: list(map(func, values))
+
+# Squaring numbers using the above lambda
+squared_values = apply_func(lambda x: x**2, [1, 2, 3, 4])
+print(squared_values)  # Output: [1, 4, 9, 16]
+```
+
+### Conclusion
+
+While lambda functions in Python are limited to a single expression and cannot contain traditional statements, you can often use conditional expressions and other functional programming techniques to achieve the desired outcome. For more complex scenarios, defining a regular function with `def` is the clearer and more maintainable approach.
+
+[Back to TOC](#Python-Questions)   
 
 
 
