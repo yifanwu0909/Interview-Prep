@@ -19,6 +19,7 @@
 - [Can you explain what pass means in Python?](#can-you-explain-what-pass-means-in-Python)
 - [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
 - [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
+- [Pylint](#pylint)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -465,6 +466,55 @@ In summary, while monkey patching is a powerful tool in Python, it should be use
 [Back to TOC](#Python-Questions)   
 
 
+## Pylint
+
+Pylint is a package. Pylint analyzes Python code without actually executing it to detect various types of errors, such as syntax errors, logical errors, and stylistic errors. It also provides suggestions for code improvements, helping developers adhere to best practices and coding standards, such as those outlined in PEP 8, the official Python style guide.
+
+### Key Features of Pylint
+
+- **Error Detection**: Pylint can identify coding errors that could lead to bugs in the program, such as syntax errors, type errors (when type checking is enabled), and undefined variables.
+- **Code Quality Scores**: It assigns a numerical score to your code based on its analysis, encouraging developers to improve their code quality iteratively.
+- **Refactoring Suggestions**: Beyond finding errors, Pylint suggests places where the code could be refactored to improve readability, simplicity, or performance.
+- **Style Checking**: It enforces a consistent coding style across the project, which is crucial for maintainability, especially in projects with multiple contributors.
+- **Customizable**: Pylint is highly configurable, allowing teams to define their own set of rules on top of the default set. You can enable or disable specific checks according to your project's needs.
+- **Integration**: It can be integrated into development environments, continuous integration pipelines, and editors, providing feedback to developers in real-time or as part of the development workflow.
+
+### How to Use Pylint
+
+To use Pylint, you first need to install it, typically via pip:
+
+```sh
+pip install pylint
+```
+
+Once installed, you can run Pylint on a Python file or module to analyze it:
+
+```sh
+pylint my_module.py
+```
+
+Pylint will print out a report detailing any warnings or errors found in the code, along with a final score indicating the code quality.
+
+### Example Output
+
+Here's an example of what Pylint's output might look like:
+
+```
+************* Module my_module
+my_module.py:1: [C0111(missing-docstring), ] Missing module docstring
+my_module.py:1: [E0602(undefined-variable), ] Undefined variable 'nonexistent_var'
+
+------------------------------------------------------------------
+Your code has been rated at -10.00/10 (previous run: 10.00/10, -20.00)
+```
+
+This output indicates that the module `my_module.py` has a missing module docstring and uses an undefined variable, leading to a negative score. The goal is to address these issues to improve the score towards 10/10.
+
+### Conclusion
+
+Pylint is a powerful tool for maintaining high standards of code quality in Python projects. By integrating Pylint into the development process, teams can catch potential issues early, enforce coding standards, and ultimately produce cleaner, more maintainable code.
+
+[Back to TOC](#Python-Questions)   
 
 
 
