@@ -415,7 +415,8 @@ Each method has its own advantages and is suitable for different scenarios. Cons
 
 ## Please explain what monkey patching means in Python.
 
-Monkey patching is a term used in programming to describe the dynamic (or runtime) modifications of a class or module. In Python, this means altering or extending the behavior of libraries, modules, classes, or methods during runtime, without modifying the source code. Monkey patching can be powerful but should be used with caution, as it can lead to code that is hard to understand and maintain.
+It's like when you're in the middle of running your program and you decide to tweak or add some new functionalities to the classes or modules you're working with, this means altering or extending the behavior of libraries, modules, classes, or methods during runtime, without modifying the source code.
+Monkey patching is a term used in programming to describe the dynamic (or runtime) modifications of a class or module. 
 
 ### How Monkey Patching Works in Python
 
