@@ -514,7 +514,6 @@ This output indicates that the module `my_module.py` has a missing module docstr
 
 Pylint is a powerful tool for maintaining high standards of code quality in Python projects. By integrating Pylint into the development process, teams can catch potential issues early, enforce coding standards, and ultimately produce cleaner, more maintainable code.
 
-Here's a comparison of Pylint and PyChecker in a table format, which highlights their key differences:
 
 | Feature                   | Pylint                                                    | PyChecker                                              |
 |---------------------------|-----------------------------------------------------------|--------------------------------------------------------|
@@ -526,6 +525,7 @@ Here's a comparison of Pylint and PyChecker in a table format, which highlights 
 | **Primary Focus**         | Enforcing coding standards and conventions, improving code quality | Identifying potential bugs and errors in the code  |
 | **Scoring System**        | Provides a score rating based on code analysis            | Does not provide a scoring system                      |
 | **Python Version Support**| Regularly updated for the latest Python versions          | May have limited compatibility with newer Python versions |
+
 
 This table summarizes the main differences between Pylint and PyChecker, offering insights into their focus areas, capabilities, and how they might fit into different development practices.
 
