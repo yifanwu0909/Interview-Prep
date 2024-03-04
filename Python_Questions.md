@@ -16,6 +16,7 @@
 - [Reduce function](#reduce-function)
 - [Filter function](#filter-function)
 - [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
+- [Can you explain what pass means in Python?](#can-you-explain-what-pass-means-in-Python)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -332,11 +333,62 @@ In most cases and environments, you can expect that all memory allocated to a Py
 [Back to TOC](#Python-Questions)  
 
 
+## Can you explain what pass means in Python?
+In Python, the `pass` statement is a null operation; it does nothing when executed. It is used as a placeholder in parts of your code where a statement is syntactically required, but you do not want any command or code to execute. 
 
+### Usage of `pass`
 
+1. **Empty Control Flow Blocks**: In Python, control flow statements like `if`, `for`, `while`, etc., require at least one statement inside their block. If you have not decided what code to put yet or simply do not need to execute anything, you can use `pass` as a placeholder.
 
+   ```python
+   if condition:
+       pass  # TODO: add logic later
+   ```
 
+2. **Empty Functions or Methods**: Similarly, when defining a function or method that you intend to implement later, `pass` can be used to avoid a syntax error and serve as a reminder.
 
+   ```python
+   def function_that_does_nothing_yet():
+       pass
+   ```
+
+3. **Minimal Classes**: In object-oriented programming, you might want to define a class with no methods or attributes initially. `pass` allows you to do so without syntax errors.
+
+   ```python
+   class MyEmptyClass:
+       pass
+   ```
+
+### Example
+
+Here's a practical example demonstrating the use of `pass`:
+
+```python
+for number in range(5):
+    if number == 2:
+        pass  # Normally, you might handle this condition differently
+    else:
+        print(number)
+```
+
+Output:
+```
+0
+1
+3
+4
+```
+
+In this example, when `number` is 2, the `pass` statement does nothing, and the loop continues without interrupting the flow or printing the number 2.
+
+### Key Points
+
+- The `pass` statement is a no-operation action that is syntactically necessary.
+- It is useful as a placeholder in blocks where code will be added later.
+- `pass` can be used to define minimal structures without causing syntax errors.
+- Unlike comments, the `pass` statement is recognized and executed by the Python interpreter, but it results in no operation.
+
+[Back to TOC](#Python-Questions)  
 
 
 
