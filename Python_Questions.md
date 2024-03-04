@@ -206,7 +206,7 @@ This is a convenient way to perform element-wise transformations and operations 
 [Back to TOC](#Python-Questions)  
 
 
-## Explain what _init_.py does.
+## Explain what _init_.py does
  _init_.py is a file in Python that data scientists use to mark directories as Python packages. It signals to the Python interpreter that a directory contains code for modules and ensures that Python treats directories as modules.
 The `__init__.py` file is used in Python to mark directories on disk as Python package directories. If you have a directory containing Python script files and you want to be able to import those modules into other scripts, you need to create an empty file named `__init__.py` in that directory. This file can be empty, or it can contain valid Python code.
 
