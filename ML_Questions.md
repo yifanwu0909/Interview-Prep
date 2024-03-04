@@ -148,6 +148,41 @@ Further considerations include layer activations, hyperparameters, and model arc
 
 
 ## Bagging vs Boosting
+
+Bagging and Boosting are both ensemble techniques in machine learning, where multiple models (often of the same type) are trained to solve the same problem and combined to get better results. The key idea behind these methods is that a group of weak learners can come together to form a strong learner. Despite their similarities, they have distinct differences in how they approach building the ensemble of models.
+
+### Bagging (Bootstrap Aggregating)
+
+**Key Concepts:**
+- **Parallel Ensemble**: Each model in the ensemble votes independently, and their predictions are combined through averaging (for regression) or majority voting (for classification).
+- **Bootstrap Sampling**: Creates different training datasets by randomly sampling with replacement from the original dataset. Each model gets a slightly different dataset, which helps in reducing variance.
+- **Equal Weighting**: Each model in the ensemble has an equal vote on the final outcome.
+
+**Objective**: Primarily aims to reduce variance and overfitting in complex models.
+
+**Example**: **Random Forest** is a popular bagging ensemble method that uses multiple decision trees.
+
+### Boosting
+
+**Key Concepts:**
+- **Sequential Ensemble**: Models are added sequentially to correct the errors made by previous models. Later models focus more on the data points that were misclassified or had a higher error by earlier models.
+- **Weighted Data Points**: Misclassified or harder to predict data points are given more weight, so subsequent models focus more on them.
+- **Weighted Voting**: The final prediction is made based on a weighted vote, where more accurate models have more influence.
+
+**Objective**: Aims to reduce both bias and variance by focusing on reducing errors from previous models, making it powerful but also prone to overfitting if not carefully tuned.
+
+**Example**: AdaBoost (Adaptive Boosting) and Gradient Boosting are well-known boosting methods.
+
+### Comparison
+
+| Feature | Bagging | Boosting |
+|---------|---------|----------|
+| **Model Building** | Models are built independently. | Models are built sequentially to correct the predecessors' errors. |
+| **Sampling Method** | Uses bootstrap sampling to create different training datasets. | Reweights the data to focus on more difficult cases. |
+| **Decision Making** | Takes an equally weighted average or majority vote of its models. | Uses a weighted average or vote, giving more influence to better-performing models. |
+| **Objective** | Aims to reduce variance and avoid overfitting, suitable for high-variance, low-bias models. | Aims to reduce both bias and variance but may increase the risk of overfitting. |
+| **Example Methods** | Random Forest. | AdaBoost, Gradient Boosting. |
+
 If the problem is that the single model gets a very low performance, Bagging will rarely get a better bias. However, Boosting could generate a combined model with lower errors as it optimises the advantages and reduces pitfalls of the single model.
 By contrast, if the difficulty of the single model is over-fitting, then Bagging is the best option. Boosting for its part doesn’t help to avoid over-fitting; in fact, this technique is faced with this problem itself. For this reason, Bagging is effective more often than Boosting.
 
