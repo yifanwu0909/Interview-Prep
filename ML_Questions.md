@@ -37,6 +37,12 @@
 28. [Random Forest VS Decision Tree](#random-forest-vs-decision-tree)
 29. [How to Prune Decision Tree](#how-to-prune-decision-tree)
 30. [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
+31. [How do you interpret linear regression coefficients?](#how-do-you-interpret-linear-regression-coefficients)
+32. [What is maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
+33. [What is linear discriminant analysis?](#what-is-linear-discriminant-analysis)
+34. [Identifying Data Mismatch](#identifying-data-mismatch)
+35. [Addressing Data Mismatch](#addressing-data-mismatch)
+36. [What is the difference between Parametric and Non Parametric Algorithms?](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
 
 
 ## Bias & Variance Trade Off
@@ -601,6 +607,7 @@ Def: The size of the dataset used to train the model mattered far more than the 
 | **Accuracy** | The results are not accurate. | This gives accurate and precise results. |
 | **Computation & Time** | Decision trees require low computation, thus reducing time to implement and carrying low accuracy. | This consumes more computation. The process of generation and analyzing is time-consuming. |
 | **Visualization** | It is easy to visualize. The only task is to fit the decision tree model. | This has complex visualization as it determines the pattern behind the data. |
+Random Forest is suitable for situations when we have a large dataset, and interpretability is not a major concern. Decision trees are much easier to interpret and understand. Since a random forest combines multiple decision trees, it becomes more difficult to interpret.
 
 [Back to TOC](#ML-Questions)
 
@@ -674,5 +681,59 @@ By following these steps, you can leverage ML to optimize routes for gas technic
 
 [Back to TOC](#ML-Questions)
 
+## How do you interpret linear regression coefficients?
+Interpreting linear regression coefficients is much simpler than logistic regression. The regression coefficient signifies how much the mean of the dependent variable changes, given a one-unit shift in that variable, holding all other variables constant.
+
+[Back to TOC](#ML-Questions)
+
+## What is maximum likelihood estimation?
+Maximum likelihood estimation is where we find the distribution that is most likely to have generated the data. To do this, we have to estimate the parameter theta that maximizes the likelihood function evaluated at x.
+
+[Back to TOC](#ML-Questions)
+
+
+## What is linear discriminant analysis?
+LDA is a predictive modeling algorithm for multi-class classification. LDA will compute the directions that will represent the axes that maximize the separation between classes.
+
+[Back to TOC](#ML-Questions)
+
+
+## Identifying Data Mismatch
+1. Training set. This is the data that the algorithm will learn from (e.g., Internet images +
+Mobile images). This does not have to be drawn from the same distribution as what we
+really care about (the dev/test set distribution).
+2. Training dev set: This data is drawn from the same distribution as the training set (e.g.,
+Internet images + Mobile images). This is usually smaller than the training set; it only
+needs to be large enough to evaluate and track the progress of our learning algorithm.
+3. Dev set: This is drawn from the same distribution as the test set, and it reflects the
+distribution of data that we ultimately care about doing well on. (E.g., mobile images.)
+4. Test set: This is drawn from the same distribution as the dev set. (E.g., mobile images.)
+Armed with these four separate datasets, you can now evaluate:
+
+- Training error:  by evaluating on the training set.
+- The algorithm’s ability to generalize to new data drawn from the training set distribution, by evaluating on the training dev set.
+- The algorithm’s performance on the task you care about, by evaluating on the dev and/or test set
+  
+[Back to TOC](#ML-Questions)
+
+
+## Addressing Data Mismatch
+1. Try to understand what properties of the data differ between the
+training and the dev set distributions.
+2. Try to find more training data that better matches
+the dev set examples that your algorithm has trouble with.
+
+[Back to TOC](#ML-Questions)
+
+
+## What is the difference between Parametric and Non Parametric Algorithms?
+- Parametric algorithms： 
+	- Def: based on a mathematical model that defines the relationship between inputs and outputs. More restrictive than nonparametric algorithms, but faster and easier to train. A learning model that summarizes data with a set of fixed-size parameters. Optimizes the function to a known form. Best for problems where the input data is well-defined and predictable: predictive modeling.
+	- i.e.: Linear/logistic regression, neural network, Naive Bayes
+- Nonparametric algorithms
+	- Def: not based on a mathematical model; instead, they learn from the data itself. More flexible than parametric algorithms, but also more computationally expensive. Best for problems where the input data is not well-defined or is too complex for parametric algorithms. The word nonparametric does not mean that the value lacks parameters existing in it, but rather that the parameters are adjustable and can change.i.e. classification, where the goal is to separate data into distinct classes or groups. often more accurate than parametric algorithms for complex problems.
+	- i.e.: Trees, SVM.
+   
+[Back to TOC](#ML-Questions)
 
 
