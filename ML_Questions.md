@@ -33,7 +33,7 @@
 24. [MobileNet](#mobilenet)
 25. [Keras vs Tensorflow vs Pytorch](#keras-vs-tensorflow-vs-pytorch)
 26. [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
-27. [Difference between Xgboost and Random Forest](#difference-between-xgboost-and-random-forest)
+27. [Xgboost vs Random Forest](#difference-between-xgboost-and-random-forest)
 28. [Random Forest VS Decision Tree](#random-forest-vs-decision-tree)
 29. [How to Prune Decision Tree](#how-to-prune-decision-tree)
 30. [Data Science Behavioral Question](#data-science-behavioral-question)
@@ -438,7 +438,7 @@ The intuition is that we are taking the **harmonic mean between precision and re
 - **Feature Selection**: Identify the most relevant features for detecting fraud using statistical tests and domain knowledge.
 
 ### 4. Model Selection
-- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. Tree-based models (e.g., Random Forest, Gradient Boosting) and neural networks are commonly used. Consider using ensemble methods or anomaly detection algorithms for better performance.
+- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. **XGBoost and Neural networks are commonly used.** In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, **XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation.** Random Forest may not treat the class imbalance with a proper process. Consider using ensemble methods or anomaly detection algorithms for better performance.
 - **Baseline Model**: Develop a simple model to establish a performance baseline.
 
 ### 5. Model Training and Tuning
@@ -574,11 +574,6 @@ Def: The size of the dataset used to train the model mattered far more than the 
 
 
 ## Difference between Xgboost and Random Forest
-Here's the formatted version of the comparison between XGBoost and Random Forest:
-
----
-
-### Difference between XGBoost and Random Forest
 
 - **Random Forest** is a bagging technique.
 
