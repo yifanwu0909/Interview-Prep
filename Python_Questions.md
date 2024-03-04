@@ -20,6 +20,7 @@
 - [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
 - [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
 - [Pylint and PyChecker](#pylint)
+- [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -533,10 +534,18 @@ This table summarizes the main differences between Pylint and PyChecker, offerin
 
 
 
+## Please explain how you would check if a Pandas data frame is empty.
 
+The `empty` attribute is the most straightforward and idiomatic way to check for an empty DataFrame in Pandas. It is efficient because it does not require scanning the entire DataFrame; it simply checks the underlying array shapes.
 
-
-
+```python
+df.empty
+```
+Output:
+```
+True
+```
+[Back to TOC](#Python-Questions)   
 
 
 
