@@ -38,70 +38,86 @@
 29. [How to Prune Decision Tree](#how-to-prune-decision-tree)
 30. [Data Science Behavioral Question](#data-science-behavioral-question)
 
-### Bias & Variance Trade Off
-#### Definition
-#### Bias
-#### Variance
 
-### Techniques for Reducing Variance
+## Bias & Variance Trade Off
+### Definition
+Of the changes you could make to most learning algorithms, there are some that reduce bias errors but at the cost of increasing variance, and vice versa.
+### Bias
+An error that occurs due to overly simplistic assumptions or erroneous assumptions in the learning algorithm. If you use bias, it can lead to the model underfitting your data with low predictive accuracy.
+### Variance
+An error due to complexity in the learning algorithm. In variance, your data gets highly sensitive to high degrees of variation, leading your model to overfit the data. You'll end up carrying noise from your training data for your model to be useful for your test data. 
 
-### Techniques for Reducing Bias
+[Back to TOC](#ML-Questions)
 
-### Data Cleaning
+## Techniques for Reducing Variance
+1. Add more data
+2. Add penalties(L1 and L2)
+3. Early stopping and drop out
+4. Feature selection 
+5. Decrease model size
+6. Modify input features based on insights from error analysis
+7. Modify model architecture
 
-### Handle Missing Data
+[Back to TOC](#ML-Questions)
 
-### Label Imbalance
 
-### How to Feature Selection
+## Techniques for Reducing Bias
 
-### Procedure for Hyperparameter Tuning
+## Data Cleaning
 
-### Improve Poor Model Performance
+## Handle Missing Data
 
-### Bagging vs Boosting
+## Label Imbalance
 
-### How does one Collect Data and Prepare Dataset for Training?
+## How to Feature Selection
 
-### Why Normalization?
+## Procedure for Hyperparameter Tuning
 
-### Too Many Categories in Categorical Features
+## Improve Poor Model Performance
 
-### Would an Additional Feature Improve GBM or Logistic Regression More?
+## Bagging vs Boosting
 
-### Feature Engineering
+## How does one Collect Data and Prepare Dataset for Training?
 
-### Lasso and Ridge
+## Why Normalization?
 
-### AUC and ROC
+## Too Many Categories in Categorical Features
 
-### What is the Intuition Behind the F1 Score?
+## Would an Additional Feature Improve GBM or Logistic Regression More?
 
-### How would you Build a Bank Fraud Detection Model?
+## Feature Engineering
 
-### CNN
-#### Convolution Layer
-#### Pooling Layer
-#### Fully Connected Layer
-#### Non-Linearity Layers
+## Lasso and Ridge
 
-### Vanishing Gradient
+## AUC and ROC
 
-### Exploding Gradient
+## What is the Intuition Behind the F1 Score?
 
-### Resnet
+## How would you Build a Bank Fraud Detection Model?
 
-### MobileNet
+## CNN
+### Convolution Layer
+### Pooling Layer
+### Fully Connected Layer
+### Non-Linearity Layers
 
-### Keras vs Tensorflow vs Pytorch
+## Vanishing Gradient
 
-### Unreasonable Effectiveness of Data
+## Exploding Gradient
 
-### Difference between Xgboost and Random Forest
+## Resnet
 
-### Random Forest VS Decision Tree
+## MobileNet
 
-### How to Prune Decision Tree
+## Keras vs Tensorflow vs Pytorch
 
-### Data Science Behavioral Question
+## Unreasonable Effectiveness of Data
+
+## Difference between Xgboost and Random Forest
+
+## Random Forest VS Decision Tree
+
+## How to Prune Decision Tree
+
+## Data Science Behavioral Question
 
