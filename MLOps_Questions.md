@@ -137,6 +137,9 @@ There are multiple ways to avoid train serve skew like:
 
 
 ## How to Create CI/CD Pipelines for Machine Learning
+If the technical stack is primarily AWS driven, Sagemaker pipelines can stand in for CI/CD pipelines.
+Other approaches could be to use Kubeflow pipelines and traditional tools like Jenkins or even Github actions to build CI/CD pipelines.
+
 [Back to TOC](#MLOps-Questions)    
 
 
