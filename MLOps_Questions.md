@@ -210,7 +210,7 @@ Summarize:
 - Tools like DVC (Data Version Control) offer specialized version control for ML, allowing users to track datasets, ML models, and metrics, without storing them in Git.
 - Other tools such as Mlflow and Neptune. They not only track versions but also monitor training runs, parameters, and results.
 
-  ### Best Practice
+### Best Practice
 - Track both datasets and models.
 - Keep raw data immutable and version derivatives.
 - Version pipelines, not just models.
