@@ -552,14 +552,50 @@ due to the initial weights assigned to the neural nets creating large losses. Bi
 
 
 ## Keras vs Tensorflow vs Pytorch
+| Feature               | Keras                                                                                   | PyTorch                                                                                      | TensorFlow                                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **Definition**        | Open-source neural network library designed for fast experimentation with deep neural networks. Runs on top of CNTK, TensorFlow, and Theano. Modular, user-friendly, and extensible. Handles high-level computations. TensorFlow has adopted Keras. | Simplicity, ease of use, flexibility, efficient memory usage, and dynamic computational graphs. Feels native, making coding more manageable and increasing processing speed. | End-to-end open-source deep learning framework with documentation and training support, scalable production and deployment options, multiple abstraction levels, and support for different platforms. Best suited for dataflow programming. |
+| **API Level**         | High                                                                                    | Low                                                                                           | High and Low                                                                                                        |
+| **Architecture**      | Simple, concise, readable                                                               | Complex, less readable                                                                        | Not easy to use                                                                                                     |
+| **Datasets**          | Smaller datasets                                                                        | Large datasets, high performance                                                              | Large datasets, high performance                                                                                    |
+| **Debugging**         | Simple network, so debugging is not often needed                                        | Good debugging capabilities                                                                   | Difficult to conduct debugging                                                                                      |
+| **Have Trained Models?** | Yes                                                                                     | Yes                                                                                           | Yes                                                                                                                 |
+| **Popularity**        | Most popular                                                                            | Third most popular                                                                            | Second most popular                                                                                                 |
+| **Speed**             | Slow, low performance                                                                   | Fast, high-performance                                                                        | Fast, high-performance                                                                                              |
+| **Written In**        | Python                                                                                  | Lua                                                                                           | C++, CUDA, Python                                                                                                   |
+
 [Back to TOC](#ML-Questions)
 
 
 ## Unreasonable Effectiveness of Data
+Def: The size of the dataset used to train the model mattered far more than the choice of ML approach. And, the performance differences between the models became very small as the dataset grew large. More data is almost always better and “more” gets measured in orders of magnitude.
+
 [Back to TOC](#ML-Questions)
 
 
 ## Difference between Xgboost and Random Forest
+Here's the formatted version of the comparison between XGBoost and Random Forest:
+
+---
+
+### Difference between XGBoost and Random Forest
+
+- **Random Forest** is a bagging technique.
+
+- **XGBoost** prunes the tree with a score called “Similarity score” before entering into the actual modeling purposes. It considers the “Gain” of a node as the difference between the similarity score of the node and the similarity score of the children. If the gain from a node is found to be minimal, it stops constructing the tree to a greater depth, which can overcome the challenge of overfitting to a great extent. Meanwhile, Random Forest might overfit the data if the majority of the trees in the forest are provided with similar samples. If the trees are completely grown, then the model will collapse once the test data is introduced. Therefore, major consideration is given to distributing all the elementary units of the sample with approximately equal participation to all trees.
+
+- **XGBoost** is a $\color{red}{\textsf{good option for unbalanced datasets}}$, but we cannot trust Random Forest in these types of cases. In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation. Random Forest may not treat the class imbalance with a proper process.
+
+- One of the most important differences is that **XGBoost** gives more importance to functional space when reducing the cost of a model, while **Random Forest** tries to give more preferences to hyperparameters to optimize the model. A small change in the hyperparameter will affect almost all trees in the forest, which can alter the prediction. XGBoost hyperparameters are applied to only one tree at the beginning, which is expected to adjust itself in an efficient manner as iterations progress. Also, XGBoost needs only a very low number of initial hyperparameters (shrinkage parameter, depth of the tree, number of trees) when compared with Random Forest.
+
+- When the model encounters a categorical variable with a different number of classes, there lies a possibility that **Random Forest** may give more preferences to the class with more participation.
+
+- **Random Forests** are easier to tune than Boosting algorithms.
+
+- **Random Forests** adapt more easily to distributed computing than Boosting algorithms.
+
+- **Random Forests** will not overfit almost certainly if the data is neatly pre-processed and cleaned, unless similar samples are repeatedly given to the majority of trees.
+
 [Back to TOC](#ML-Questions)
 
 
