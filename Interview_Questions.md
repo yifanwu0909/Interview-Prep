@@ -153,7 +153,7 @@ If you think about the interpreter model every line has to be interpreted for me
 
 
 ## What does the generator function do in Python?
-A generator function in Python is a special type of function that returns an iterator object. Instead of returning a single value, a generator yields a sequence of results, producing one item at a time and only when required. This is achieved using the `yield` statement instead of `return`. 
+A special type of function that returns an iterator object. Instead of returning a single value, a generator yields a sequence of results, producing one item at a time and only when required. This is achieved using the `yield` statement instead of `return`. 
 
 Here's what makes generator functions powerful:
 
