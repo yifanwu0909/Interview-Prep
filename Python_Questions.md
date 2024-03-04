@@ -5,18 +5,20 @@
   - [Shallow Copy](#shallow-copy)
   - [Deep Copy](#deep-copy)
 - [Mutable vs Immutable](#mutable-vs-immutable)
-- [Decorators in python](#what-are-decorators-in-python)
+- [Decorators](#what-are-decorators-in-python)
 - [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
 - [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
-- [What is List comprehension?](#what-is-list-comprehension)
+- [List comprehension?](#what-is-list-comprehension)
 - [Tuple VS a list](#tuple-vs-a-list)
-- [What does the generator function do in Python?](#what-does-the-generator-function-do-in-Python)
-- [Explain the map function.](#explain-the-map-function)
+- [Generator function](#what-does-the-generator-function-do-in-Python)
+- [Map function.](#explain-the-map-function)
 - [Explain what init.py does](#explain-what-init-py-does)
 - [Reduce function](#reduce-function)
 - [Filter function](#filter-function)
 - [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
 - [Can you explain what pass means in Python?](#can-you-explain-what-pass-means-in-Python)
+- [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
+- [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
@@ -392,14 +394,72 @@ In this example, when `number` is 2, the `pass` statement does nothing, and the 
 
 
 
+## How would you store the first and last names of candidates in Python?
+
+The choice of data structure depends on how you plan to use the data:
+
+- If you need to access the first and last names separately and frequently, using a tuple, dictionary, or a class might be more convenient.
+- If you need to maintain the order of insertion and ensure that each candidate is unique, a list is appropriate.
+- If you need to perform more complex operations on the candidate data, such as sorting or filtering based on attributes, a class or named tuple might be the best choice.
+- If you just need to store and display the names without further manipulation, a list of strings could suffice.
+
+Each method has its own advantages and is suitable for different scenarios. Consider the specific needs of your application when deciding which method to use.
 
 
 
+## Please explain what monkey patching means in Python.
 
+Monkey patching is a term used in programming to describe the dynamic (or runtime) modifications of a class or module. In Python, this means altering or extending the behavior of libraries, modules, classes, or methods during runtime, without modifying the source code. Monkey patching can be powerful but should be used with caution, as it can lead to code that is hard to understand and maintain.
 
+### How Monkey Patching Works in Python
 
+In Python, functions and methods are first-class objects, meaning they can be passed around and manipulated just like any other object. This feature allows Python programmers to change the behavior of code at runtime.
 
+For example, consider a module `math_ops` with a function `add` that simply adds two numbers. If you wanted to change the behavior of `add` to, say, always subtract instead of adding, you could do so using monkey patching.
 
+```python
+# math_ops.py
+def add(a, b):
+    return a + b
+```
+
+```python
+import math_ops
+
+# Original behavior
+print(math_ops.add(2, 3))  # Output: 5
+
+# Monkey patching the add function
+def subtract(a, b):
+    return a - b
+
+math_ops.add = subtract
+
+# Modified behavior
+print(math_ops.add(2, 3))  # Output: -1
+```
+
+### Advantages of Monkey Patching
+
+- **Flexibility**: Monkey patching allows you to modify or extend the behavior of libraries or classes without altering their source code. This can be particularly useful when working with third-party code.
+- **Testing**: It can be used in testing to mock or stub out methods with side effects or external dependencies, making it easier to test components in isolation.
+
+### Disadvantages and Risks
+
+- **Maintenance Challenges**: Code that relies on monkey patching can be difficult to understand and maintain, especially for someone who isn't aware of the runtime modifications.
+- **Compatibility Issues**: If the library or module you've monkey patched changes its implementation or interface, your code might break, leading to compatibility issues.
+- **Debugging Difficulty**: Debugging issues related to monkey patched code can be challenging, as the behavior of the code does not match what's written in the source files.
+
+### Best Practices
+
+Given the risks associated with monkey patching, it's generally recommended to use it sparingly and carefully. Here are some best practices:
+
+- **Documentation**: Clearly document any monkey patches you apply, including the rationale behind them.
+- **Isolation**: Keep monkey patches isolated from the core logic of your application to minimize dependencies on modified behavior.
+- **Testing**: Ensure thorough testing of monkey patched code to catch any unintended consequences early.
+- **Alternatives**: Whenever possible, consider alternatives to monkey patching, such as subclassing, decorators, or contributing patches to the upstream project.
+
+In summary, while monkey patching is a powerful tool in Python, it should be used judiciously and with an understanding of the potential implications for code maintainability and stability.
 
 
 
