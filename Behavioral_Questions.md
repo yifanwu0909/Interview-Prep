@@ -53,96 +53,187 @@ Now, for the subtitles that match these anchor IDs:
 ## Tell me about yourself
 [Back to TOC](#Behavioral-Questions)
 
+
 ## Tell me about a project at BDO
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Biggest challenge at BDO
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Why do you want to leave your job?
+[Back to TOC](#Behavioral-Questions)
 
-## What is
 
- your biggest achievement?
+## What is your biggest achievement?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## What's your ideal work environment?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## What questions do you have for us?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How do you deal with a conflict with a coworker?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Where do you see yourself in five years?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How would you deal with a difficult customer?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you failed.
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me how you would handle a difficult situation?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time in which your colleagues weren’t convinced by your approach you believed strongly in. How did you change your approach to influence them?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you disagreed with the direction of a project. What did you do?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## What is your biggest weakness?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## What is your biggest strength?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How would other people describe you?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Why do you want this job?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## What can you do for us
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when your role in a project was unclear. How did you resolve the issue.
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time you had to communicate something technical to a non-technical stakeholder
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How would you communicate data-driven insights to a business stakeholder?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time you used data to influence a decision or solve a problem.
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How comfortable are you presenting your insights?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you had to clean and organize a large dataset.
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Your manager asks you to build a model with a neural network to solve a business problem. How would you justify the complexity of building a neural network?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How have you used data to elevate the experience of a customer
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Provide an example of a goal you reached and tell me how you achieved it.
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Describe an experience in which you had moving deadlines for several projects, but felt that one key project element needed extra attention. How did you balance your daily responsibilities with this new element?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a data project you have worked on where you encountered a challenging problem. How did you respond?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Provide an example of a goal you did not meet and how you handled it
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Describe a time you conceived, planned and executed a data science project. How did you conceive it? What was your approach?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time that you got unexpected results? How did you test the validity of those results?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Talk about an algorithm you built or used recently. Why did you choose that algorithm?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Have you gone above and beyond the call of duty? If so, how?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you were asked to do something you have never done before? What did you learn?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## If you could change one thing about a specific data science project you have worked on, what would it be and why?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you had assigned with multiple projects at the same time. How did you organize your time? What was the result?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when something significant didn’t go according to plan at work. What was your role? What was the outcome? What did you learn from the experience?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when you had to work with someone difficult to get along with. How did you handle interactions with that person?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time when your supervisor wasn’t available when a problem arose. How did you handle the situation? With whom did you consult?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Did you ever have two deadlines that you had to meet simultaneously? How did you manage that?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How will you handle the situation if you have an insubordinate team member?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Have you ever had to explain a technical concept to a non-technical person? Was it difficult to do so?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## How do you prioritize your work?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Do you work well under stress?
+[Back to TOC](#Behavioral-Questions)
+
 
 ## Tell me about a time you failed to meet a deadline.
+[Back to TOC](#Behavioral-Questions)
+
