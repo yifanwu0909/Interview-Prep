@@ -36,8 +36,7 @@
 27. [Xgboost vs Random Forest](#difference-between-xgboost-and-random-forest)
 28. [Random Forest VS Decision Tree](#random-forest-vs-decision-tree)
 29. [How to Prune Decision Tree](#how-to-prune-decision-tree)
-30. [Data Science Behavioral Question](#data-science-behavioral-question)
-31. [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
+30. [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
 
 
 ## Bias & Variance Trade Off
@@ -618,9 +617,6 @@ Def: The size of the dataset used to train the model mattered far more than the 
 
 [Back to TOC](#ML-Questions)
 
-
-## Data Science Behavioral Question
-[Back to TOC](#ML-Questions)
 
 ## Optimize routes for gas technicians
 Using Machine Learning (ML) to optimize routes for gas technicians involves several steps, from data collection to model deployment. Here's a structured approach to achieve this:
