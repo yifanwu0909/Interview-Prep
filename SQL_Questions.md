@@ -347,4 +347,5 @@ MySQL and PostgreSQL are just two versions of the Structured Query Language. Pos
  
 PL/SQL is not a version of SQL. PL/SQL is a complete procedural programming language and its scope of application is different. It is not strictly related to relational databases.
 
+[Back to TOC](#SQL-Questions)
 
