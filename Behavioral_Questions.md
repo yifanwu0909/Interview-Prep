@@ -115,62 +115,141 @@ My ideal work environment is positive and has a good work-life balance, is one w
 
 
 ## How do you deal with a conflict with a coworker?
+I value diversity and understand that different people have different opinions, which may lead to conflict. When that happens, I would check if I was doing anything to contribute to the conflict before speaking to my co worker. After that I will talk to my co-worker in private to find an amicable way forward that we were both comfortable with. I would always put the needs of my team first and try to overcome the conflict so we could quickly move forward. I like to ask questions and understand their perspectives. This helps keep the situation calm, helps them feel like they’re being heard, and after this, I’ve found it’s much easier to come to an agreement or compromise while both staying a lot calmer. I will try to not get defensive when trying to express my opinion by actively practicing tactics to manage this behavior, such as pausing to take a deep breath and carefully considering my words before responding. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Where do you see yourself in five years?
+I love learning about new technologies and trends, so in the next five years, I see myself being a T-shaped data scientist. The “T” represents wide range of skills, across the top, with depth in one area represented by the vertical bar of the 'T'. Data science is such a collaborative and creative field, T-shaped data scientist can more easily work in interdisciplinary teams than those with less breadth and can be more effective than those without depth. I think a successful senior data scientist will be knowledgeable in database, math, statistics, optimization, cloud computing, pipeline development, and have good business sense and good communication skill. At the same time, they must also have a substantial, deep expertise in at least one of those field. For me that's math and model training. 
+	
+By working as a data scientist at Altoida, I will have gained interdisciplinary experience I mentione nd above by learning and collaborating with a cross-functional team that you have, and I’ll have stayed on top of new technologies by becoming active in one or more online machine learning communities. The result of all the hard work above will set me on a fast track to becoming a senior data scientist or even lead data scientist that oversees multiple machine learning projects. That’s my ultimate career goal that I hope to achieve at Altoida. 
+ 
 [Back to TOC](#Behavioral-Questions)
 
 
 ## How would you deal with a difficult customer?
+- **Listen Actively:** Allow the customer to share their concerns without interruption, demonstrating that they are being heard and helping to identify the root cause of their frustration.
+- **Empathize and Validate:** Acknowledge the customer's feelings with statements like, "I understand how that can be frustrating," to build rapport and trust.
+- **Stay Calm and Professional:** Maintain composure and professionalism at all times, avoiding emotional responses that could escalate the situation.
+- **Ask Clarifying Questions:** To navigate the complexities of IT consulting, ask specific questions to gain a deeper understanding of the customer's issue, aiding in efficient problem-solving.
+- **Offer Solutions, Not Excuses:** Present solutions or alternatives to the problem, acknowledging any mistakes on our part and focusing on rectification rather than the mistake itself.
+- **Set Clear Expectations:** Clearly communicate timelines, deliverables, and any actions required from the customer to avoid future misunderstandings.
+- **Follow-Up:** Schedule a follow-up to ensure the implemented solution meets the customer's expectations and to address any additional questions.
+- **Reflect and Learn:** After resolution, reflect on the interaction to identify successes and areas for improvement, fostering continuous enhancement in handling similar situations.
+- **Engage in Continuous Training:** Stay abreast of the latest technologies and best practices in IT, and enhance soft skills, particularly in conflict resolution and customer relationship management.
+- **Seek Feedback:** Conduct regular feedback sessions with customers to address concerns proactively, showing a commitment to continuous improvement and customer satisfaction.
+  
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time when you failed.
+I was given this task to analyze the model performance and figure out a way to improve the model accuracy to at least 90%, and I was so eager to impress my manager that I told her I could finish the project within a week. I thought this was doable, but it ended up taking three weeks and she were not happy because she planed the rest of the sprint contingent upon me bringing the model up to a good performance. Looking back, I realized I should have been more conservative in my estimation. I realized that whoever you report to, could be your manager or a client, isn’t going to be upset if you’re clear about the timeline in advance, but they are going to be disappointed if you promise something and then don’t deliver. So I took this experience and used it to become much better at managing the expectations during projects I was given. For example, on the next project with a different objective, I told my manager it’d take four weeks and made her fully aware of the potential road block along the way and I finished in three instead of four. She was very happy about this. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me how you would handle a difficult situation?
+In my previous position as a data scientist, I was tasked of developing the second half of the pipeline while my colleague was given the first half. So we split up our work load and assisted each other when necessary. After merging our results, I noticed since the first half weren't working correctly, on which my half of the development is dependent on. This leaves me with the responsibility of having to do extra error handling because the data that has been passed onto my part of the workflow is faulty, which will make me pass the delivery deadline.
+
+Instead of involving our supervisor, I talked to her directly. I first made sure that she felt like her hard work did not go un-credited. What she's done is extremely pioneering and challenging but despite all that she still managed to have a running first part of the pipeline and that's an incredible accomplishment in itself. After that I told her I have also noticed some of the pipeline error can be traced back to her work and ultimately became my responsibility. I also explained if this was left unfixed, the entire project would suffer. What I offered is for us to fix the faulty part of the pipeline together to maximize the efficiency. After this conversation, my partner apologized and we worked super efficiently toward the same goal by supporting each other along the way and We finished well within the delivery deadline. I learned that working out issues among coworkers instead of involving supervisors can be very effective. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time in which your colleagues weren’t convinced by your approach you believed strongly in. How did you change your approach to influence them?
+In a previous data science role, the company had been using ResidualNet 50 as the model backbone for training image classification model. Although it is the state-of-the-art model structure to use on any image classification problem, it is an inherently complex model structure that takes a lot of computational resource when running inferences--so it's very expensive!  I suggested that we use a much compact model backbone called MobileNet, which is a reduced-sized model architecture that has been widely used in cell phone application and self-driving system due to it's light-weight, low-latency nature. At first, the team wasn’t open to testing a new approach because lighter weight models tends to have lower accuracy score. However, I created a small comparison test where I train two simple models using exact same data and hyper parameters, with their only difference being one is MobileNet backbone and the other is our old Residual Net 50 model backbone. The lighter-weight MobileNet model was running 10 times faster on CPU on the same batch of testing data than ResNet50 without compromising much on model accuracy. I created a short presentation on this result during our next weekly stand-up session and the team was very impress by the performance of this new model architecture. We have been switching to this new approach ever since. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time when you disagreed with the direction of a project. What did you do?
+One time, I disagreed with my manager over the process for building a pipeline, as their approach was to jump straight into the execution. I knew that it would be better to perform some planning in advance, rather than feeling our way through and reacting to roadblocks as they arose, so I documented a plan that could potentially save us time in development. That documentation and planning showed where pitfalls were likely to arise, and by solving for future issues we were able to launch the new pipeline a couple of weeks early.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What is your biggest weakness?
+My biggest weakness is that I don't yet have any leadership experience. I have not had the opportunity to lead tasks or projects yet, but this is something I am eager to do when the opportunity arises. I am the type of person who is always willing to learn, so if you see anything about my performance in this role that I could improve on, just let me know and I will take the appropriate steps to develop in that area.
+ can independently lead and handle the challenge.
+ 
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What is your biggest strength?
+My DISCIPLINE and dependability is a strength because it means I will always organize my work diligently. I will take ownership of important tasks and project and you can always count on me to make the decision that is in company's best interest. For instance in my last role I was able to detect duplications in image processing that costs us a lot and developed a methodology to run prediction on each image only once. Another of my strengths include my CREATIVITY. For example, in my last role I recommended to my manager that we should try using a lighter weight model structure to cut cost on cloud computing resources. Because a lighter weight model runs so much faster, it actually saved us a lot of money without compromising much on model accuracy. 
+ 
+I am naturally a POSITIVE & ENTHUSIASTIC person, and this tends to rub off on other people in a team. Finally, I am a LOYAL & DEDICATED person. If I got hired, I will represent OpenZeppeline in a positive way, I am committed to LIFELONG LEARNING, which means I will always be a productive and high-performing member of your team and you will always be able to trust me with important duties and responsibilities.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## How would other people describe you?
+My friends and previous co-workers have often described me as someone who is driven, enthusiastic and upbeat. I believe they would also describe me as someone they could turn to whenever they needed assistance; someone they could rely on to help them out at short notice, and someone who has a can-do attitude and that takes ownership of difficult situation.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Why do you want this job?
+I want this job because my research tells me you have a great company culture and working environment, and you support your staff to be the best versions of themselves possible. I feel I can make a big difference to the team in the role, and I will be able to add value to your company. 
+ 
+And also, because it is the type of role that I genuinely love doing. It is very technical and I love to be intellectually challenged. I love feeling smarter at the end of the day than when I step into the job this morning. We spend a lot of time at work, and I want that time to be put to good use. I feel I already have the skills and qualities to match the job description which means I can come into the job hit-the-ground-running and start making positive impacts immediately. 
+ 
+I love the wide range of skill sets I get to develop in this position and my last job took me away from that. This role will give me the opportunity to combine both my skills in model training and pipeline development experience to achieve the full life cycle of implementing machine learning in business. So now, I’m looking to find a role that will let me get back to working on projects I really enjoy and after looking at the job spec I think this role would be perfect with that. Because of my high energy levels I am CONFIDENT I can quickly learn what is required in the position and contribute to the team's objectives. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What can you do for us
+I can bring a diverse set of skills, qualities and experience to the team that I believe will help your business grow. I am a strong communicator, and I will always try to solve problems without troubling my manager. I can also bring a level of knowledge to this role that I believe is unrivaled because I come from the combination of a strong academic background from Georgetown University and a 3-years concentrated hands-on machine learning work experience. The previous equipped me with the theories behind machine learning and data science, while the latter put those schooling to real world's test where the unexpected happens all the time. My level of knowledge in ML and data science, along with my ability to work well under pressure will aid me in this role and help ensure positive return on your investment by hiring me.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time when your role in a project was unclear. How did you resolve the issue.
+When I first joined EagleView as a data scientist, the ML t eam was a start-up that just got acquired by the company so the role wasn’t clearly defined. The manager empowered me to define the objectives of the role by myself sometimes. Because the day-to-day responsibilities weren’t yet assigned, I knew it would be best to align my work to the company’s core objectives, which were to prototype a wide range of models, improve the quality of current testing data, and mine internet data available for our areas of interest. I developed a plan with milestones to make incremental quarterly progress towards those goals using data science techniques and communicated the objectives to my manager for feedback and approval. My manager agreed that the work and role was aligned with company objectives and continued to give me new leeway in tackling emerging issues and tasks.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time you had to communicate something technical to a non-technical stakeholder
+In a previous job, I was asked to demo the image preprocessing technique for one of the image classification models. I created a presentation that walks the management team through a serious of steps using visualizations tools and large amount of images as examples. I was able to design a flow chart as a visual aid to showcase how I was able to filter out low quality imageries step by step. I started from the raw input data, moving onto simple filtering techniques like using sizes and pixel values, and slowly built up to more advanced ones like Fourier transform to map building geometry coordinates to their image pixels. I took special attention so that the style of my narration resembles story-telling to make it engaging and avoided technical jargons as much as possible. Finally I wrapped up the presentation with a line chart to demonstrate the business impact by comparing model performance from before and after the pre-processing. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## How would you communicate data-driven insights to a business stakeholder?
+Communicating data-driven insights to business stakeholders effectively involves several key strategies to ensure the information is clear, actionable, and aligned with business objectives. Here's a structured approach:
+
+### Understand Your Audience
+- **Identify Stakeholder Goals:** Understand the business goals, challenges, and knowledge level of your stakeholders to tailor your communication.
+- **Speak Their Language:** Use terminology familiar to them, avoiding technical jargon unless it's commonly understood.
+
+### Simplify Complex Information
+- **Highlight Key Findings:** Start with the most important insights that directly impact business decisions.
+- **Use Visualizations:** Graphs, charts, and dashboards can make complex data more accessible and engaging.
+
+### Provide Context and Relevance
+- **Explain the Data Source and Methodology:** Briefly describe how the data was collected and analyzed to build trust in your insights.
+- **Connect Insights to Business Outcomes:** Demonstrate how the findings relate to business goals, challenges, or opportunities.
+
+### Offer Actionable Recommendations
+- **Suggest Next Steps:** Based on the insights, propose actionable recommendations that align with business objectives.
+- **Discuss Potential Impact:** Highlight the expected benefits or risks associated with your recommendations.
+
+### Facilitate Discussion
+- **Encourage Questions:** Invite stakeholders to ask questions to clarify their understanding and concerns.
+- **Be Prepared to Dive Deeper:** Have additional data or analysis ready in case stakeholders want more detailed information.
+
+### Follow-Up
+- **Provide a Summary:** After the meeting, send a concise summary of the key insights, recommendations, and agreed-upon actions.
+- **Offer Ongoing Support:** Make it clear that you're available for further clarification, additional analysis, or to help monitor the impact of implemented actions.
+
+### Use Storytelling Techniques
+- **Narrative Structure:** Frame your presentation as a story, with a clear beginning (the business challenge), middle (the analysis and insights), and end (recommendations and next steps).
+- **Relatable Scenarios:** Use hypothetical scenarios or case studies to illustrate how the insights could be applied in practice.
+
+By following these strategies, you can communicate data-driven insights in a way that is engaging, understandable, and actionable for business stakeholders, ultimately facilitating data-informed decision-making.
 [Back to TOC](#Behavioral-Questions)
 
 
