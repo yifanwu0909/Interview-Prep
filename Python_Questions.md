@@ -2,13 +2,13 @@
 
 Based on the topics, here's a rearranged Table of Contents grouped by similarity:
 
-**Concept**
+## Concept
 - [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
 - [Mutable vs Immutable](#mutable-vs-immutable)
 - [OOP - Python](#oop---python)
 - [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
 
-**Data Structures and Operations**
+## Data Structures and Operations
 - [List comprehension?](#what-is-list-comprehension)
 - [Generator function](#what-does-the-generator-function-do-in-Python)
 - [Map function.](#explain-the-map-function)
@@ -26,12 +26,12 @@ Based on the topics, here's a rearranged Table of Contents grouped by similarity
 - [Pickling and UnPickling](#pickling)
 - [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
 
-**System and Environment**
+## System and Environment
 - [Explain what init.py does](#explain-what-init-py-does)
 - [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
 - [Pylint and PyChecker](#pylint)
 
-**Cases**
+## Cases
 - [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
 - [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
 
