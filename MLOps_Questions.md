@@ -1,13 +1,16 @@
 # MLOps Questions
 
-- [Model Monitoring](#model-monitoring)   
-  - [Cues for Retraining](#cues-for-retraining)   
-  - [Error Rate Based Drift Detection](#error-rate-based-drift-detection)   
-  - [Drift Detection on the Target Variable](#drift-detection-on-the-target-variable)   
-  - [Drift Detection on the Input Data](#drift-detection-on-the-input-data)   
-  - [Summary](#summary)   
+## Model Monitoring and Drift
+- [Model Monitoring](#model-monitoring)
+  - [Cues for Retraining](#cues-for-retraining)
+  - [Error Rate Based Drift Detection](#error-rate-based-drift-detection)
+  - [Drift Detection on the Target Variable](#drift-detection-on-the-target-variable)
+  - [Drift Detection on the Input Data](#drift-detection-on-the-input-data)
+  - [Summary](#summary)
 - [Explain about Model/Concept Drift](#explain-about-model-or-concept-drift)
 - [Train/Serve Skew](#train-or-serve-skew)
+
+## MLOps and Deployment
 - [Features of each Cloud MLOps tool](#features-of-each-mlops-tool)
 - [How to Create CI/CD Pipelines for Machine Learning](#how-to-create-cicd-pipelines-for-machine-learning)
 - [How Would You Scale Your ML Model](#how-would-you-scale-your-ml-model)
@@ -23,9 +26,13 @@
 - [How Can We Ensure Reproducibility When Deploying Machine Learning Models?](#how-can-we-ensure-reproducibility-when-deploying-machine-learning-models)
 - [What Is the Concept of “Immutable Infrastructure”?](#what-is-the-concept-of-immutable-infrastructure)
 - [What Is Your Opinion on the A/B Split Approach to Model Evaluation?](#what-is-your-opinion-on-the-ab-split-approach-to-model-evaluation)
+
+## DevOps, Docker, and Infrastructure
 - [Difference Between CMD and Entrypoint](#difference-between-cmd-and-entrypoint)
 - [Can There Be Multiple CMD Commands or Entrypoint Command?](#can-there-be-multiple-cmd-commands-or-entrypoint-command)
 - [How to Run Multiple RUN Commands in One Line in a Docker File](#how-to-run-multiple-run-commands-in-one-line-in-a-docker-file)
+
+## Data Management and Warehousing
 - [Data Archiving](#data-archiving)
 - [Data Warehousing](#data-warehousing)
 - [What Are the 4 Key Components of a Data Warehouse?](#what-are-the-4-key-components-of-a-data-warehouse)
@@ -34,6 +41,8 @@
 - [What Is Active Datawarehousing?](#what-is-active-datawarehousing)
 - [What Is the Difference Between OLTP and OLAP?](#what-is-the-difference-between-oltp-and-olap)
 - [What Is the Difference Between Datawarehouse and OLAP?](#what-is-the-difference-between-datawarehouse-and-olap)
+
+
 
 ## Model Monitoring
 The knowledge embedded in a machine learning model is a frozen snapshot of a real-world process imperfectly captured in data. Even if your machine learning (ML) models aren’t wrong now, drift will inevitably affect any model and cause it to lose accuracy over time. 
