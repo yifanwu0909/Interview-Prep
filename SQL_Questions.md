@@ -29,31 +29,21 @@
 - [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
 - [SQL View?](#What-is-an-sql-View)
 - [DDL, DQL, DML, DCL](#DDL-DQL-DML-DCL)
-
-1. [General Information about SQL](#general-information-about-sql)
-    - [What is SQL?](#what-is-sql)
-    - [What are the different flavors of SQL?](#what-are-the-different-flavors-of-sql)
-    - [What is a primary key?](#what-is-a-primary-key)
-2. [Relational Databases and How They Work](#relational-databases-and-how-they-work)
-    - [What are the top RDBMS engines?](#what-are-the-top-rdbms-engines)
-    - [How is an RDBMS different from a No-SQL database?](#how-is-an-rdbms-different-from-a-no-sql-database)
-3. [SQL Sublanguages and Their Main Keywords](#sql-sublanguages-and-their-main-keywords)
-    - [What do DDL, DCL, and DML stand for?](#what-do-ddl-dcl-and-dml-stand-for)
-    - [Give examples of commands for each.](#give-examples-of-commands-for-each)
-4. [Data Types and How SQL Handles It](#data-types-and-how-sql-handles-it)
-    - [What are the common data types in SQL?](#what-are-the-common-data-types-in-sql)
-    - [Does an SQLite database support date time objects?](#does-an-sqlite-database-support-date-time-objects)
-5. [Attribute Constraints](#attribute-constraints)
-    - [What are attribute constraints, and explain them?](#what-are-attribute-constraints-and-explain-them)
-6. [Types of JOINs](#types-of-joins)
-    - [What is the difference between inner join and left outer join?](#what-is-the-difference-between-inner-join-and-left-outer-join)
-    - [What is the difference between UNION and UNION ALL?](#what-is-the-difference-between-union-and-union-all)
-7. [Aggregation and Rollup Functions](#aggregation-and-rollup-functions)
-    - [When should one use a CTE over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
-    - [What are window functions?](#what-are-window-functions)
-8. [Knowledge of Various SQL Functions](#knowledge-of-various-sql-functions)
-    - [What is the difference between WHERE and HAVING?](#what-is-the-difference-between-where-and-having)
-    - [What does the COALESCE function do?](#what-does-the-coalesce-function-do)
+- [What is SQL?](#what-is-sql)
+- [Different flavors of SQL?](#what-are-the-different-flavors-of-sql)
+- [Primary key](#what-is-a-primary-key)
+- [Top RDBMS engines](#what-are-the-top-rdbms-engines)
+- [RDBMS vs No-SQL database](#how-is-an-rdbms-different-from-a-no-sql-database)
+- [Give examples of commands for each.](#give-examples-of-commands-for-each)
+- [Common data types in SQL?](#what-are-the-common-data-types-in-sql)
+- [Does an SQLite database support date time objects?](#does-an-sqlite-database-support-date-time-objects)
+- [Attribute constraints](#what-are-attribute-constraints-and-explain-them)
+- [inner join vs left outer join](#what-is-the-difference-between-inner-join-and-left-outer-join)
+- [UNION vs UNION ALL](#what-is-the-difference-between-union-and-union-all)
+- [When should one use a CTE over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
+- [window functions](#what-are-window-functions)
+- [WHERE vs HAVING](#what-is-the-difference-between-where-and-having)
+- [COALESCE function](#what-does-the-coalesce-function-do)
 
 ## Explain Normalization?
 Normalization is a method of organization of the data in the database to minimize redundancy from a set of relations. The concept of Normal forms is used to perform normalization on a relation. 
@@ -449,14 +439,60 @@ Each of these SQL flavors has its syntax nuances, proprietary functions, and ext
 
 
 ## What is a primary key?
+A primary key is a fundamental concept in the realm of relational database management systems (RDBMS). It is a column (or a set of columns) in a table that uniquely identifies each row in that table. The primary key serves several important purposes in a database:
+
+1. **Uniqueness**: Ensures that each row in a table can be uniquely identified, meaning no two rows can have the same value(s) in the primary key column(s).
+2. **Indexing**: The database automatically creates a unique index for the primary key column(s), which speeds up the retrieval of data based on the primary key.
+3. **Referential Integrity**: Primary keys play a crucial role in relationships between tables. A primary key in one table can be referenced by a foreign key in another table, establishing a direct link between the rows of the two tables. This is used to enforce referential integrity within the database.
+4. **Simplicity**: Having a single, unique identifier for each row simplifies the process of querying, updating, or deleting specific records in a database.
+
+**Characteristics of a Primary Key:**
+- It must contain unique values.
+- It cannot contain NULL values.
+- A table can have only one primary key, which can consist of single or multiple columns (composite key).
+
 [Back to TOC](#SQL-Questions)
 
 
 ## What are the top RDBMS engines?
+As of my last update in 2023, several Relational Database Management System (RDBMS) engines are widely recognized for their performance, features, and scalability. The "top" RDBMS engines can vary based on the criteria used (such as popularity, performance, feature set, etc.), but here's a list of some of the most prominent ones:
+
+1. **Oracle Database**: Oracle DB is known for its robust feature set, scalability, and performance, particularly in enterprise environments. It supports a wide range of data types and has extensive capabilities for data warehousing, online transaction processing (OLTP), and mixed database workloads.
+
+2. **MySQL**: MySQL is one of the most popular open-source RDBMS, widely used for web applications and as part of the LAMP (Linux, Apache, MySQL, PHP/Python/Perl) stack. It's known for its ease of use, reliability, and strong performance for web-based applications.
+
+3. **Microsoft SQL Server**: MSSQL Server is a comprehensive, enterprise-grade database solution developed by Microsoft. It offers extensive tools for data analysis, integration, and reporting. It's used in a wide range of applications, from small websites to large-scale enterprise systems.
+
+4. **PostgreSQL**: PostgreSQL is an advanced, open-source object-relational database system. It is highly extensible and supports advanced data types and functions. It's known for its standards compliance, robustness, and support for complex queries.
+
+5. **IBM Db2**: IBM Db2 is designed for enterprise users and offers high performance and scalability for both OLTP and data warehousing uses. It supports various platforms, including Linux, UNIX, and Windows, as well as cloud environments.
+
+6. **SQLite**: Unlike the other RDBMS engines mentioned, SQLite is a lightweight, file-based database. It's embedded into the end program, offering a simple, disk-based database that doesn't require a separate server process. It's widely used in mobile apps, small to medium-sized websites, and desktop applications.
+
+7. **MariaDB**: MariaDB is a fork of MySQL, created by the original developers of MySQL after concerns over Oracle's acquisition of MySQL. It aims to maintain open-source freedom and compatibility with MySQL, while also introducing new features and improvements.
+
+8. **SAP HANA**: SAP HANA is an in-memory, column-oriented, relational database management system that emphasizes high-speed transactions and real-time analytics. It's part of SAP's strategy to offer a high-performance analytical and transactional processing system.
+
+9. **Amazon Aurora**: Part of Amazon Web Services (AWS), Aurora is a cloud-based RDBMS that is compatible with MySQL and PostgreSQL. It's designed to offer the performance and reliability of high-end commercial databases at a fraction of the cost.
+
+10. **CockroachDB**: Although newer to the scene, CockroachDB is a cloud-native, distributed SQL database designed for horizontal scalability and strong consistency with a focus on global applications.
+
 [Back to TOC](#SQL-Questions)
 
 
 ## How is an RDBMS different from a No-SQL database?
+Here's a comparison of RDBMS and NoSQL databases in a tabular format:
+
+| Feature | RDBMS | NoSQL |
+|---------|-------|-------|
+| **Data Model** | Structured schema with tables, rows, and columns. Data is stored in relations and typically normalized. | Variety of data models (key-value, document, column-family, graph). Schema-less or flexible schema for unstructured or semi-structured data. |
+| **Scalability** | Traditionally scaled vertically (more powerful server). Not inherently designed for horizontal scaling. | Designed for horizontal scalability (across many servers). Built to distribute data across multiple machines. |
+| **Query Language** | Uses SQL for defining and manipulating data. Supports complex queries including joins and transactions. | No standard query language; uses a variety of query languages or APIs tailored to specific data models. Some support SQL-like querying. |
+| **Consistency** | Follows ACID properties (Atomicity, Consistency, Isolation, Durability) for transactions. Ensures data integrity and consistency. | Often follows BASE model (Basically Available, Soft state, Eventual consistency). May sacrifice some consistency for availability and partition tolerance. |
+| **Use Cases** | Ideal for applications requiring complex transactions, strong consistency, and a well-defined data structure. Common in banking systems, ERP systems, and applications requiring complex querying. | Suited for applications needing high performance with large volumes of data, scalability, and flexible data models. Used in big data applications, real-time web apps, and systems where data structure can evolve. |
+
+This table summarizes the key differences between RDBMS and NoSQL databases, highlighting their data models, scalability, query languages, consistency models, and typical use cases.
+
 [Back to TOC](#SQL-Questions)
 
 
