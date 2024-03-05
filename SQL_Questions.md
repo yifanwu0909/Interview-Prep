@@ -2,7 +2,7 @@
 
 1. [Explain Normalization?](#explain-normalization)
 2. [DDL vs DML](#difference-between-ddl-and-dml)
-3. [ACID Properties(#acid-properties-in-sql)
+3. [ACID Properties](#acid-properties-in-sql)
 4. [Write a Query to Find all the Duplicates in a Table?](#find-duplicates-in-a-table)
 5. [Clustered vs non-clustered](#clustered-vs-non-clustered-index)
 6. [Denormalisation](#explain-denormalisation)
