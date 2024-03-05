@@ -83,8 +83,11 @@ deep_copied_list = copy.deepcopy(original_list)
 
 
 ## What are decorators in python
-decorators wrap a function, modifying its behavior.   
-To define a decorator, you typically define a function returning a wrapper function. The wrapper function uses *args and **kwargs to pass on arguments to the decorated function. If you want your decorator to also take arguments, you need to nest the wrapper function inside another function. In this case, you usually end up with three return statements. Decorators provide a simple syntax for calling higher-order functions. By definition, a decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. You'll use a decorator when you need to change the behavior of a function without modifying the function itself. A few good examples are when you want to add logging, test performance, perform caching, verify permissions, and so on. You can also use one when you need to run the same code on multiple functions.
+- A function that takes another function and extends the behavior of the latter function without explicitly modifying it.
+- Used when need to change the behavior of a function without modifying the function itself.
+- To define a decorator, you typically define a function returning a wrapper function.
+- examples: add logging, test performance, perform caching, verify permissions, run the same code on multiple functions
+- Uses *args and **kwargs to pass on arguments to the decorated function. If you want your decorator to also take arguments, you need to nest the wrapper function inside another function. In this case, you usually end up with three return statements. Decorators provide a simple syntax for calling higher-order functions.   
 ```python
 def my_decorator(func):
     def wrapper():
