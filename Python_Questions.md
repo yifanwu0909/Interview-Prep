@@ -1,30 +1,41 @@
 # Python Questions
 
-- [OOP - Python](#oop---python)
+Based on the topics, here's a rearranged Table of Contents grouped by similarity:
+
+**Concept**
+- [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
+- [Mutable vs Immutable](#mutable-vs-immutable)
+- [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
+
+**Data Structures and Operations**
+- [List comprehension?](#what-is-list-comprehension)
+- [Generator function](#what-does-the-generator-function-do-in-Python)
+- [Map function.](#explain-the-map-function)
+- [Reduce function](#reduce-function)
+- [Filter function](#filter-function)
+- [enumerate()](#enumerate)
 - [Copy an object in Python](#copy-an-object-in-python)
   - [Shallow Copy](#shallow-copy)
   - [Deep Copy](#deep-copy)
-- [Mutable vs Immutable](#mutable-vs-immutable)
-- [Decorators](#what-are-decorators-in-python)
-- [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
-- [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
-- [List comprehension?](#what-is-list-comprehension)
-- [Tuple VS a list](#tuple-vs-a-list)
-- [Generator function](#what-does-the-generator-function-do-in-Python)
-- [Map function.](#explain-the-map-function)
-- [Explain what init.py does](#explain-what-init-py-does)
-- [Reduce function](#reduce-function)
-- [Filter function](#filter-function)
-- [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
-- [Can you explain what pass means in Python?](#can-you-explain-what-pass-means-in-Python)
-- [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
-- [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
-- [Pylint and PyChecker](#pylint)
-- [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
-- [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
-- [Pickling and UnPickling](#pickling)
-- [enumerate()](#enumerate)
 - [Array vs linked list](#What-is-the-difference-between-an-array-and-a-linked-list)
+- [Tuple VS a list](#tuple-vs-a-list)
+- [What does pass mean](#can-you-explain-what-pass-means-in-Python)
+- [OOP - Python](#oop---python)
+- [Decorators](#what-are-decorators-in-python)
+- [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
+- [Pickling and UnPickling](#pickling)
+- [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
+
+**System and Environment**
+- [Explain what init.py does](#explain-what-init-py-does)
+- [Could you explain whether all memory gets freed when Python exits?](#Could-you-explain-whether-all-memory-gets-freed-when-python-exits)
+- [Pylint and PyChecker](#pylint)
+
+**Cases**
+- [Please explain how you would check if a Pandas data frame is empty.](#Please-explain-how-you-would-check-if-a-Pandas-data-frame-is-empty)
+- [How would you store the first and last names of candidates in Python?](#How-would-you-store-the-first-and-last-names-of-candidates-in-Python?)
+
+
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
