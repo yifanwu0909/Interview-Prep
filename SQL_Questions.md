@@ -1,9 +1,5 @@
 # SQL Questions
 
-Here are the subtitles with matching anchor IDs as requested:
-
-# SQL Questions
-
 - [Explain Normalization?](#explain-normalization)
 - [DDL vs DML](#difference-between-ddl-and-dml)
 - [ACID Properties](#acid-properties-in-sql)
