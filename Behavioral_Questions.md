@@ -71,22 +71,46 @@ I opted for a random forest model, a tree-based classification approach, which w
 
 
 ## Biggest challenge at BDO
+- **Situation**: In the same project for the Cooperative of American Physicians, one of the key tasks was to enrich the client's on-premise database with public data. The challenge was that the database was hosted on-premise/a.k.a a local machine to cut cost, while our entire pipeline was set up in Azure, which is a cloud-based environment.
+- **Task**: My main challenge was to ensure seamless data flow between the on-premise database and our cloud-based Azure pipeline. This was crucial for the model to access and process the data efficiently.
+- **Action**: I initially tried to establish a direct connection between the Azure cloud environment and the on-premise database. However, this approach faced several hurdles, mainly due to network compatibility and security issues. After extensive research and troubleshooting, which involved reading numerous blog posts and technical documents, I ended up building a secure virtual network and place the Docker container, which ran the model, under this network. I then rerouted all traffic to the model endpoint through this virtual network. This process was complex and required me to escalate the issue to Microsoft's official dev support team and the network admin on client's side, because I encountered limitations due to restricted network setting permissions. It was crucial for me to break down the technical details in a way that was easy to grasp and to ensure they were comfortable with the approach, especially since it involved keeping their data on-premise to cut costs.
+- **Result**: After nearly two weeks of hard effort and collaboration with Microsoft's support team, the issue was successfully resolved. This solution not only ensured the secure and efficient flow of data between the on-premise database and the cloud environment but also enhanced the overall reliability of our data pipeline. 
+It was all about keeping everyone on the same page. I made sure to keep the client looped in with regular updates - kind of like translating tech-speak into everyday language. And when things got really technical, I wasn't shy about pulling in some extra brainpower. We had a great team at BDO, and reaching out to Microsoft's support team was a game-changer, too. It's amazing how much you can achieve when you combine a bit of teamwork with open and honest communication. 
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Why do you want to leave your job?
+Firstly, I greatly value the experiences I've had in my current role, and I've learned a lot from the challenges presented.
+	
+The allocated project budget does not match the amount of work it requires to deliver a satisfying solution. This comes from the underestimation of the workload needed for developing full-scale ML solutions and it has really taken a tole on my work-life balance. 
+Moreover, due to the short project timelines, our solutions tend to focus on the short term. However Managing the performance of ML pipelines and and data drift is a long-term progress it is just simply not feasible in the current setting. While I appreciate opportunities for growth, the rapid pace without adequate time for skill acquisition has been challenging.
+
+I ready for a fresh challenge.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What is your biggest achievement?
+My greatest achievement was in my previous role where I built a prototype pipeline that automatically gather data and train model in iterative fashion. It was achieved by packaging python code inside various docker containers, plugging the containers into AWS Sagemaker tasks, and orchestrating different components by using AWS step function. This frees up machine learning team from day-to-day cumbersome work, which takes the majority of their time, and to work on more advanced research-oriented work without loosing visibility and control of the model training process. And the result of this is improved team productivity and level of skill set across the whole machine learning team. 
+ 
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What's your ideal work environment?
+My ideal work environment is positive and has a good work-life balance, is one where everyone in the team supports each other and seeks to continually grow and improve, and where I would get to use my data science skill to help solve real life business problem.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## What questions do you have for us?
+- Where you guys at in your gas technician route optimization project?
+- Can you talk about company culture?
+- What advice would you give to the successful candidate who wants to excel in the role?
+- What's the typical day-to-day look like for this role?
+- What are the next steps of the process and when could I contact you to find out the results of my interview?
+- How would you describe the management style of the organization?
+  
 [Back to TOC](#Behavioral-Questions)
 
 
