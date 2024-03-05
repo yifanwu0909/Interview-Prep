@@ -461,7 +461,7 @@ The intuition is that we are taking the **harmonic mean between precision and re
 - **Feature Selection**: Identify the most relevant features for detecting fraud using statistical tests and domain knowledge.
 
 ### 4. Model Selection
-- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. $\color{red}{\textsf{**XGBoost and Neural networks are commonly used.**}}$ In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, $\color{red}{\textsf{**XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation.**}}$ Random Forest may not treat the class imbalance with a proper process. Consider using ensemble methods or anomaly detection algorithms for better performance.
+- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. $\color{red}{\textsf{XGBoost and Neural networks are commonly used.}}$ In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, $\color{red}{\textsf{XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation.}}$ Random Forest may not treat the class imbalance with a proper process. Consider using ensemble methods or anomaly detection algorithms for better performance.
 - **Baseline Model**: Develop a simple model to establish a performance baseline.
 
 ### 5. Model Training and Tuning
