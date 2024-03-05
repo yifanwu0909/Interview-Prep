@@ -27,7 +27,7 @@
 - [Commits and Checkpoints](#what-are-commits-and-checkpoints)
 - [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
 - [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
-- [SQL View?](#What-is-an-sql-View?)
+- [SQL View?](#What-is-an-sql-View)
 
 
 
