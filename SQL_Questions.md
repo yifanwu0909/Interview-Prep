@@ -1,49 +1,64 @@
 # SQL Questions
 
-- [Explain Normalization?](#explain-normalization)
-- [DDL vs DML](#difference-between-ddl-and-dml)
-- [ACID Properties](#acid-properties-in-sql)
-- [Write a Query to Find all the Duplicates in a Table?](#write-a-query-to-find-all-the-duplicates-in-a-table)
-- [Clustered vs non-clustered](#difference-between-a-clustered-and-non-clustered-index)
-- [Denormalisation](#explain-denormalisation)
-- [Collation](#what-is-collation)
-- [inner, outer, and full outer join](#what-is-the-difference-between-inner-outer-and-full-outer-join)
-- [Join vs Union?](#explain-the-difference-between-a-join-and-a-union)
-- [UNION vs UNION ALL](#explain-the-difference-between-union-and-union-all)
-- [Write a Query to Print the Highest Salary from a Table](#write-a-query-to-print-the-highest-salary-from-a-table)
-- [Shared vs Inclusive Locks](#what-is-the-difference-between-shared-and-inclusive-locks)
-- [Transpose Using SQL](#explain-the-mechanism-of-transpose-using-sql)
-- [Working of the B-trees Index](#explain-the-working-of-the-b-trees-index)
-- [Effect of Truncate and Delete on an Identity](#explain-the-effect-of-truncate-and-delete-on-an-identity)
-- [Cost of Having a Database Index](#explain-the-cost-of-having-a-database-index)
-- [Advantages of Having an Index](#what-are-the-advantages-of-having-an-index)
-- [Indexing in the Database](#explain-indexing-in-the-database)
-- [OLAP and OLTP](#what-is-olap-and-oltp)
-- [In What Conditions Does CASE WHEN Apply](#in-what-conditions-does-case-when-apply)
-- [Explain the Cases to Use HAVING versus WHERE](#explain-the-cases-to-use-having-versus-where)
-- [PL/SQL](#what-is-plsql)
-- [ETL in SQL](#what-is-etl-in-sql)
-- [Nested Triggers](#what-are-nested-triggers)
-- [Commits and Checkpoints](#what-are-commits-and-checkpoints)
-- [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
-- [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
-- [SQL View?](#What-is-an-sql-View)
-- [DDL, DQL, DML, DCL](#DDL-DQL-DML-DCL)
+## Basic
 - [What is SQL?](#what-is-sql)
 - [Different flavors of SQL?](#what-are-the-different-flavors-of-sql)
-- [Primary key](#what-is-a-primary-key)
-- [Top RDBMS engines](#what-are-the-top-rdbms-engines)
-- [RDBMS vs No-SQL database](#how-is-an-rdbms-different-from-a-no-sql-database)
-- [Give examples of commands for each.](#give-examples-of-commands-for-each)
-- [Common data types in SQL?](#what-are-the-common-data-types-in-sql)
-- [Does an SQLite database support date time objects?](#does-an-sqlite-database-support-date-time-objects)
+
+## Database Design
+- [Explain Normalization?](#explain-normalization)
+- [Denormalisation](#explain-denormalisation)
 - [Attribute constraints](#what-are-attribute-constraints-and-explain-them)
+- [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
+
+## SQL Commands and Language Constructs
+- [DDL, DQL, DML, DCL](#DDL-DQL-DML-DCL)
+- [DDL vs DML](#difference-between-ddl-and-dml)
+- [PL/SQL](#what-is-plsql)
+
+## Indexes and Performance
+- [Clustered vs non-clustered](#difference-between-a-clustered-and-non-clustered-index)
+- [Working of the B-trees Index](#explain-the-working-of-the-b-trees-index)
+- [Cost of Having a Database Index](#explain-the-cost-of-having-a-database-index)
+- [Advantages of Having an Index](#what-are-the-advantages-of-having-an-index)
+- [Explain Indexing in the Database](#explain-indexing-in-the-database)
+
+## Query Writing Techniques
+- [Write a Query to Find all the Duplicates in a Table?](#write-a-query-to-find-all-the-duplicates-in-a-table)
+- [Write a Query to Print the Highest Salary from a Table](#write-a-query-to-print-the-highest-salary-from-a-table)
+- [inner, outer, and full outer join](#what-is-the-difference-between-inner-outer-and-full-outer-join)
 - [inner join vs left outer join](#what-is-the-difference-between-inner-join-and-left-outer-join)
-- [UNION vs UNION ALL](#what-is-the-difference-between-union-and-union-all)
+- [Join vs Union?](#explain-the-difference-between-a-join-and-a-union)
+- [UNION vs UNION ALL](#explain-the-difference-between-union-and-union-all)
+- [Transpose Using SQL](#explain-the-mechanism-of-transpose-using-sql)
 - [When should one use a CTE over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
 - [window functions](#what-are-window-functions)
 - [WHERE vs HAVING](#what-is-the-difference-between-where-and-having)
 - [COALESCE function](#what-does-the-coalesce-function-do)
+- [In What Conditions Does CASE WHEN Apply](#in-what-conditions-does-case-when-apply)
+- [Explain the Cases to Use HAVING versus WHERE](#explain-the-cases-to-use-having-versus-where)
+
+## Database Systems and Technologies
+- [Top RDBMS engines](#what-are-the-top-rdbms-engines)
+- [RDBMS vs No-SQL database](#how-is-an-rdbms-different-from-a-no-sql-database)
+- [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
+- [What is an SQL View?](#What-is-an-sql-View)
+- [OLAP and OLTP](#what-is-olap-and-oltp)
+- [What is ETL in SQL](#what-is-etl-in-sql)
+
+## Data Types and Structures
+- [Common data types in SQL?](#what-are-the-common-data-types-in-sql)
+- [Does an SQLite database support date time objects?](#does-an-sqlite-database-support-date-time-objects)
+
+## Transactions and Concurrency
+- [ACID Properties](#acid-properties-in-sql)
+- [Shared vs Inclusive Locks](#what-is-the-difference-between-shared-and-inclusive-locks)
+- [What are nested triggers](#what-are-nested-triggers)
+- [What are commits and checkpoints](#what-are-commits-and-checkpoints)
+- [Explain the effect of Truncate and Delete on an Identity](#explain-the-effect-of-truncate-and-delete-on-an-identity)
+
+## Collation and Character Sets
+- [What is Collation](#what-is-collation)
+  
 
 ## Explain Normalization?
 Normalization is a method of organization of the data in the database to minimize redundancy from a set of relations. The concept of Normal forms is used to perform normalization on a relation. 
@@ -496,19 +511,79 @@ This table summarizes the key differences between RDBMS and NoSQL databases, hig
 [Back to TOC](#SQL-Questions)
 
 
-## What do DDL, DCL, and DML stand for?
-[Back to TOC](#SQL-Questions)
-
-
-## Give examples of commands for each.
-[Back to TOC](#SQL-Questions)
-
-
 ## What are the common data types in SQL?
+SQL databases support a variety of data types that allow you to store different kinds of information. Here are some of the most common data types found in SQL:
+
+### Numeric Data Types
+
+1. **INT**: Stores integer numbers (whole numbers) without decimals. The size can vary (e.g., `TINYINT`, `SMALLINT`, `MEDIUMINT`, `INT`, `BIGINT`) to accommodate the data's range.
+2. **DECIMAL(M, N)**: Stores exact numeric data with a fixed number of decimal places. `M` is the maximum number of digits (the precision) and `N` is the number of digits to the right of the decimal point (the scale).
+3. **FLOAT(M, D)** and **DOUBLE(M, D)**: Store floating-point numbers. `FLOAT` is for single-precision, and `DOUBLE` provides double precision. `M` is the total number of digits, and `D` is the number of digits following the decimal.
+
+### String Data Types
+
+1. **CHAR(N)**: Stores fixed-length strings. If you insert a string shorter than the length of the column, SQL pads the remaining space with spaces.
+2. **VARCHAR(N)**: Stores variable-length strings. `N` defines the maximum string length. It uses only as much space as needed, making it more flexible and efficient for strings of varying lengths.
+3. **TEXT**: Stores long text strings. There are variations like `TINYTEXT`, `TEXT`, `MEDIUMTEXT`, and `LONGTEXT` that differ in the maximum length of the text they can store.
+
+### Date and Time Data Types
+
+1. **DATE**: Stores a date in the format `YYYY-MM-DD`.
+2. **TIME**: Stores a time in the format `HH:MM:SS`.
+3. **DATETIME**: Stores a combination of date and time in the format `YYYY-MM-DD HH:MM:SS`.
+4. **TIMESTAMP**: Similar to `DATETIME`, but used for tracking changes or recording events based on the system's current time.
+5. **YEAR**: Stores a year in two-digit or four-digit format.
+
+### Binary Data Types
+
+1. **BINARY(N)** and **VARBINARY(N)**: Similar to `CHAR` and `VARCHAR` but for binary strings. `BINARY` stores fixed-length binary data, while `VARBINARY` stores variable-length binary data.
+2. **BLOB**: Stands for Binary Large Object, used to store large amounts of binary data, such as images or files. Like `TEXT`, there are variations (`TINYBLOB`, `BLOB`, `MEDIUMBLOB`, `LONGBLOB`) based on the size of the data.
+
+### Boolean Data Type
+
+1. **BOOLEAN**: Stores TRUE or FALSE values. It is often represented as `TINYINT(1)`, where `0` signifies false and `1` signifies true.
+
+### Miscellaneous Data Types
+
+1. **ENUM**: A string object that can have only one value, chosen from a list of possible values that you specify when you create the table.
+2. **SET**: Similar to `ENUM`, but can store multiple values from a predefined list.
+
+These data types are common across various SQL database systems like MySQL, PostgreSQL, and SQL Server, though there might be slight variations in naming or behavior. Always refer to the specific database's documentation for the most accurate information.
+
 [Back to TOC](#SQL-Questions)
 
 
 ## Does an SQLite database support date time objects?
+SQLite does not have a dedicated storage class for storing dates and/or times, but it does support date and time data types through its built-in date and time functions. These functions allow you to store dates and times as TEXT, REAL, or INTEGER values:
+
+1. **TEXT**: Date and time are stored as text in the format "YYYY-MM-DD HH:MM:SS.SSS".
+2. **REAL**: Date and time are stored as Julian day numbers, the number of days since noon in Greenwich on November 24, 4714 B.C. according to the proleptic Gregorian calendar.
+3. **INTEGER**: Date and time are stored as Unix Time, the number of seconds since 1970-01-01 00:00:00 UTC.
+
+SQLite recognizes strings in any of these formats as date-time values and can perform date-time arithmetic using its built-in functions like `date()`, `time()`, `datetime()`, `julianday()`, and `strftime()`. This allows you to format, extract, and calculate dates and times for storage and retrieval in an SQLite database.
+
+When using SQLite, you would typically:
+
+- Store the date and time as a string in the ISO8601 format ("YYYY-MM-DD HH:MM:SS").
+- Use SQLite's date and time functions to manipulate and retrieve the date and time in the desired format.
+
+Here's an example of how you might store and retrieve a date-time value in SQLite:
+
+```sql
+-- Create a table with a TEXT column for date-time
+CREATE TABLE events (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    event_time TEXT
+);
+
+-- Insert a date-time as text
+INSERT INTO events (name, event_time) VALUES ('Meeting', '2021-04-15 14:30:00');
+
+-- Retrieve the date-time as text and convert it to a different format
+SELECT name, strftime('%Y-%m-%d %H:%M', event_time) as formatted_time FROM events;
+```
+
 [Back to TOC](#SQL-Questions)
 
 
