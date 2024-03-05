@@ -27,6 +27,7 @@
 - [Commits and Checkpoints](#what-are-commits-and-checkpoints)
 - [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
 - [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
+- [SQL View?](#What-is-an-SQL-View?)
 
 
 
@@ -349,3 +350,8 @@ PL/SQL is not a version of SQL. PL/SQL is a complete procedural programming lang
 
 [Back to TOC](#SQL-Questions)
 
+## What is an SQL View?
+
+A view is a virtual table whose contents are obtained from an existing table or tables, called base tables. The retrieval happens through an SQL statement, incorporated into the view. So, you can think of a view object as a view into the base table. The view itself does not contain any real data; the data is electronically stored in the base table. The view simply shows the data contained in the base table.
+
+[Back to TOC](#SQL-Questions)
