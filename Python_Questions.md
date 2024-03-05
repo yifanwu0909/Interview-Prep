@@ -24,7 +24,7 @@
 - [Is it possible for lambda forms to contain statements in Python?](#Is-it-possible-for-lambda-forms-to-contain-statements-in-Python)
 - [Pickling and UnPickling](#pickling)
 - [enumerate()](#enumerate)
-- [Array vs a linked list](#What-is-the-difference-between-an-array-and-a-linked-list)
+- [Array vs linked list](#What-is-the-difference-between-an-array-and-a-linked-list)
 
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
