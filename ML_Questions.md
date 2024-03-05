@@ -5,7 +5,7 @@
    - [Definition](#definition)
    - [Bias](#bias)
    - [Variance](#variance)
-- [Techniques for Reducing Variance](#techniques-for-reducing-variance)
+- [**Overfitting**: Techniques for Reducing Variance](#techniques-for-reducing-variance)
 - [Techniques for Reducing Bias](#techniques-for-reducing-bias)
 - [Interpret linear regression coefficients?](#how-do-you-interpret-linear-regression-coefficients)
 
