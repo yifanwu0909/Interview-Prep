@@ -9,6 +9,7 @@
 - [Denormalisation](#explain-denormalisation)
 - [Attribute constraints](#what-are-attribute-constraints-and-explain-them)
 - [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
+- [Fast query speed](#Fast-query-speed)
 
 ## SQL Commands and Language Constructs
 - [DDL, DQL, DML, DCL](#DDL-DQL-DML-DCL)
@@ -732,4 +733,40 @@ This query will return 'N/A' for any employee whose `MiddleName` is null, ensuri
 
 [Back to TOC](#SQL-Questions)
 
+## Fast query speed
 
+Ensuring fast query speeds in SQL involves a combination of good database design, efficient query writing, and appropriate use of indexing. Here are some strategies to help you achieve faster query speeds:
+
+### 1. **Indexing**
+- **Use Indexes Wisely**: Indexes can significantly speed up data retrieval but can slow down data insertion, deletion, and update. Use them on columns that are frequently used in WHERE clauses, JOIN conditions, or as part of an ORDER BY.
+- **Index Types**: Understand the different types of indexes (e.g., B-tree, hash, full-text) and use the appropriate type based on your query patterns.
+
+### 2. **Query Optimization**
+- **Select Only Required Columns**: Instead of using `SELECT *`, specify only the columns you need.
+- **Use Joins Instead of Subqueries**: Joins are generally more efficient than subqueries, especially if you're joining a small table to a larger table.
+- **Limit the Use of Wildcards**: If you must use the `LIKE` operator, try not to start your search pattern with a wildcard, as it prevents the use of indexes.
+- **Use WHERE Clauses Wisely**: Filter your data as much as possible in the WHERE clause to reduce the amount of data that needs to be processed.
+
+### 3. **Database Design**
+- **Normalization**: Ensure your database is properly normalized to eliminate data redundancy. However, in some high-read scenarios, a certain level of denormalization might help performance.
+- **Data Types**: Use the most appropriate data types for your data. Smaller data types are generally faster because they use less disk space and memory.
+
+### 4. **Performance Tools**
+- **Explain Plan**: Use the `EXPLAIN` statement (or equivalent in your RDBMS) to analyze and understand how your SQL statements are executed. This can help you identify bottlenecks.
+- **Database Profiling**: Use database profiling tools to monitor and analyze database activity. This can help you identify slow queries and the reasons behind them.
+
+### 5. **Server Configuration**
+- **Hardware Resources**: Ensure your server has enough RAM and a fast disk I/O. SQL databases perform better with more memory and faster disks.
+- **Database Configuration**: Tune your database configuration settings for better performance. This includes settings like buffer pool size, query cache, and others, depending on your RDBMS.
+
+### 6. **Caching**
+- **Application-Level Caching**: Cache frequent queries or their results at the application level to reduce database load.
+- **Database Caching**: Use your database's built-in caching mechanisms to speed up query execution.
+
+### 7. **Regular Maintenance**
+- **Update Statistics**: Regularly update your database statistics to ensure the query optimizer has accurate information.
+- **Optimize or Rebuild Indexes**: Fragmented indexes can degrade performance. Regularly check and optimize or rebuild indexes as necessary.
+
+Improving SQL query speed is an ongoing process of monitoring, analyzing, and tuning. It's important to regularly review your queries, database design, and server performance to identify and address any bottlenecks.
+
+[Back to TOC](#SQL-Questions)
