@@ -25,6 +25,8 @@
 - [ETL in SQL](#what-is-etl-in-sql)
 - [Nested Triggers](#what-are-nested-triggers)
 - [Commits and Checkpoints](#what-are-commits-and-checkpoints)
+- [What is the point of using a foreign key constraint?](#What-is-the-point-of-using-a-foreign-key-constraint)
+- [What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?](#What-is-the-difference-between-Mysql-and-Postgresql-How-about-between-pl-sql-and-sql)
 
 
 
@@ -331,4 +333,18 @@ The commit makes sure the data is consistent and maintained in the updated state
 In the case of a checkpoint, it is used to write all the changes that are committed to disk up the system change number in the control files and header files. 
 
 [Back to TOC](#SQL-Questions)
+
+## What is the point of using a foreign key constraint?
+The foreign key constraint comprises a set of rules, or limits, that will ensure that the values in the child and parent tables match. Technically, this means that the foreign key constraint will maintain the referential integrity within the database.
+
+[Back to TOC](#SQL-Questions)
+
+## What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?
+
+SQL has a few versions, each carrying specific characteristics.
+
+MySQL and PostgreSQL are just two versions of the Structured Query Language. PostgreSQL supports outer joins, while MySQL doesn’t – you’ll need to use UNION or UNION ALL to emulate an outer join in MySQL. 
+ 
+PL/SQL is not a version of SQL. PL/SQL is a complete procedural programming language and its scope of application is different. It is not strictly related to relational databases.
+
 
