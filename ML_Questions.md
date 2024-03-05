@@ -7,7 +7,7 @@
    - [Variance](#variance)
 - [Techniques for Reducing Variance](#techniques-for-reducing-variance)
 - [Techniques for Reducing Bias](#techniques-for-reducing-bias)
-- [How do you interpret linear regression coefficients?](#how-do-you-interpret-linear-regression-coefficients)
+- [Interpret linear regression coefficients?](#how-do-you-interpret-linear-regression-coefficients)
 
 ## Data Preparation and Feature Engineering
 - [How does one Collect Data and Prepare Dataset for Training?](#how-does-one-collect-data-and-prepare-dataset-for-training)
@@ -49,16 +49,16 @@
 
 
 ## Model Design and Cases
-- [How would you Build a Bank Fraud Detection Model?](#how-would-you-build-a-bank-fraud-detection-model)
+- [Build a Bank Fraud Detection Model](#how-would-you-build-a-bank-fraud-detection-model)
 - [Model design: object detection](#Model-design-object-detection)
     - [How to make it efficient?](#make-it-efficient)
 - [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
 
 ## Miscellaneous Topics
 - [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
-- [What is maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
-- [What is linear discriminant analysis?](#what-is-linear-discriminant-analysis)
-- [What is the difference between Parametric and Non Parametric Algorithms?](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
+- [Maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
+- [LDA: Linear discriminant analysis?](#what-is-linear-discriminant-analysis)
+- [Parametric vs Non Parametric Algorithms](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
 
 
 
