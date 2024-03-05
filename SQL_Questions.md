@@ -118,12 +118,20 @@ In a SQL server, collation provides sorting rules, accent, and case sensitivity 
 
 Some of the collation levels are as below:
 - Case-sensitive (_CS)
+- Character Sorting
 - Accent-sensitive (_AS)
 - Kana-sensitive (_KS)
 - Width-sensitive (_WS)
 - Variation-selector-sensitive (_VSS)a
 - Binary (_BIN)
 - Binary-code point (_BIN2)
+
+In SQL Server, you can specify collation at various levels:
+
+- Server-level collation (default for new databases and used for system databases)
+- Database-level collation (default for new columns in the database)
+- Column-level collation (specific to a column in a table)
+- Expression-level collation (applied to a specific expression in a query)
 
 [Back to TOC](#SQL-Questions)
 
