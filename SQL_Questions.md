@@ -665,10 +665,63 @@ Window functions can be used for a wide range of operations, such as:
 
 
 ## What is the difference between WHERE and HAVING?
+
+In summary, the `WHERE` clause is used to filter rows before aggregation, while the `HAVING` clause is used to filter groups or aggregate results after the `GROUP BY` clause. Both are essential for controlling the data that is included in the final result set of a SQL query.
+
+### WHERE Clause
+- The `WHERE` clause is used to filter rows before any groupings are made.
+- It is applied to individual rows in the base tables (or joined tables) before any aggregate functions are computed.
+- You can use the `WHERE` clause in any `SELECT`, `UPDATE`, or `DELETE` statement to specify which rows should be included in the operation.
+- The `WHERE` clause cannot be used with aggregate functions because it operates before the result set is aggregated.
+
+**Example:**
+```sql
+SELECT employee_id, department, salary
+FROM employees
+WHERE salary > 50000;
+```
+This query selects employees who have a salary greater than 50,000.
+
+### HAVING Clause
+- The `HAVING` clause is used to filter groups after the `GROUP BY` clause has been applied.
+- It is applied after the aggregation phase and is used in conjunction with aggregate functions to filter the results of a query based on an aggregate property.
+- The `HAVING` clause is typically used with the `GROUP BY` clause but can be used without it if the query involves aggregate functions.
+- You cannot use the `HAVING` clause to filter individual rows based on column values directly; you must use the `WHERE` clause for that purpose.
+
+**Example:**
+```sql
+SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+```
+This query selects departments where the average salary is greater than 50,000.
+
 [Back to TOC](#SQL-Questions)
 
 
 ## What does the COALESCE function do?
+
+The `COALESCE` function in SQL is used to return the first non-null value in a list of arguments. It is often used to substitute a default value for null values when displaying data or performing calculations. 
+### Example Usage
+
+To display a full name for each employee, substituting the string 'N/A' for any null `MiddleName`, you could use the `COALESCE` function like this:
+
+```sql
+SELECT FirstName,
+       COALESCE(MiddleName, 'N/A') AS MiddleName,
+       LastName
+FROM Employees;
+```
+This query will return 'N/A' for any employee whose `MiddleName` is null, ensuring that the query results do not contain null values for the `MiddleName` column.
+
+### Advantages of Using COALESCE
+
+- **Flexibility**: `COALESCE` can accept multiple arguments, making it versatile for various scenarios where you might want to check multiple expressions for null values.
+- **Standard Compliance**: `COALESCE` is ANSI SQL standard, which means it is supported across almost all SQL databases, ensuring portability of your SQL code.
+- **Readability**: Using `COALESCE` can make SQL queries more readable and concise, especially when dealing with potential null values.
+
+
 [Back to TOC](#SQL-Questions)
 
 
