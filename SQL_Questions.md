@@ -3,8 +3,8 @@
 1. [Explain Normalization?](#explain-normalization)
 2. [DDL vs DML](#difference-between-ddl-and-dml)
 3. [ACID Properties](#acid-properties-in-sql)
-4. [Write a Query to Find all the Duplicates in a Table?](#find-duplicates-in-a-table)
-5. [Clustered vs non-clustered](#clustered-vs-non-clustered-index)
+4. [Write a Query to Find all the Duplicates in a Table?](#Write-a-Query-to-Find-all-the-Duplicates-in-a-Table)
+5. [Clustered vs non-clustered](#Difference-Between-a-Clustered-and-non-clustered-Index-)
 6. [Denormalisation](#explain-denormalisation)
 7. [Collation](#what-is-collation)
 8. [inner, outer, and full outer join](#difference-between-joins)
@@ -38,7 +38,7 @@ BCNF:- Boy Codd’s Normal form is a strong representation of 3NF.
 [Back to TOC](#SQL-Questions)
 
 
-## Explain the Difference Between DDL and DML?
+## Difference Between DDL and DML?
 - DDL stands for Data Definition language whereas, DML is called Data Manipulation Language.
 - DDL creates a schema with some constraints. DML adds, retrieves or updates the data in that schema. 
 - DDL defines the column attribute of the table. DML provides the row attribute of the table.
@@ -48,7 +48,7 @@ BCNF:- Boy Codd’s Normal form is a strong representation of 3NF.
 [Back to TOC](#SQL-Questions)
 
 
-## What are ACID Properties in SQL?
+## ACID Properties in SQL?
 - Atomicity - Changes in the data must be like a single operation. 
 - Consistency - The data must be consistent before and after the transaction. 
 - Isolation - Multiple transactions can be done without any hindrance. 
