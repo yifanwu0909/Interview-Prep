@@ -56,8 +56,8 @@
 
 ## Miscellaneous Topics
 - [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
-- [Maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
-- [LDA: Linear discriminant analysis?](#what-is-linear-discriminant-analysis)
+- [Maximum likelihood estimation](#what-is-maximum-likelihood-estimation)
+- [LDA: Linear discriminant analysis](#what-is-linear-discriminant-analysis)
 - [Parametric vs Non Parametric Algorithms](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
 
 
