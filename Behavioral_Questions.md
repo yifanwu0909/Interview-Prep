@@ -51,10 +51,22 @@
 Now, for the subtitles that match these anchor IDs:
 
 ## Tell me about yourself
+My name is Yifan Wu and I'm a Machine Learning specialist and AI enthusiast. The the past 5 years, I was focusing on cultivating my skills in machine learning, cloud solutions, and big data analysis.
+
+I went to grad school at Georgetown University in Master of Science in Data Science for two years to build a solid academic background. At my recent role with BDO Digital, I’m using classical ML and Microsoft Azure to access risk in the insurance industry and translating my modeling results to profitable insight and share with business stakeholders.
+	
+Unlike my current role at BDO, which is advisory and consulting, my previous job is heavily product oriented. I was a Computer vision developer and Data Scientist at a company that uses ML to analyze drone imageries. I've worked with petabytes of unstructured imagery data, researched and implemented different CNN algorithms, prototyped and maintained ML pipelines in AWS. I'm also an active member of several largest online machine learning community there is because I think it's important to keep track of the latest technologies there is in the field of ML.
+ 
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a project at BDO
+- **Situation:** At BDO Digital, I led a significant project for the Cooperative of American Physicians, a top 5 client of BDO. The objective was to overhaul their medical insurance underwriting process through the application of AI, necessitating a comprehensive exploration of AI's role in healthcare, especially in medical insurance.
+- **Task:**  My responsibility was to develop one or more AI models capable of not only assigning an overall risk score to each physician but also providing insights into how various risk indicators (such as physician background, work patterns, patient behavior) influenced their overall risk score. This approach aimed to offer a multi-dimensional perspective on the reasoning behind each risk assessment, requiring sophisticated model development and statistical analysis. Additionally, seamless integration of the AI model with the client's existing systems was imperative.
+- **Action:**  The process began with extensive market research and review of academic literature on AI applications within medical insurance. Subsequently, I acquired a substantial volume of public Medicare data on physicians to augment our client's dataset. This data was meticulously loaded into an Azure SQL database, with careful attention to data types and formatting to facilitate efficient querying.  
+I opted for a random forest model, a tree-based classification approach, which was deployed on Azure ML Studio using Python SDK, Docker, and MLFlow to ensure a streamlined CI/CD process. Given the data storage in both Oracle and Azure SQL databases, I crafted complex SQL algorithms for data cleaning, wrangling, and feature engineering, preparing the data for model training and usage.
+- **Result:**  The integration of data into the Azure SQL database significantly reduced errors and simplified query processes. The fine-tuned Random Forest model I developed demonstrated high accuracy in predicting physician medical malpractice risk, outperforming traditional manual assessment methods.
+
 [Back to TOC](#Behavioral-Questions)
 
 
