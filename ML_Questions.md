@@ -49,6 +49,7 @@
 - [Resnet](#resnet)
 - [MobileNet](#mobilenet)
 - [Keras vs Tensorflow vs Pytorch](#keras-vs-tensorflow-vs-pytorch)
+- [Dropouts](#What-are-dropouts)
 
 
 ## Model Design and Cases
@@ -946,8 +947,26 @@ In decision tree algorithms like ID3 and C4.5, Information Gain is often used as
 
 [Back to TOC](#ML-Questions)
 
+## What are dropouts?
 
+Dropout is a straightforward implementation to halt neural network overfitting by terminating some of its units. Repeating this for every training example gives us different models for each one, improves processing, and reduces time.
 
+Dropout works by randomly "dropping out" a proportion of neurons in the network during the training phase, meaning that these neurons are temporarily removed from the network along with all their incoming and outgoing connections. This process is applied at each training step, so each time the data is passed through the network (in each epoch), a different set of neurons is dropped.
+
+### How Dropouts Work:
+1. **Random Deactivation**: During training, each neuron (except those in the output layer) has a probability \(p\) of being temporarily "dropped out" and not participating in the forward and backward pass. The probability \(p\) is a hyperparameter and is typically set between 0.2 and 0.5. 
+2. **Training Phase**: In the training phase, for each training iteration, the dropout procedure randomly selects a subset of neurons which are then ignored during that particular forward and backward pass. This can be thought of as training a sub-network extracted from the larger network.
+3. **Testing Phase**: During the testing or inference phase, dropout is not applied; instead, the entire network is used. However, the weights of the neurons are scaled down by a factor equal to the dropout rate to account for the larger number of active units during testing compared to training.
+
+### Benefits:
+- **Prevents Overfitting**: By randomly dropping neurons, dropout prevents the network from becoming too dependent on any single neuron. This encourages the network to learn more robust features that are useful in conjunction with many different random subsets of the other neurons.
+- **Model Averaging**: Dropout can be interpreted as a form of model averaging. Each training step uses a different "thinned" network, and the final model can be seen as an ensemble of these thinned networks. This ensemble effect helps improve the model's generalization.
+- **Reduces Co-adaptations**: Neurons in a network can become co-adapted, where they rely on specific configurations of other neurons to correct their mistakes. Dropout reduces co-adaptation by making the presence of other neurons unreliable, thus forcing each neuron to learn features that are generally useful.
+
+### Implementation:
+In practice, implementing dropout in a neural network is straightforward with modern deep learning frameworks like TensorFlow or PyTorch, which provide built-in dropout layers. These layers can be added to the network architecture, and the dropout rate \(p\) can be specified as a parameter.
+
+[Back to TOC](#ML-Questions)
 
 
 
