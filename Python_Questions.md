@@ -5,6 +5,7 @@ Based on the topics, here's a rearranged Table of Contents grouped by similarity
 **Concept**
 - [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
 - [Mutable vs Immutable](#mutable-vs-immutable)
+- [OOP - Python](#oop---python)
 - [Why interpreter languages are slow?](#why-interpreter-languages-are-slow)
 
 **Data Structures and Operations**
@@ -20,7 +21,6 @@ Based on the topics, here's a rearranged Table of Contents grouped by similarity
 - [Array vs linked list](#What-is-the-difference-between-an-array-and-a-linked-list)
 - [Tuple VS a list](#tuple-vs-a-list)
 - [What does pass mean](#can-you-explain-what-pass-means-in-Python)
-- [OOP - Python](#oop---python)
 - [Decorators](#what-are-decorators-in-python)
 - [Monkey patching](#Please-explain-what-monkey-patching-means-in-Python)
 - [Pickling and UnPickling](#pickling)
