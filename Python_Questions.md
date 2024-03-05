@@ -12,6 +12,8 @@
 - [Map function.](#explain-the-map-function)
 - [Reduce function](#reduce-function)
 - [Filter function](#filter-function)
+- [args and kwargs](#args-and-kwargs)
+- [iterrow()](#iterrow)
 - [enumerate()](#enumerate)
 - [Copy an object in Python](#copy-an-object-in-python)
   - [Shallow Copy](#shallow-copy)
@@ -690,10 +692,72 @@ This table highlights the main differences between arrays and linked lists, help
 [Back to TOC](#Python-Questions)   
 
 
+## args and kwargs
 
+In Python, `*args` and `**kwargs` are special syntax elements used in function definitions to allow the function to accept an arbitrary number of arguments. `*args` is used to gather additional positional arguments, while `**kwargs` gathers additional keyword arguments. Here's a closer look at each:
 
+### `*args` (Arbitrary Positional Arguments)
 
+- **Syntax**: An asterisk (`*`) before a parameter name (commonly `*args`) in a function definition means "gather any additional positional arguments into a tuple."
+- **Usage**: This is useful when you want your function to be flexible regarding the number of positional arguments it can accept.
+- **Example**:
 
+```python
+def add_numbers(*args):
+    return sum(args)
+
+print(add_numbers(1, 2, 3))  # Output: 6
+print(add_numbers(1, 2, 3, 4, 5))  # Output: 15
+```
+
+In this example, `*args` collects all the positional arguments passed to `add_numbers` into a tuple, allowing the function to accept any number of arguments.
+
+### `**kwargs` (Arbitrary Keyword Arguments)
+
+- **Syntax**: Two asterisks (`**`) before a parameter name (commonly `**kwargs`) in a function definition means "gather any additional keyword arguments into a dictionary."
+- **Usage**: This is useful when you want your function to accept an arbitrary number of keyword arguments without having to define all the possible parameters in the function signature.
+- **Example**:
+
+```python
+def print_pet_names(**kwargs):
+    for pet, name in kwargs.items():
+        print(f"{pet}: {name}")
+
+print_pet_names(dog="Rex", cat="Whiskers", fish="Bubbles")
+```
+
+In this example, `**kwargs` collects all the keyword arguments passed to `print_pet_names` into a dictionary, where each key is the parameter name and each value is the argument value.
+
+### Combining `*args` and `**kwargs`
+
+You can use both `*args` and `**kwargs` in the same function to accept an arbitrary number of both positional and keyword arguments:
+
+```python
+def function_with_both(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+function_with_both(1, 2, 'three', first_name="John", last_name="Doe")
+```
+
+- This function can accept any number of positional arguments (collected into a tuple called `args`) and any number of keyword arguments (collected into a dictionary called `kwargs`).
+- The names `args` and `kwargs` are conventions; you could technically use any name (e.g., `*myargs`, `**mykwargs`), but it's highly recommended to stick with the convention for readability.
+- When defining a function with both `*args` and `**kwargs`, `*args` must come before `**kwargs`.
+
+[Back to TOC](#Python-Questions)  
+
+## iterrow
+- Generates an iterator, yielding each **index** and **row** data as a Series. 
+- Useful when you want to perform operations on each row individually.
+
+```python
+for index, row in df.iterrows():
+    print(f"Index: {index}, Name: {row['Name']}, Age: {row['Age']}")
+```
+
+While `iterrows()` is convenient for iterating over rows, it's worth noting that it can be slower on large DataFrames. This is because for each iteration, it returns a Series object, which could lead to performance overhead. For more performance-critical applications, vectorized operations or using methods like `apply()` might be more efficient.
+
+[Back to TOC](#Python-Questions)  
 
 
 
