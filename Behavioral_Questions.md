@@ -249,19 +249,33 @@ Communicating data-driven insights to business stakeholders effectively involves
 - **Narrative Structure:** Frame your presentation as a story, with a clear beginning (the business challenge), middle (the analysis and insights), and end (recommendations and next steps).
 - **Relatable Scenarios:** Use hypothetical scenarios or case studies to illustrate how the insights could be applied in practice.
 
-By following these strategies, you can communicate data-driven insights in a way that is engaging, understandable, and actionable for business stakeholders, ultimately facilitating data-informed decision-making.
+
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time you used data to influence a decision or solve a problem.
+Insurance companies like all-state are the primary clients at my previous company, EagleView. They wants to know about in which states more people tend to have pool in their backyard because a pool is considered an “attractive nuisance” and will increase the liability risk for pool accident. So they hired us to determine pool coverage across the US since we have aerial imagery coverage of residential property. 
+	
+So the project objective is to build a pool finder model and generate property reports for state-wise pool coverage to help all-states on their marketing champaign. 
+	
+I built a pool finder model that automatically detect whether there is a pool in people's backyard. Our baseline system was a binary image classification CNN model with two classes, pool or no pool and it worked. I started from a prototype model trained with a couple hundred of images and iteratively tune the model and added more training images so that the model was able to accurately detect 95% of the pool. After a couple of weeks, we have state-wise pool coverage report across all US so all-state can use it to allocate their Champaign resources.
+ 
 [Back to TOC](#Behavioral-Questions)
 
 
 ## How comfortable are you presenting your insights?
+I am mostly comfortable with it. But in large group settings it’s more difficult. For me, preparation is critical. First, I gather information about the audience and what their goals are. Then, I develop slides and a loose speaking script for the presentation. Lastly, I like to run through the presentation with manager or colleagues once or twice for clarity and relevance.
+
 [Back to TOC](#Behavioral-Questions)
 
 
 ## Tell me about a time when you had to clean and organize a large dataset.
+- **Situation:**  At my previous job, I was tasked with cleaning and organizing a large dataset of images that were crucial for training a machine learning model. The dataset consisted of historic metadata that I initially attempted to gather using Postgres SQL on a local machine.
+- **Task:**  My objective was to ensure the dataset was of high quality and free of any biases or inaccuracies that could affect the model's performance. This involved pre-processing and filtering tasks, such as removing small images and black pixels, as well as images that were not relevant to our project, like houses in Florida.
+- **Action:**  After realizing that the local environment was insufficient due to the size of the dataset, I migrated the process to AWS, utilizing Athena for more efficient querying within the AWS ecosystem. To handle the data on a local level, I sampled a small, unbiased batch and used tools like CyberDuck for visualization. Upon identifying low-quality and inaccurate data, I started a GPU remote machine with an attached larger volume disk to download and process all the images. I also implemented an auto-stopping mechanism to shut down the GPU after training to optimize resource usage.
+- **Result:**  The next morning, I checked the results and found that the dataset was well-prepared, and the machine learning model training had gone well, thanks to the organized and clean data. This preparation played a significant role in the success of the model's performance.
+
 [Back to TOC](#Behavioral-Questions)
 
 
