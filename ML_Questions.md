@@ -33,6 +33,7 @@
 - [Improve Poor Model Performance](#improve-poor-model-performance)
 - [AUC and ROC](#auc-and-roc)
 - [F1 Score](#what-is-the-intuition-behind-the-f1-score)
+- [Type I vs Type II error](#What-is-the-difference-between-a-Type-I-and-Type-II-error)
 - [Lasso L1 and Ridge L2](#lasso-and-ridge)
 
 ## Deep Learning and CNN
@@ -885,10 +886,28 @@ This simple example demonstrates retrieving log data based on a date range. In p
 [Back to TOC](#ML-Questions)
 
 
+## What is the difference between a Type I and Type II error
+In statistical hypothesis testing, a Type I error and a Type II error are two different kinds of errors that can occur when making a decision about the null hypothesis (usually denoted as \(H_0\)). Understanding these errors is crucial for interpreting the results of hypothesis tests accurately.
 
+### Type I Error (False Positive)
+A Type I error occurs when the null hypothesis is true, but we incorrectly reject it. In other words, it's a false positive result. For example, if we're testing a new drug and the null hypothesis is that the drug has no effect (it's equivalent to a placebo), a Type I error would occur if we conclude that the drug does have an effect when, in fact, it does not.
 
+The probability of making a Type I error is denoted by \(\alpha\), which is also known as the significance level of the test. The significance level is set by the researcher before conducting the test and represents the threshold for rejecting the null hypothesis. Common values for \(\alpha\) are 0.05 or 0.01.
 
+### Type II Error (False Negative)
+A Type II error occurs when the null hypothesis is false, but we incorrectly fail to reject it. This is a false negative result. Continuing with the drug example, a Type II error would occur if we conclude that the drug has no effect when, in reality, it does have a beneficial effect.
 
+The probability of making a Type II error is denoted by \(\beta\). The power of a test, which is \(1 - \beta\), represents the probability of correctly rejecting the null hypothesis when it is false. High power is desirable and means that the test has a good chance of detecting an effect when there is one.
+
+### Key Differences
+- **Nature of Error**: A Type I error is a false positive (rejecting a true null hypothesis), while a Type II error is a false negative (failing to reject a false null hypothesis).
+- **Probability Notation**: The probability of a Type I error is denoted by \(\alpha\), and the probability of a Type II error is denoted by \(\beta\).
+- **Control**: Researchers often set a threshold for \(\alpha\) to control the risk of a Type I error, but \(\beta\) is influenced by several factors, including the sample size, effect size, and the chosen significance level.
+
+### Balancing Type I and Type II Errors
+In practice, there's often a trade-off between minimizing Type I and Type II errors. Decreasing the risk of one typically increases the risk of the other. The choice of \(\alpha\) affects this balance; a lower \(\alpha\) reduces the risk of a Type I error but increases the risk of a Type II error, and vice versa. Researchers must choose an appropriate balance based on the context of their study and the relative consequences of each type of error.
+
+[Back to TOC](#ML-Questions)
 
 
 
