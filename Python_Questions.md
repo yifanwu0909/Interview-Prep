@@ -1,7 +1,5 @@
 # Python Questions
 
-Based on the topics, here's a rearranged Table of Contents grouped by similarity:
-
 ## Concept
 - [How python is different from C or C++?](#how-python-is-different-from-c-or-c)
 - [Mutable vs Immutable](#mutable-vs-immutable)
