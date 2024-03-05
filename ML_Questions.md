@@ -452,15 +452,16 @@ The intuition is that we are taking the **harmonic mean between precision and re
 ### 2. Data Collection and Preparation
 - **Data Sources**: Collect data from relevant sources, including transaction logs, customer profiles, and historical fraud reports.
 - **Feature Engineering**: Create features that are indicative of fraud, such as transaction frequency, amount, location discrepancies, and unusual patterns in user behavior.
-- **Handling Imbalanced Data**: Fraudulent transactions are typically much less frequent than legitimate ones. Techniques like oversampling, undersampling, or using anomaly detection methods can help address this imbalance.
+- **Handling Imbalanced Data**: Fraudulent transactions are typically much less frequent than legitimate ones. Techniques like $\color{red}{\textsf{oversampling, undersampling, SMOTE, or using anomaly detection methods can help address this imbalance.}}$
 - **Data Cleaning**: Handle missing values, outliers, and errors in the dataset.
+- **Prevent Data Leakage**: $\color{red}{\textsf{splitting the dataset into training and test sets before applying balancing techniques.}}$
 
 ### 3. Exploratory Data Analysis (EDA)
 - **Data Understanding**: Perform EDA to understand the distributions of key variables, identify patterns, and detect anomalies.
 - **Feature Selection**: Identify the most relevant features for detecting fraud using statistical tests and domain knowledge.
 
 ### 4. Model Selection
-- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. **XGBoost and Neural networks are commonly used.** In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, **XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation.** Random Forest may not treat the class imbalance with a proper process. Consider using ensemble methods or anomaly detection algorithms for better performance.
+- **Algorithm Choice**: Choose algorithms suited for imbalanced classification problems. $\color{red}{\textsf{**XGBoost and Neural networks are commonly used.**}}$ In applications like forgery or fraud detection, where the classes are almost certainly imbalanced, $\color{red}{\textsf{**XGBoost gives more preferences and weightage to underrepresented classes in the upcoming iterations, thereby increasing its ability to predict the class with low participation.**}}$ Random Forest may not treat the class imbalance with a proper process. Consider using ensemble methods or anomaly detection algorithms for better performance.
 - **Baseline Model**: Develop a simple model to establish a performance baseline.
 
 ### 5. Model Training and Tuning
@@ -469,8 +470,8 @@ The intuition is that we are taking the **harmonic mean between precision and re
 - **Feature Importance**: Evaluate the importance of different features in the model to gain insights and potentially refine the feature set.
 
 ### 6. Model Evaluation
-- **Performance Metrics**: Due to class imbalance, accuracy is not a reliable metric. Focus on precision, recall, F1-score, ROC-AUC, and precision-recall curves.
-- **Threshold Tuning**: Adjust the decision threshold to balance false positives and false negatives according to business objectives.
+- **Performance Metrics**: Due to class imbalance, accuracy is not a reliable metric. Focus on $\color{red}{\textsf{precision, recall, F1-score, ROC-AUC, and precision-recall curves.}}$
+- **Threshold Tuning**: Adjust the decision threshold to balance false positives and false negatives according to business objectives. $\color{red}{\textsf{Balancing precision and recall to optimize model performance}}$, recognizing the trade-offs between detecting as many frauds as possible (recall) and ensuring high confidence in fraud predictions (precision).
 
 ### 7. Deployment
 - **Integration**: Integrate the model into the bank's transaction processing system to flag or block fraudulent transactions in real-time.
