@@ -382,3 +382,8 @@ A view is a virtual table whose contents are obtained from an existing table or 
 - **Data Control Language (DCL)**
   - `GRANT`
   - `REVOKE`
+
+[Back to TOC](#SQL-Questions)
+
+
+
