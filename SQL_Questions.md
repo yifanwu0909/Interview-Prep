@@ -339,7 +339,7 @@ The foreign key constraint comprises a set of rules, or limits, that will ensure
 
 [Back to TOC](#SQL-Questions)
 
-## What is the difference between MySQL and PostgreSQL? How about between PL/SQL and SQL?
+## What is the difference between Mysql and Postgresql? How about between pl sql and sql?
 
 SQL has a few versions, each carrying specific characteristics.
 
