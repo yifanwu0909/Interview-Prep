@@ -42,19 +42,25 @@
 
 
 ## OOP - Python
-In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
+- In Python, everything is an object, including numbers, strings, functions, and classes. 
+- Each entity in Python has attributes and methods associated with it, which define its properties and behaviors.
+- 
 [Back to TOC](#Python-Questions)    
 
 ## Copy an object in Python
 ### Shallow Copy
-A shallow copy creates a new object, but instead of copying the objects that the original object references, it only copies the references to those objects. Therefore, changes to mutable objects within the copied object would reflect in the original object as well.
+- A shallow copy creates a new object
+- Only copies the references to those objects. 
+- So changes to mutable objects within the copied object would reflect in the original object as well.
 ```python
 shallow_copied_list = copy.copy(original_list)
 copied_list = original_list[:]
 copied_dict = original_dict.copy()
 ```
 ### Deep Copy
-A deep copy creates a new object and recursively copies all the objects it references. Changes to any level of nested objects within the copied object will not affect the original object.
+- Creates a new object and recursively copies all the objects it references.
+- Changes to any level of nested objects within the copied object will not affect the original object.
+- 
 ```python
 deep_copied_list = copy.deepcopy(original_list)
 ```
