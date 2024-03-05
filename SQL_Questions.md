@@ -30,7 +30,7 @@
 - [Join vs Union?](#explain-the-difference-between-a-join-and-a-union)
 - [UNION vs UNION ALL](#explain-the-difference-between-union-and-union-all)
 - [Transpose Using SQL](#explain-the-mechanism-of-transpose-using-sql)
-- [When should one use a CTE over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
+- [When should one use a **CTE(Common Table Expressions)** over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
 - [window functions](#what-are-window-functions)
 - [WHERE vs HAVING](#what-is-the-difference-between-where-and-having)
 - [COALESCE function](#what-does-the-coalesce-function-do)
@@ -144,7 +144,7 @@ Some of the collation levels are as below:
 
 
 ## Explain the Difference Between UNION AND UNION ALL?
-Union keeps unique records whereas Union keeps all records including all the duplicates. Also, the union does a deduplication step before returning the data and the union all prints concatenated results 
+Union keeps unique records whereas Union keeps all records including all the duplicates. Also, the union does a deduplication step before returning the data and the union all prints concatenated results.
 
 [Back to TOC](#SQL-Questions)
 
@@ -560,14 +560,10 @@ SQLite does not have a dedicated storage class for storing dates and/or times, b
 2. **REAL**: Date and time are stored as Julian day numbers, the number of days since noon in Greenwich on November 24, 4714 B.C. according to the proleptic Gregorian calendar.
 3. **INTEGER**: Date and time are stored as Unix Time, the number of seconds since 1970-01-01 00:00:00 UTC.
 
-SQLite recognizes strings in any of these formats as date-time values and can perform date-time arithmetic using its built-in functions like `date()`, `time()`, `datetime()`, `julianday()`, and `strftime()`. This allows you to format, extract, and calculate dates and times for storage and retrieval in an SQLite database.
-
 When using SQLite, you would typically:
 
 - Store the date and time as a string in the ISO8601 format ("YYYY-MM-DD HH:MM:SS").
 - Use SQLite's date and time functions to manipulate and retrieve the date and time in the desired format.
-
-Here's an example of how you might store and retrieve a date-time value in SQLite:
 
 ```sql
 -- Create a table with a TEXT column for date-time
@@ -588,22 +584,83 @@ SELECT name, strftime('%Y-%m-%d %H:%M', event_time) as formatted_time FROM event
 
 
 ## What are attribute constraints, and explain them?
+
+- Rules applied to table columns to enforce data integrity and to ensure the accuracy and reliability of the data within the database. 
+- Defined when a table is created or altered 
+- Restrict the type of data that can be inserted into a column.  
+- Examples:
+  1. **NOT NULL**: This constraint ensures that a column cannot have a NULL value. It must always have a value, which means that you cannot insert a new record, or update a record without adding a value to this column.
+  2. **DEFAULT**: The DEFAULT constraint provides a default value for a column when no value is specified. If a new record does not include a value for this column, the DEFAULT value is inserted.
+  3. **UNIQUE**: The UNIQUE constraint ensures that all values in a column are different. This constraint allows for the value NULL (unless combined with NOT NULL), but otherwise, no two rows can have the same value in this column.
+  4. **PRIMARY KEY**: A PRIMARY KEY constraint is a combination of NOT NULL and UNIQUE. It uniquely identifies each record in a table. Primary keys must contain unique values, and cannot contain NULL values. A table can have only one primary key, which may consist of single or multiple columns.
+  5. **CHECK**: The CHECK constraint ensures that all values in a column satisfy a specific condition. It is used to limit the value range that can be placed in a column. If a value that does not meet the condition is inserted into the column, the action is aborted.
+  6. **FOREIGN KEY**: A FOREIGN KEY is a key used to link two tables together. A FOREIGN KEY in one table points to a PRIMARY KEY in another table. The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+  7. **INDEX**: While not a constraint, an index is used to speed up the retrieval of data from the table. It is created on columns that are used frequently to access data, such as those in a WHERE clause.
+
 [Back to TOC](#SQL-Questions)
 
 
 ## What is the difference between inner join and left outer join?
-[Back to TOC](#SQL-Questions)
+### INNER JOIN
+- An INNER JOIN returns only the rows that have matching values in both tables.
+- If a row in the first table does not have a corresponding row with a matching key in the second table, that row will not appear in the result set.
+- The result set of an INNER JOIN contains only the intersection of the two tables, excluding the non-matching rows from either table.
 
+### LEFT OUTER JOIN (or simply LEFT JOIN)
+- A LEFT OUTER JOIN returns all the rows from the left table (the first table), and the matched rows from the right table (the second table).
+- If there are no matches in the right table, the result will still include the rows from the left table, with NULL values in the columns from the right table.
+- The result set of a LEFT OUTER JOIN includes all records from the left table and the intersected records from the right table, plus rows from the left table with NULLs in place of values from the right table where there is no match.
 
-## What is the difference between UNION and UNION ALL?
+```
+INNER JOIN:
+Table A   Table B
+| id |    | id |
+|----|    |----|
+| 1  |    | 1  |
+| 2  |    | 3  |
+| 3  |    | 4  |
+Result: Rows with id 1 and 3 (the intersection)
+
+LEFT OUTER JOIN:
+Table A   Table B
+| id |    | id |
+|----|    |----|
+| 1  |    | 1  |
+| 2  |    | 3  |
+| 3  |    | 4  |
+Result: Rows with id 1, 2, and 3. Row with id 2 has NULLs for Table B's columns.
+```
+
 [Back to TOC](#SQL-Questions)
 
 
 ## When should one use a CTE over a subquery?
+Common Table Expressions (CTEs)
+- **Readability**: more readable and organized than subqueries.
+- **Efficiency**: can be referenced multiple times within a single query, while subqueries can only be referenced once. This can make CTEs more efficient, as they can reduce the number of times the same query needs to be executed.
+- **Query Length**: Because CTEs can continue to be referenced multiple times throughout the query, they can also cut down on query length. 
+- **Avoid Bugs**: SQL queries that might look impressive but take scrolling and scrolling and scrolling with sub-queries here and there and everywhere become ripe for bugs and headaches. CTEs can help with this mess.
+- **Simplifying Complex Queries**: When you write a query, it is easier to break down a complex query into smaller pieces using CTE.
+- **Recursive Capability**: CTEs can be recursive: A CTE can run recursively, which a subquery cannot. This makes it especially well-suited to tree structures, in which information in a given row is based on the information from the previous row(s).
+ 
 [Back to TOC](#SQL-Questions)
 
 
 ## What are window functions?
+Perform calculations across a set of rows that are related to the current row. Unlike standard aggregate functions, which collapse the rows into a single output row, window functions retain the individual rows while still allowing for aggregations, rankings, and other calculations over a defined "window" of rows.
+
+This "window" is determined by the `OVER()` clause, which specifies how the rows are partitioned and ordered for the calculation. The window defined by the `OVER()` clause can include rows from the entire table, partitioned subsets of rows, or a frame of rows surrounding the current row.
+
+Window functions can be used for a wide range of operations, such as:
+
+1. **Aggregations**: Calculate aggregate values (such as `SUM`, `AVG`, `MIN`, `MAX`, `COUNT`) over a window of rows without collapsing them into a single output row. For example, you can calculate a running total or a moving average within a partition.
+
+2. **Ranking**: Assign a rank to each row within a partition based on a specified order. Common ranking functions include `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, and `NTILE()`. For instance, you can assign a sales rank within each region.
+
+3. **Row Navigation**: Access data from other rows relative to the current row without using a self-join. Functions like `LEAD()` and `LAG()` let you look ahead or behind within the same result set to compare current row values with those of preceding or following rows.
+
+4. **Cumulative Distributions**: Calculate cumulative distributions or percentiles, such as `CUME_DIST()` and `PERCENT_RANK()`, to understand the relative standing of a value within a dataset.
+
 [Back to TOC](#SQL-Questions)
 
 
