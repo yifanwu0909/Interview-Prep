@@ -37,6 +37,10 @@ Based on the topics, here's a rearranged Table of Contents grouped by similarity
 
 
 
+
+
+
+
 ## OOP - Python
 In Python, everything is an object, including numbers, strings, functions, and classes. This means that each entity in Python has attributes and methods associated with it, which define its properties and behaviors.   
 [Back to TOC](#Python-Questions)    
