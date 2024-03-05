@@ -76,6 +76,8 @@ BCNF:- Boy Codd’s Normal form is a strong representation of 3NF.
 ## Explain Denormalisation?
 The database optimization technique in which we add data(redundant)  to the table(s) is called denormalization. The technique is useful as it helps to reduce the costly joins in the database.
 
+OLAP are databases intended for online analytical processing, while OLTP are databases intended for online transaction processing. Denormalize the data when it falls under OLAP operations and normalize when OLTP.
+
 [Back to TOC](#SQL-Questions)
 
 
