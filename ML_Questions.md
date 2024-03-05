@@ -1,27 +1,36 @@
 # ML Questions
 
+## Machine Learning Concepts
 1. [Bias & Variance Trade Off](#bias--variance-trade-off)
    - [Definition](#definition)
    - [Bias](#bias)
    - [Variance](#variance)
 2. [Techniques for Reducing Variance](#techniques-for-reducing-variance)
 3. [Techniques for Reducing Bias](#techniques-for-reducing-bias)
+10. [Bagging vs Boosting](#bagging-vs-boosting)
+36. [What is the difference between Parametric and Non Parametric Algorithms?](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
+32. [What is maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
+33. [What is linear discriminant analysis?](#what-is-linear-discriminant-analysis)
+
+## Data Preparation and Feature Engineering
 4. [Data Cleaning](#data-cleaning)
 5. [Handle Missing Data](#handle-missing-data)
 6. [Label Imbalance](#label-imbalance)
 7. [How to Feature Selection](#how-to-feature-selection)
-8. [Procedure for Hyperparameter Tuning](#procedure-for-hyperparameter-tuning)
-9. [Improve Poor Model Performance](#improve-poor-model-performance)
-10. [Bagging vs Boosting](#bagging-vs-boosting)
-11. [How does one Collect Data and Prepare Dataset for Training?](#how-does-one-collect-data-and-prepare-dataset-for-training)
 12. [Why Normalization?](#why-normalization)
 13. [Too Many Categories in Categorical Features](#too-many-categories-in-categorical-features)
-14. [Would an Additional Feature Improve GBM or Logistic Regression More?](#would-an-additional-feature-improve-gbm-or-logistic-regression-more)
 15. [Feature Engineering](#feature-engineering)
-16. [Lasso L1 and Ridge L2](#lasso-and-ridge)
+34. [Identifying Data Mismatch](#identifying-data-mismatch)
+35. [Addressing Data Mismatch](#addressing-data-mismatch)
+
+## Model Evaluation and Performance Improvement
+8. [Procedure for Hyperparameter Tuning](#procedure-for-hyperparameter-tuning)
+9. [Improve Poor Model Performance](#improve-poor-model-performance)
 17. [AUC and ROC](#auc-and-roc)
 18. [F1 Score](#what-is-the-intuition-behind-the-f1-score)
-19. [How would you Build a Bank Fraud Detection Model?](#how-would-you-build-a-bank-fraud-detection-model)
+16. [Lasso L1 and Ridge L2](#lasso-and-ridge)
+
+## Deep Learning and Neural Networks
 20. [CNN](#cnn)
     - [Convolution Layer](#convolution-layer)
     - [Pooling Layer](#pooling-layer)
@@ -31,20 +40,25 @@
 22. [Exploding Gradient](#exploding-gradient)
 23. [Resnet](#resnet)
 24. [MobileNet](#mobilenet)
-25. [Keras vs Tensorflow vs Pytorch](#keras-vs-tensorflow-vs-pytorch)
-26. [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
+
+## Ensemble Methods and Comparisons
 27. [Xgboost vs Random Forest](#difference-between-xgboost-and-random-forest)
 28. [Random Forest VS Decision Tree](#random-forest-vs-decision-tree)
 29. [How to Prune Decision Tree](#how-to-prune-decision-tree)
-30. [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
+
+## Specific Models and Algorithms
+14. [Would an Additional Feature Improve GBM or Logistic Regression More?](#would-an-additional-feature-improve-gbm-or-logistic-regression-more)
+19. [How would you Build a Bank Fraud Detection Model?](#how-would-you-build-a-bank-fraud-detection-model)
 31. [How do you interpret linear regression coefficients?](#how-do-you-interpret-linear-regression-coefficients)
-32. [What is maximum likelihood estimation?](#what-is-maximum-likelihood-estimation)
-33. [What is linear discriminant analysis?](#what-is-linear-discriminant-analysis)
-34. [Identifying Data Mismatch](#identifying-data-mismatch)
-35. [Addressing Data Mismatch](#addressing-data-mismatch)
-36. [What is the difference between Parametric and Non Parametric Algorithms?](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
 37. [Model design: object detection](#Model-design-object-detection)
     - [How to make it efficient?](#make-it-efficient)
+
+## Miscellaneous Topics
+11. [How does one Collect Data and Prepare Dataset for Training?](#how-does-one-collect-data-and-prepare-dataset-for-training)
+25. [Keras vs Tensorflow vs Pytorch](#keras-vs-tensorflow-vs-pytorch)
+26. [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
+30. [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
+
 
 
 ## Bias & Variance Trade Off
