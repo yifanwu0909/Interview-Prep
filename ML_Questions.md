@@ -35,6 +35,8 @@
 - [F1 Score](#what-is-the-intuition-behind-the-f1-score)
 - [Type I vs Type II error](#What-is-the-difference-between-a-Type-I-and-Type-II-error)
 - [Lasso L1 and Ridge L2](#lasso-and-ridge)
+- [Entropy vs Information Gain](#What-is-the-difference-between-Entropy-and-Information-Gain)
+- [Test the effectiveness of an ML model](#What-evaluation-approaches-would-you-use-to-gauge-the-effectiveness-of-an-ML-model)
 
 ## Deep Learning and CNN
 - [CNN](#cnn)
@@ -910,14 +912,39 @@ In practice, there's often a trade-off between minimizing Type I and Type II err
 
 [Back to TOC](#ML-Questions)
 
+## What is the difference between Entropy and Information Gain?
+Entropy is the average rate at which information is produced by a stochastic source of data. It’s an indicator of how dirty your data is. It decreases as you reach closer to the leaf node.
+
+The information gain is the amount of information gained about a random variable or signal from observing another random variable. It’s based on the decrease in entropy after a dataset is split on an attribute. It keeps on increasing as you get closer to the leaf node.
+
+Entropy and Information Gain are concepts from information theory that are commonly used in the context of machine learning, particularly in decision tree algorithms. Here's a comparison of the two:
+
+### Entropy
+- **Definition**: Entropy is a measure of the amount of uncertainty or disorder in a set of data. In the context of machine learning, it quantifies the impurity or randomness in the dataset.
+- **Range**: Entropy ranges from 0 to \( \log_2(N) \), where 0 indicates no uncertainty (all elements belong to a single class), and \( \log_2(N) \) indicates maximum uncertainty (elements are evenly distributed across all classes).
+- **Usage**: In decision trees, entropy is used to determine the homogeneity of a sample. If the sample is completely homogeneous, the entropy is zero, and if the sample is an equally divided it has entropy of one.
+
+### Information Gain
+- **Definition**: Information Gain measures the reduction in entropy or impurity in the dataset after splitting it based on an attribute. It is used to decide which attribute to split on at each step in the construction of a decision tree.
+- **Range**: Information Gain ranges from 0 to 1, where 0 indicates no reduction in entropy (the attribute does not provide any information about the class), and 1 indicates complete separation (the attribute perfectly divides the dataset into classes).
+- **Usage**: In decision trees, Information Gain is used to select the attribute that best separates the classes, thus gaining the most information about the dataset for that split.
+
+### Summary
+- **Entropy** is a measure of the disorder or unpredictability in the dataset.
+- **Information Gain** is the measure of the change in entropy when the dataset is split on an attribute; it's the amount of uncertainty reduced after a dataset is split on an attribute.
+- **Relationship**: Information Gain is calculated based on the change in entropy before and after a dataset is split on an attribute. Therefore, Information Gain is directly dependent on entropy.
+
+In decision tree algorithms like ID3 and C4.5, Information Gain is often used as a criterion for choosing the attribute that will best separate the data into classes, thereby creating branches in the tree.
+
+[Back to TOC](#ML-Questions)
 
 
+## What evaluation approaches would you use to gauge the effectiveness of an ML model?
+- Split the dataset into training and test sets
+- Use a cross-validation technique to segment the dataset
+- Implement performance metrics like accuracy and the F1 score
 
-
-
-
-
-
+[Back to TOC](#ML-Questions)
 
 
 
