@@ -77,11 +77,12 @@ An error due to complexity in the learning algorithm. In variance, your data get
 ## Techniques for Reducing Variance
 1. Add more data
 2. Add penalties(L1 and L2)
-3. Early stopping and drop out
-4. Feature selection 
-5. Decrease model size
-6. Modify input features based on insights from error analysis
-7. Modify model architecture
+3. Cross-validation
+4. Early stopping and drop out
+5. Feature selection 
+6. Decrease model size
+7. Modify input features based on insights from error analysis
+8. Modify model architecture
 
 [Back to TOC](#ML-Questions)
 
