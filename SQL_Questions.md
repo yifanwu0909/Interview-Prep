@@ -30,7 +30,30 @@
 - [SQL View?](#What-is-an-sql-View)
 - [DDL, DQL, DML, DCL](#DDL-DQL-DML-DCL)
 
-
+1. [General Information about SQL](#general-information-about-sql)
+    - [What is SQL?](#what-is-sql)
+    - [What are the different flavors of SQL?](#what-are-the-different-flavors-of-sql)
+    - [What is a primary key?](#what-is-a-primary-key)
+2. [Relational Databases and How They Work](#relational-databases-and-how-they-work)
+    - [What are the top RDBMS engines?](#what-are-the-top-rdbms-engines)
+    - [How is an RDBMS different from a No-SQL database?](#how-is-an-rdbms-different-from-a-no-sql-database)
+3. [SQL Sublanguages and Their Main Keywords](#sql-sublanguages-and-their-main-keywords)
+    - [What do DDL, DCL, and DML stand for?](#what-do-ddl-dcl-and-dml-stand-for)
+    - [Give examples of commands for each.](#give-examples-of-commands-for-each)
+4. [Data Types and How SQL Handles It](#data-types-and-how-sql-handles-it)
+    - [What are the common data types in SQL?](#what-are-the-common-data-types-in-sql)
+    - [Does an SQLite database support date time objects?](#does-an-sqlite-database-support-date-time-objects)
+5. [Attribute Constraints](#attribute-constraints)
+    - [What are attribute constraints, and explain them?](#what-are-attribute-constraints-and-explain-them)
+6. [Types of JOINs](#types-of-joins)
+    - [What is the difference between inner join and left outer join?](#what-is-the-difference-between-inner-join-and-left-outer-join)
+    - [What is the difference between UNION and UNION ALL?](#what-is-the-difference-between-union-and-union-all)
+7. [Aggregation and Rollup Functions](#aggregation-and-rollup-functions)
+    - [When should one use a CTE over a subquery?](#when-should-one-use-a-cte-over-a-subquery)
+    - [What are window functions?](#what-are-window-functions)
+8. [Knowledge of Various SQL Functions](#knowledge-of-various-sql-functions)
+    - [What is the difference between WHERE and HAVING?](#what-is-the-difference-between-where-and-having)
+    - [What does the COALESCE function do?](#what-does-the-coalesce-function-do)
 
 ## Explain Normalization?
 Normalization is a method of organization of the data in the database to minimize redundancy from a set of relations. The concept of Normal forms is used to perform normalization on a relation. 
@@ -385,5 +408,99 @@ A view is a virtual table whose contents are obtained from an existing table or 
 
 [Back to TOC](#SQL-Questions)
 
+
+## What is SQL?
+SQL, which stands for Structured Query Language, is a standardized programming language used for managing and manipulating relational databases. It enables users to perform various operations on a database, such as querying data, updating records, and defining and modifying the structure of database objects. SQL is widely used because of its ability to efficiently query large data sets across multiple tables and its support for a wide range of database systems, including MySQL, PostgreSQL, SQL Server, Oracle, and SQLite, among others.
+
+Key operations performed using SQL include:
+
+- **Data Querying**: Retrieving data from databases using the `SELECT` statement, often combined with various clauses to filter and sort data.
+- **Data Manipulation**: Inserting (`INSERT`), updating (`UPDATE`), and deleting (`DELETE`) records in a database to manage the data.
+- **Data Definition**: Creating (`CREATE`), altering (`ALTER`), and dropping (`DROP`) database objects like tables, views, indexes, and stored procedures.
+- **Data Control**: Managing access to the database and its objects through permissions using commands like `GRANT` and `REVOKE`.
+
+SQL plays a crucial role in both web and software development that involves the storage, retrieval, and manipulation of data in relational database management systems (RDBMS).
+
+[Back to TOC](#SQL-Questions)
+
+
+## What are the different flavors of SQL?
+SQL, or Structured Query Language, is the standard language for dealing with relational databases. However, various database management systems (DBMS) implement their version of SQL, often adding extensions or modifications to standard SQL to enhance functionality or performance. These variations are sometimes referred to as "flavors" of SQL. Here are some of the most widely used flavors:
+
+1. **MySQL**: One of the most popular open-source relational database management systems. MySQL is widely used in web applications and is a part of the LAMP stack (Linux, Apache, MySQL, PHP/Python/Perl).
+
+2. **PostgreSQL**: An advanced, open-source object-relational database system known for its robustness, scalability, and support for advanced data types and functionalities, such as JSON storage and geographic data (GIS).
+
+3. **SQLite**: A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world, found in various applications, from browsers to mobile apps.
+
+4. **Oracle Database (Oracle DB)**: A multi-model database management system produced and marketed by Oracle Corporation. It is known for its feature-rich, enterprise-scale capabilities, including support for pluggable databases and multi-tenancy.
+
+5. **Microsoft SQL Server (MSSQL)**: A relational database management system developed by Microsoft. It is known for its integration with the .NET framework, offering a range of tools for business intelligence, reporting, and in-depth analytics.
+
+6. **IBM DB2**: A family of data management products, including database servers, developed by IBM. It supports both relational and object-relational models and is known for its performance on large systems.
+
+7. **MariaDB**: A fork of MySQL, created by the original developers of MySQL after concerns over Oracle's acquisition of MySQL. MariaDB is intended to remain free under the GNU GPL and aims to maintain compatibility with MySQL, ensuring a drop-in replacement capability.
+
+8. **SAP HANA**: An in-memory, column-oriented, relational database management system developed and marketed by SAP SE. Its primary function as a database server is to store and retrieve data as requested by the applications, with an emphasis on speed and advanced analytics.
+
+Each of these SQL flavors has its syntax nuances, proprietary functions, and extensions beyond the standard SQL. However, the core of SQL—the SELECT, INSERT, UPDATE, DELETE statements, and the concept of querying with JOINs—remains consistent across these variations, allowing skills in one flavor to be somewhat transferable to another with some learning and adjustments.
+
+[Back to TOC](#SQL-Questions)
+
+
+## What is a primary key?
+[Back to TOC](#SQL-Questions)
+
+
+## What are the top RDBMS engines?
+[Back to TOC](#SQL-Questions)
+
+
+## How is an RDBMS different from a No-SQL database?
+[Back to TOC](#SQL-Questions)
+
+
+## What do DDL, DCL, and DML stand for?
+[Back to TOC](#SQL-Questions)
+
+
+## Give examples of commands for each.
+[Back to TOC](#SQL-Questions)
+
+
+## What are the common data types in SQL?
+[Back to TOC](#SQL-Questions)
+
+
+## Does an SQLite database support date time objects?
+[Back to TOC](#SQL-Questions)
+
+
+## What are attribute constraints, and explain them?
+[Back to TOC](#SQL-Questions)
+
+
+## What is the difference between inner join and left outer join?
+[Back to TOC](#SQL-Questions)
+
+
+## What is the difference between UNION and UNION ALL?
+[Back to TOC](#SQL-Questions)
+
+
+## When should one use a CTE over a subquery?
+[Back to TOC](#SQL-Questions)
+
+
+## What are window functions?
+[Back to TOC](#SQL-Questions)
+
+
+## What is the difference between WHERE and HAVING?
+[Back to TOC](#SQL-Questions)
+
+
+## What does the COALESCE function do?
+[Back to TOC](#SQL-Questions)
 
 
