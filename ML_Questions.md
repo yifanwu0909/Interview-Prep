@@ -57,13 +57,14 @@
 - [Model design: object detection](#Model-design-object-detection)
     - [How to make it efficient?](#make-it-efficient)
 - [Optimize routes for gas technicians](#Optimize-routes-for-gas-technicians)
+- [Write a program to retrieve log data in an optimal way](#Write-a-program-to-retrieve-log-data-in-an-optimal-way)
 
 ## Miscellaneous Topics
 - [Unreasonable Effectiveness of Data](#unreasonable-effectiveness-of-data)
 - [Maximum likelihood estimation](#what-is-maximum-likelihood-estimation)
 - [LDA: Linear discriminant analysis](#what-is-linear-discriminant-analysis)
 - [Parametric vs Non Parametric Algorithms](#what-is-the-difference-between-parametric-and-non-parametric-algorithms)
-- [Write a program to retrieve log data in an optimal way](#Write-a-program-to-retrieve-log-data-in-an-optimal-way)
+
 
 
 
