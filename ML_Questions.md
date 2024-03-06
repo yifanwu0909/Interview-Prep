@@ -158,25 +158,36 @@ Three strategies for handling missing data:
 
 
 ## Procedure for Hyperparameter Tuning
-In **grid search**, a predefined set of hyperparameters are evaluated exhaustively, while in random search, hyperparameters are selected randomly from a predefined search space. These approaches can be inefficient, especially for models that have a large number of hyperparameters or ones that take a long time to train.
+In **grid search**, a predefined set of hyperparameters are evaluated exhaustively: can be inefficient. 
 
-**Bayesian optimization** leverages a probabilistic model to approximate the relationship between hyperparameters and the model performance, using an acquisition function that guides the search by balancing exploration (sampling new hyperparameters) and exploitation (evaluating promising hyperparameters).
+**Bayesian optimization**: uses a probabilistic model to simulate the relationship between hyperparameters and the model performance: using an acquisition function that guides the search by balancing exploration (sampling new hyperparameters) and exploitation (evaluating promising hyperparameters). $\color{red}{\textsf{complex models and large datasets}}$
 
-In a **genetic algorithm**, models represent combinations of hyperparameters ("genes"). The process involves selecting the fittest models from each generation in an iterative manner. The surviving models undergo modification ("mutation") or recombination ("crossover") of their hyperparameters.
-Bayesian optimization and genetic algorithms can be effective in finding hyperparameter values for complex models and large datasets.
+**genetic algorithm**, models represent combinations of hyperparameters ("genes"). The process involves selecting the fittest models from each generation in an iterative manner. The surviving models undergo modification ("mutation") or recombination ("crossover") of their hyperparameters. $\color{red}{\textsf{complex models and large datasets}}$
 
 [Back to TOC](#ML-Questions)
 
 
 ## Improve Poor Model Performance
 1. **Overfitting or underfitting?**
-2. **Define the problem**: Clearly define what is considered as "poor performance". Is the model compiling? Are there runtime issues? Is the loss not converging, or simply too high? Are model predictions outside of expected bounds?
-3. **Visualize the data**: Plot the data to check for patterns, outliers, corruption. Determine whether the dataset is being sampled properly, or if there are any ingestion issues. Check the data before and after preprocessing. For instance, missing values might be too pervasive, handled incorrectly, or numerical features are not properly normalized.
-4. **Step through the model**: Inspect the model state at each layer for several steps. Print the outputs of all tensor operations, including outputs of activation functions. It is common to discover problems such as incorrect tensor operations, outliers, NaNs, and improper inputs at this stage.
-5. **Loss**: Verify the loss computation is correct. Check the learning rate, gradient computation, and layer weights. After several steps, verify optimizer behaviors like momentum.
-6. **Simplify the model**: If model performance is still difficult to troubleshoot, simplify all components of the model. Ingest fewer layers, and use a simple optimizer like SGD. Use fewer parameters, ensure the optimizer converges. Once the model is converging and metrics are moving in the right direction, incrementally add complexity back and verify once more.
-7. **Debugging with TensorBoard**: Use TensorBoard to visualize the training process, such as loss over time, to help identify issues with the model. For instance, if the model shows signs of overfitting, apply regularization or early stopping.
-8. **Model tuning**: To get better performance, experiment with various components of the model:
+2. **Define the problem**: 
+	- Is the model compiling?
+ 	- Are there runtime issues?
+	- Is the loss not converging,
+	- or simply too high?
+	- Are model predictions outside of expected bounds?
+3. **Visualize the data**:
+	- Plot the data to check for patterns, outliers, corruption.
+	- Determine whether the dataset is being sampled properly,
+	- or if there are any ingestion issues.
+	- Check the data before and after preprocessing
+		 - too much missing values
+	  	 - handled incorrectly,
+	    	 - or numerical features are not properly normalized.
+5. **Step through the model**: Inspect the model state at each layer for several steps. Print the outputs of all tensor operations, including outputs of activation functions. It is common to discover problems such as incorrect tensor operations, outliers, NaNs, and improper inputs at this stage.
+6. **Loss**: Verify the loss computation is correct. Check the learning rate, gradient computation, and layer weights. After several steps, verify optimizer behaviors like momentum.
+7. **Simplify the model**: If model performance is still difficult to troubleshoot, simplify all components of the model. Ingest fewer layers, and use a simple optimizer like SGD. Use fewer parameters, ensure the optimizer converges. Once the model is converging and metrics are moving in the right direction, incrementally add complexity back and verify once more.
+8. **Debugging with TensorBoard**: Use TensorBoard to visualize the training process, such as loss over time, to help identify issues with the model. For instance, if the model shows signs of overfitting, apply regularization or early stopping.
+9. **Model tuning**: To get better performance, experiment with various components of the model:
 	- Feature selection
 	- Feature preprocessing
 	- Layers
