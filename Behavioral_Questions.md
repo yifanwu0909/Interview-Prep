@@ -2,8 +2,8 @@
 
 1. [Tell me about yourself](#tell-me-about-yourself)
 2. [Tell me about a project at BDO](#tell-me-about-a-project-at-bdo)
-3. [Tell me how you would handle a difficult situation?](#tell-me-how-you-would-handle-a-difficult-situation)
-4. [Biggest challenge at BDO](#biggest-challenge-at-bdo)
+3. [Biggest challenge at BDO](#biggest-challenge-at-bdo)
+4. [Tell me how you would handle a difficult situation?](#tell-me-how-you-would-handle-a-difficult-situation)
 5. [Why do you want to leave your job?](#why-do-you-want-to-leave-your-job)
 6. [What is your biggest achievement?](#what-is-your-biggest-achievement)
 7. [What's your ideal work environment?](#whats-your-ideal-work-environment)
