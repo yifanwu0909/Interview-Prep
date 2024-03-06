@@ -72,9 +72,12 @@
 ### Definition
 Of the changes you could make to most learning algorithms, there are some that reduce bias errors but at the cost of increasing variance, and vice versa.
 ### Bias
-An error that occurs due to overly simplistic assumptions or erroneous assumptions in the learning algorithm. If you use bias, it can lead to the model underfitting your data with low predictive accuracy.
+- An error due to overly simplistic/erroneous assumptions. 
+- Model underfitting: low predictive accuracy.
 ### Variance
-An error due to complexity in the learning algorithm. In variance, your data gets highly sensitive to high degrees of variation, leading your model to overfit the data. You'll end up carrying noise from your training data for your model to be useful for your test data. 
+- An error due to complexity in the learning algorithm. 
+- highly sensitive to high degrees of variation: overfit the data. 
+- carrying noise from your training data. 
 
 [Back to TOC](#ML-Questions)
 
@@ -140,9 +143,16 @@ Three strategies for handling missing data:
 
 
 ## How to Feature Selection
-1. **Filter**:  statistical tests such as ANOVA, mutual information, information gain, chi-squared test, correlation coefficient, and others.
-2. **Business Insight**
-3. **Algorithmic**: the Random Forest method can do feature importance. An alternative approach incorporates L1 regularization, shrink less informative features weight to 0.
+1. **Filter**:
+   	- correlation coefficient
+	- statistical tests such as ANOVA
+	- mutual information
+	- information gain
+ 	- chi-squared test
+3. **Business Insight**
+4. **Algorithmic**:
+	- Random Forest: feature importance. 
+ 	- L1 regularization: shrink less informative features weight to 0.
 
 [Back to TOC](#ML-Questions)
 
