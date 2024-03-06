@@ -178,11 +178,11 @@ In **grid search**, a predefined set of hyperparameters are evaluated exhaustive
 3. **Visualize the data**:
 	- Plot the data to check for patterns, outliers, corruption.
 	- Determine whether the dataset is being sampled properly,
-	- or if there are any ingestion issues.
+	- any ingestion issues.
 	- Check the data before and after preprocessing
-		 - too much missing values
-	  	 - handled incorrectly,
-	    	 - or numerical features are not properly normalized.
+		- too much missing values
+	  	- handled incorrectly
+		- numerical features are not properly normalized
 5. **Step through the model**: Inspect the model state at each layer for several steps. Print the outputs of all tensor operations, including outputs of activation functions. It is common to discover problems such as incorrect tensor operations, outliers, NaNs, and improper inputs at this stage.
 6. **Loss**: Verify the loss computation is correct. Check the learning rate, gradient computation, and layer weights. After several steps, verify optimizer behaviors like momentum.
 7. **Simplify the model**: If model performance is still difficult to troubleshoot, simplify all components of the model. Ingest fewer layers, and use a simple optimizer like SGD. Use fewer parameters, ensure the optimizer converges. Once the model is converging and metrics are moving in the right direction, incrementally add complexity back and verify once more.
