@@ -7,6 +7,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+label_counts = df['target'].value_counts()
+missing_percentage = df.isnull().mean() * 100
+#or sort it
+missing_percentage = df.isnull().mean().round(4).mul(100).sort_values(ascending=False)
+df.dtypes
+df.info()
+df.dtypes.to_dict()
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
