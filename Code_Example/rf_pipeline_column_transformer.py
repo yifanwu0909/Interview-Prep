@@ -7,6 +7,17 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 
+# Load dataset
+df = pd.read_csv('path/to/your/dataset.csv')
+X = df.drop('price', axis=1)
+y = df['price']
+
+# Load the Iris dataset
+# from sklearn.datasets import load_iris
+# iris = load_iris()
+# X = pd.DataFrame(iris.data, columns=iris.feature_names)
+# y = iris.target
+
 label_counts = df['target'].value_counts()
 missing_percentage = df.isnull().mean() * 100
 #or sort it
