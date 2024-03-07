@@ -6,8 +6,42 @@ from sklearn.preprocessing import StandardScaler
 
 # Load dataset
 df = pd.read_csv('path/to/your/dataset.csv')
+X = df.drop('price', axis=1)
+y = df['price']
 
-# Split into features and target
+label_counts = df['target'].value_counts()
+missing_percentage = df.isnull().mean() * 100
+#or sort it
+missing_percentage = df.isnull().mean().round(4).mul(100).sort_values(ascending=False)
+df.dtypes
+df.info()
+df.dtypes.to_dict()
+
+num_pipeline = Pipeline(steps=[
+    ('impute', SimpleImputer(strategy='mean')),
+    ('scale', StandardScaler())
+])
+
+cat_pipeline = Pipeline(steps=[
+    ('impute', SimpleImputer(strategy='constant', fill_value=0)),
+    ('encode', OneHotEncoder(handle_unknown='ignore'))
+])
+
+num_columns = df.select_dtypes(include=['float', 'int']).columns
+cat_columns = df.select_dtypes(include=['object']).column
+
+preprocessor = ColumnTransformer(transformers=[
+    ('num', num_pipeline, num_columns),
+    ('cat', cat_pipeline, cat_columns),
+    ('drop_cat_feature_drop', 'drop', ['cat_feature_drop'])  # Dropping the column
+])
+
+# Final pipeline including the classifier
+pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('classifier', RandomForestClassifier(random_state=42))
+])
+
 X = df.drop('price', axis=1)
 y = df['price']
 
