@@ -43,6 +43,14 @@ pipeline = Pipeline(steps=[
 # Split the dataset
 X_train, X_test, y_train, y_test = train_test_split(X_df, y, test_size=0.2, random_state=42)
 
+# Train the model
+pipeline.fit(X_train, y_train)
+# Evaluate the model
+print(f"Model accuracy on test set: {pipeline.score(X_test, y_test):.4f}")
+# Define Stratified K-Fold cross-validation
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(pipeline, X_train, y_train, cv=skf, scoring='accuracy')
+
 ######################################### Bagging #########################################
 from sklearn.ensemble import BaggingClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -62,20 +70,15 @@ rf_model.fit(X_train, y_train)
 
 # Predict on the test set
 y_pred = rf_model.predict(X_test)
-###########################################################################################
-
-# Train the model
-pipeline.fit(X_train, y_train)
-
-cv_scores = cross_val_score(model_pipeline, X_trainval, y_trainval, cv=5, scoring='accuracy')
-
 # Evaluate the model
 print(f"Model accuracy on test set: {pipeline.score(X_test, y_test):.4f}")
 
 # Define Stratified K-Fold cross-validation
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(rf_model, X_train, y_train, cv=skf, scoring='accuracy')
+###########################################################################################
 
-scores = cross_val_score(pipeline, X_trainval, y_trainval, cv=skf, scoring='accuracy')
+
 print("Cross-validation scores:", scores)
 print("Mean accuracy:", scores.mean())
 print("Standard deviation of accuracy:", scores.std())
