@@ -15,6 +15,8 @@ y = df['price']
 # X = pd.DataFrame(iris.data, columns=iris.feature_names)
 # y = iris.target
 
+
+######################################################################################################### EDA #########################################################################################################
 label_counts = df['target'].value_counts()
 missing_percentage = df.isnull().mean() * 100
 #or sort it
@@ -22,6 +24,11 @@ missing_percentage = df.isnull().mean().round(4).mul(100).sort_values(ascending=
 df.dtypes
 df.info()
 df.dtypes.to_dict()
+
+# Split into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+#######################################################################################################################################################################################################################
+
 
 num_pipeline = Pipeline(steps=[
     ('impute', SimpleImputer(strategy='mean')),
@@ -42,20 +49,12 @@ preprocessor = ColumnTransformer(transformers=[
     ('drop_cat_feature_drop', 'drop', ['cat_feature_drop'])  # Dropping the column
 ])
 
-# Final pipeline including the classifier
-pipeline = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', RandomForestClassifier(random_state=42))
-])
 
+# Fit the preprocessor to the training data and transform it
+X_train_preprocessed = preprocessor.fit_transform(X_train)
 
-# Split into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Feature scaling
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+# Transform the test data (do not fit the preprocessor to the test data to avoid data leakage)
+X_test_preprocessed = preprocessor.transform(X_test)
 
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -71,12 +70,19 @@ model.compile(optimizer='adam',
               loss='mean_squared_error',
               metrics=['mean_absolute_error', 'mean_squared_error'])
 
-history = model.fit(X_train, y_train, epochs=100, validation_split=0.2, verbose=1)
+# Final pipeline including the classifier
+pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('model', model)
+])
 
-test_loss, test_mae, test_mse = model.evaluate(X_test, y_test, verbose=2)
+
+history = model.fit(X_train_preprocessed, y_train, epochs=100, validation_split=0.2, verbose=1)
+
+test_loss, test_mae, test_mse = model.evaluate(X_test_preprocessed, y_test, verbose=2)
 print(f"Test MAE: {test_mae}, Test MSE: {test_mse}")
 
-predictions = model.predict(X_test)
+predictions = model.predict(X_test_preprocessed)
 
 
 ####################################### Cross Validate ####################
@@ -95,16 +101,21 @@ fold_no = 1
 for train_index, val_index in kf.split(X):
     X_train, X_val = X[train_index], X[val_index]
     y_train, y_val = y[train_index], y[val_index]
+    
+    # Fit the preprocessor to the training data and transform it
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+    # Transform the test data (do not fit the preprocessor to the test data to avoid data leakage)
+    X_val_preprocessed = preprocessor.transform(X_val)
 
     model = create_model(input_shape=[X_train.shape[1]])
     
     print(f'Training on fold {fold_no}...')
     
     # Fit the model
-    model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_val, y_val))
+    model.fit(X_train_preprocessed, y_train, epochs=10, batch_size=32, validation_data=(X_val_preprocessed, y_val))
     
     # Optionally, evaluate the model
-    # scores = model.evaluate(X_val, y_val, verbose=0)
+    # scores = model.evaluate(X_val_preprocessed, y_val, verbose=0)
     # print(f'Score for fold {fold_no}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]}')
     
     fold_no += 1
