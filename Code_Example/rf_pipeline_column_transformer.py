@@ -16,9 +16,13 @@ y = df['price']
 # from sklearn.datasets import load_iris
 # iris = load_iris()
 # X = pd.DataFrame(iris.data, columns=iris.feature_names)
-# y = iris.target
+# y = pd.Categorical.from_codes(iris.target, iris.target_names)
 
-label_counts = df['target'].value_counts()
+# Split the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+
+label_counts = df['species'].value_counts()
 missing_percentage = df.isnull().mean() * 100
 #or sort it
 missing_percentage = df.isnull().mean().round(4).mul(100).sort_values(ascending=False)
@@ -36,13 +40,13 @@ cat_pipeline = Pipeline(steps=[
     ('encode', OneHotEncoder(handle_unknown='ignore'))
 ])
 
-num_columns = df.select_dtypes(include=['float', 'int']).columns
-cat_columns = df.select_dtypes(include=['object']).column
+num_columns = X.select_dtypes(include=['float', 'int']).columns
+cat_columns = X.select_dtypes(include=['object']).columns
 
 preprocessor = ColumnTransformer(transformers=[
     ('num', num_pipeline, num_columns),
     ('cat', cat_pipeline, cat_columns),
-    ('drop_cat_feature_drop', 'drop', ['cat_feature_drop'])  # Dropping the column
+    ('drop_cat_feature_drop', 'drop', ['sepal length (cm)'])  # Dropping the column
 ])
 
 # Final pipeline including the classifier
@@ -51,8 +55,6 @@ pipeline = Pipeline(steps=[
     ('classifier', RandomForestClassifier(random_state=42))
 ])
 
-# Split the dataset
-X_train, X_test, y_train, y_test = train_test_split(X_df, y, test_size=0.2, random_state=42)
 
 # Train the model
 pipeline.fit(X_train, y_train)
@@ -61,6 +63,10 @@ print(f"Model accuracy on test set: {pipeline.score(X_test, y_test):.4f}")
 # Define Stratified K-Fold cross-validation
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 scores = cross_val_score(pipeline, X_train, y_train, cv=skf, scoring='accuracy')
+
+print("Cross-validation scores:", scores)
+print("Mean accuracy:", scores.mean())
+print("Standard deviation of accuracy:", scores.std())
 
 ######################################### Bagging #########################################
 from sklearn.ensemble import BaggingClassifier
@@ -95,9 +101,11 @@ print(f"Model accuracy on test set: {pipeline.score(X_test, y_test):.4f}")
 # Define Stratified K-Fold cross-validation
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 scores = cross_val_score(pipeline, X_train, y_train, cv=skf, scoring='accuracy')
-###########################################################################################
-
 
 print("Cross-validation scores:", scores)
 print("Mean accuracy:", scores.mean())
 print("Standard deviation of accuracy:", scores.std())
+###########################################################################################
+
+
+
