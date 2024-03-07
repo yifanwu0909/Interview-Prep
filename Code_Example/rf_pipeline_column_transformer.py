@@ -43,6 +43,27 @@ pipeline = Pipeline(steps=[
 # Split the dataset
 X_train, X_test, y_train, y_test = train_test_split(X_df, y, test_size=0.2, random_state=42)
 
+######################################### Bagging #########################################
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# Initialize the base estimator
+base_estimator = DecisionTreeClassifier(max_features='sqrt', random_state=42)
+
+# Initialize the Bagging classifier with decision trees as base estimators
+# n_estimators: Number of trees in the forest
+# max_samples: The fraction of samples to draw from X to train each base estimator
+rf_model = BaggingClassifier(base_estimator=base_estimator,
+                             n_estimators=100,
+                             max_samples=0.8,
+                             bootstrap=True,
+                             random_state=42)
+rf_model.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = rf_model.predict(X_test)
+###########################################################################################
+
 # Train the model
 pipeline.fit(X_train, y_train)
 
