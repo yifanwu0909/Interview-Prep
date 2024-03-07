@@ -49,6 +49,17 @@ if __name__ == "__main__":
     print("Beginning Randomly Generated Weights: ")
     print(neural_network.synaptic_weights)
 
+    # Load dataset
+    # df = pd.read_csv('path/to/your/dataset.csv')
+    # X = df.drop('price', axis=1)
+    # y = df['price']
+    
+    # Load the Iris dataset
+    # from sklearn.datasets import load_iris
+    # iris = load_iris()
+    # X = pd.DataFrame(iris.data, columns=iris.feature_names)
+    # y = iris.target
+
     #training data consisting of 4 examples--3 input values and 1 output
     training_inputs = np.array([[0,0,1],
                                 [1,1,1],
