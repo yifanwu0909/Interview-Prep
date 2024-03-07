@@ -77,16 +77,24 @@ rf_model = BaggingClassifier(base_estimator=base_estimator,
                              max_samples=0.8,
                              bootstrap=True,
                              random_state=42)
-rf_model.fit(X_train, y_train)
+
+# Final pipeline including the classifier
+pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('classifier', rf_model)
+])
+
+# Train the model
+pipeline.fit(X_train, y_train)
 
 # Predict on the test set
-y_pred = rf_model.predict(X_test)
+y_pred = pipeline.predict(X_test)
 # Evaluate the model
 print(f"Model accuracy on test set: {pipeline.score(X_test, y_test):.4f}")
 
 # Define Stratified K-Fold cross-validation
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-scores = cross_val_score(rf_model, X_train, y_train, cv=skf, scoring='accuracy')
+scores = cross_val_score(pipeline, X_train, y_train, cv=skf, scoring='accuracy')
 ###########################################################################################
 
 
