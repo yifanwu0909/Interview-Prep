@@ -7,7 +7,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 
-# Load dataset
+######################################################################################################### Load dataset #########################################################################################################
+
 df = pd.read_csv('path/to/your/dataset.csv')
 X = df.drop('price', axis=1)
 y = df['price']
@@ -29,8 +30,8 @@ X.dtypes.to_dict()
 
 # Split into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-#######################################################################################################################################################################################################################
 
+######################################################################################################### Preprocessing ############################################################################################################
 
 num_pipeline = Pipeline(steps=[
     ('impute', SimpleImputer(strategy='mean')),
@@ -58,6 +59,8 @@ y_train_preprocessed = pd.get_dummies(y_train)
 # Transform the test data (do not fit the preprocessor to the test data to avoid data leakage)
 X_test_preprocessed = preprocessor.transform(X_test)
 y_test_preprocessed = pd.get_dummies(y_test)
+
+######################################################################################################### Model ############################################################################################################
 
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -90,7 +93,7 @@ print(f"Test MAE: {loss}, Test MSE: {accuracy}")
 predictions = model.predict(X_test_preprocessed)
 
 
-####################################### Cross Validate ####################
+#################################################################################################### Cross Validate #########################################################################################################################################
 
 def create_model(input_shape):
     model = tf.keras.Sequential([
