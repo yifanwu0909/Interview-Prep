@@ -9,7 +9,8 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 import pandas as pd
 
 
-# Load dataset
+######################################################################################################### Load dataset #########################################################################################################
+
 df = pd.read_csv('path/to/your/dataset.csv')
 X = df.drop('price', axis=1)
 y = df['price']
@@ -23,6 +24,8 @@ y = df['price']
 # Split the dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+######################################################################################################### EDA #########################################################################################################
+
 label_counts = y.value_counts()
 missing_percentage = X.isnull().mean() * 100
 #or sort it
@@ -30,6 +33,8 @@ missing_percentage = X.isnull().mean().round(4).mul(100).sort_values(ascending=F
 X.dtypes
 X.info()
 X.dtypes.to_dict()
+
+######################################################################################################### Preprocessing ############################################################################################################
 
 num_pipeline = Pipeline(steps=[
     ('impute', SimpleImputer(strategy='mean')),
@@ -56,6 +61,8 @@ pipeline = Pipeline(steps=[
     ('classifier', RandomForestClassifier(random_state=42))
 ])
 
+######################################################################################################### Model ############################################################################################################
+
 
 # Train the model
 pipeline.fit(X_train, y_train)
@@ -69,7 +76,7 @@ print("Cross-validation scores:", scores)
 print("Mean accuracy:", scores.mean())
 print("Standard deviation of accuracy:", scores.std())
 
-######################################### Bagging #########################################
+######################################################################################################## Bagging ########################################################################################################
 from sklearn.ensemble import BaggingClassifier
 from sklearn.tree import DecisionTreeClassifier
 
@@ -106,7 +113,6 @@ scores = cross_val_score(pipeline, X_train, y_train, cv=skf, scoring='accuracy')
 print("Cross-validation scores:", scores)
 print("Mean accuracy:", scores.mean())
 print("Standard deviation of accuracy:", scores.std())
-###########################################################################################
 
 
 
