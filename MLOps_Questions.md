@@ -11,6 +11,7 @@
 - [Train/Serve Skew](#train-or-serve-skew)
 
 ## MLOps and Deployment
+- [Rest API](#rest-api)
 - [MLOps tool: MLFlow/Google Kubeflow/TensorFlow/Azure/AWS](#features-of-each-mlops-tool)
 - [Create CI/CD Pipelines for ML](#how-to-create-cicd-pipelines-for-machine-learning)
 - [**Scale** ML Model](#how-would-you-scale-your-ml-model)
@@ -403,6 +404,38 @@ RUN python -m pip install --upgrade pip &&\
 
 
 [Back to TOC](#MLOps-Questions)    
+
+
+## REST API
+
+A REST API (Representational State Transfer Application Programming Interface) is a set of rules and conventions for building and interacting with web services. It allows different pieces of software, often running on different platforms and written in different languages, to communicate with each other over the internet.
+
+Here are some key concepts and principles of REST APIs:
+
+1. **Resources**: In REST, everything is considered a resource, which can be a document, an image, a temporal service (e.g., "today's weather in New York"), a collection of other resources, a non-virtual object (e.g., a person), and so on. Each resource is identified by a unique URI (Uniform Resource Identifier).
+
+2. **Stateless**: Each request from a client to a server must contain all the information the server needs to fulfill the request (authentication, payload, etc.). The server does not store any session information about the client.
+
+3. **Methods**: REST uses a set of standard HTTP methods, which are intended to perform specific actions on the resources. The most common HTTP methods are:
+   - `GET`: Retrieve a resource or a list of resources.
+   - `POST`: Create a new resource.
+   - `PUT`: Update an existing resource.
+   - `DELETE`: Remove a resource.
+   - `PATCH`: Apply a partial update to a resource.
+
+4. **Representations**: When a client requests a resource, the server sends the client a representation of the resource. This representation is typically in a format like JSON (JavaScript Object Notation) or XML (eXtensible Markup Language). The client can then modify the resource and send it back to the server.
+
+5. **Stateless Interactions**: Each request from the client to the server must contain all the information needed to understand the request, and cannot take advantage of any stored context on the server. Session state is therefore kept entirely on the client.
+
+6. **Uniform Interface**: REST APIs are designed to use a uniform set of operations (the HTTP methods mentioned above), which helps to decouple the client and server implementations. This means that, for example, any client that understands HTTP can interact with the REST API without needing to know anything about the underlying application.
+
+7. **Layered System**: REST allows for a layered system architecture where client and server cannot ordinarily tell whether they are connected directly to each other or if there are intermediaries between them.
+
+8. **Cacheable**: Responses must, implicitly or explicitly, define themselves as cacheable or not to prevent clients from getting outdated or inappropriate data in response to further requests.
+
+REST APIs are widely used in web services and are a key component of modern web development. They provide a simple and standardized way to exchange data between different systems and are particularly useful in microservices architectures, where different services need to communicate with each other over the network.
+
+[Back to TOC](#MLOps-Questions)   
 
 
 ## Data Archiving
