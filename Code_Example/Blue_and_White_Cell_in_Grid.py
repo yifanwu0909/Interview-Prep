@@ -1,8 +1,13 @@
-# Suppose you have an M x N grid, where each entry represents a cell with a color of either Blue or White. A A white cell will die if it is not connected to other white cells that are touching the border of the grid. Go through the grid and flip the color of white cells that will die to blue.
+# Suppose you have an M x N grid, where each entry represents a cell with a color of either Blue or White. 
+# A A white cell will die if it is not connected to other white cells that are touching the border of the grid. 
+# Go through the grid and flip the color of white cells that will die to blue.
   
 
-# 1. Identify the White Cells Connected to the Border: traverse the grid, Depth-First Search (DFS) from every white cell that is on the border. The goal is to mark all white cells connected to the border (either directly or through other white cells) as safe.
-# 2. Flip the Color of the Unsafe White Cells: After marking all the safe white cells, we traverse the grid again and flip the color of all white cells that are not marked as safe to blue.
+# 1. Identify the White Cells Connected to the Border: traverse the grid, Depth-First Search (DFS) from every white cell that is on the border. 
+# The goal is to mark all white cells connected to the border (either directly or through other white cells) as safe.
+
+# 2. Flip the Color of the Unsafe White Cells: After marking all the safe white cells, 
+# we traverse the grid again and flip the color of all white cells that are not marked as safe to blue.
 
 
 
