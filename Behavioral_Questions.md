@@ -88,7 +88,7 @@ I opted for a random forest model, a tree-based classification approach, which w
 
 
 ## Why do you want to leave your job?
-Unfortunately, like many others companies, my previous company faced significant challenges due to the post-pandemic economic hit. The business wasn't performing well: there was just not many new projects being signed and clients are delaying projects start time in many projects that DID get signed in the beginning, and there was this really noticeable decrease in billable projects that I can do. Since my role was heavily dependent on these projects, which accounting for 75% of my productivity metrics, I just do not have enough work to do and I'm as a result I'm just not learning anything. This situation directly impacted my ability to meet KPI, and as a result, the company had to make the difficult decision to downsize.
+Unfortunately, like many others companies, my previous company faced significant challenges due to the post-pandemic economic hit. The business wasn't performing well: there was just not many new projects being signed and clients are delaying projects start time in many projects that DID get signed in the beginning, and there was this really noticeable decrease in billable projects that I can do. Since my role was heavily dependent on these projects, which accounting for 75% of my productivity metrics, I just do not have enough work to do and I'm just not learning anything that could help me build my career. This situation directly impacted my ability to meet KPI, and as a result, the company had to make the difficult decision to downsize.
 
 [Back to TOC](#Behavioral-Questions)
 
