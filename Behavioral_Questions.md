@@ -88,12 +88,7 @@ I opted for a random forest model, a tree-based classification approach, which w
 
 
 ## Why do you want to leave your job?
-Firstly, I greatly value the experiences I've had in my current role, and I've learned a lot from the challenges presented.
-	
-The allocated project budget does not match the amount of work it requires to deliver a satisfying solution. This comes from the underestimation of the workload needed for developing full-scale ML solutions and it has really taken a tole on my work-life balance. 
-Moreover, due to the short project timelines, our solutions tend to focus on the short term. However Managing the performance of ML pipelines and and data drift is a long-term progress it is just simply not feasible in the current setting. While I appreciate opportunities for growth, the rapid pace without adequate time for skill acquisition has been challenging.
-
-I ready for a fresh challenge.
+Unfortunately, like many others companies, my previous company faced significant challenges due to the post-pandemic economic hit. The business wasn't performing well: there was just not many new projects being signed and clients are delaying projects start time in many projects that DID get signed in the beginning, and there was this really noticeable decrease in billable projects that I can do. Since my role was heavily dependent on these projects, which accounting for 75% of my productivity metrics, I just do not have enough work to do and I'm as a result I'm just not learning anything. This situation directly impacted my ability to meet KPI, and as a result, the company had to make the difficult decision to downsize.
 
 [Back to TOC](#Behavioral-Questions)
 
